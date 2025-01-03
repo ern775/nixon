@@ -8,7 +8,7 @@
 in {
   home.packages = with pkgs; [
     android-tools
-    pkgsStable.bottles
+    bottles
     brave
     dopamine
     gamescope
@@ -19,6 +19,7 @@ in {
     mangohud
     media-downloader
     miru
+    mpv
     onlyoffice-desktopeditors
     picard
     prismlauncher
@@ -28,7 +29,6 @@ in {
     qbittorrent
     simplex-chat-desktop
     skypeforlinux
-    soulseekqt
     steamtinkerlaunch
     # tauon
     teams-for-linux

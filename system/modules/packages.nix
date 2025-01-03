@@ -10,6 +10,7 @@ in {
     systemPackages = with pkgs; [
       alejandra
       cloudflare-warp
+      exfatprogs
       git
       home-manager
       input-remapper
