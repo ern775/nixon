@@ -8,11 +8,7 @@
 in {
   home.packages = with pkgs; [
     android-tools
-<<<<<<< HEAD
-    bottles
-=======
     pkgsStable.bottles
->>>>>>> bffca04 (Initial Commit)
     brave
     dopamine
     gamescope
