@@ -1,10 +1,6 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: let
-  system = "x86_64-linux";
-  pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
+{pkgs, ...}: let
+  # system = "x86_64-linux";
+  # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
 in {
   environment = {
     systemPackages = with pkgs; [

@@ -1,10 +1,6 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: let
-  system = "x86_64-linux";
-  pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
+{pkgs, ...}: let
+  # system = "x86_64-linux";
+  # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
 in {
   home.packages = with pkgs; [
     android-tools
@@ -27,10 +23,10 @@ in {
     protonvpn-gui
     python312Full
     qbittorrent
+    signal-desktop
     simplex-chat-desktop
     skypeforlinux
     steamtinkerlaunch
-    # tauon
     teams-for-linux
     thunderbird
     vesktop
