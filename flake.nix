@@ -8,10 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # stylix = {
+    #   url = "github:danth/stylix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,7 +34,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./system/configuration.nix
-          inputs.stylix.nixosModules.stylix
+          # inputs.stylix.nixosModules.stylix
         ];
       };
     };
