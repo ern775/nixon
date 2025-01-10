@@ -26,6 +26,14 @@
       sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
       sudo undervolt --turbo 0 -p1 35 5 -p2 45 1
     '';
+    switchM = ''
+      sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
+      sudo undervolt --turbo 0 -p1 35 5 -p2 45 1
+    '';
+    switchV = ''
+      sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
+      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
+    '';
     intelWatt = "sudo chmod o+r /sys/class/powercap/intel-rapl\:0/energy_uj";
   };
 in {

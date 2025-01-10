@@ -5,9 +5,7 @@ in {
   home.packages = with pkgs; [
     android-tools
     bottles
-    brave
     dopamine
-    gamescope
     jamesdsp
     jdk17
     kdePackages.kcalc
@@ -18,14 +16,11 @@ in {
     mpv
     onlyoffice-desktopeditors
     picard
-    prismlauncher
     protonup
     protonvpn-gui
     python312Full
     qbittorrent
     signal-desktop
-    simplex-chat-desktop
-    skypeforlinux
     steamtinkerlaunch
     teams-for-linux
     thunderbird

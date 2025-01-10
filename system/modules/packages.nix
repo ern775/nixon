@@ -21,6 +21,7 @@ in {
       steam-run
       sysfsutils
       undervolt
+      qdirstat
       xsettingsd
       xorg.xrdb
       wget
