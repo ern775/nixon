@@ -14,6 +14,10 @@
       sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix
       sudo undervolt --turbo 0 -p1 35 5 -p2 45 1
     '';
+    switchV = ''
+      sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix
+      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
+    '';
     switchE = ''
       sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
       sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
@@ -28,9 +32,9 @@
     '';
     switchM = ''
       sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
-      sudo undervolt --turbo 0 -p1 35 5 -p2 45 1
+      sudo undervolt --turbo 0 -p1 50 5 -p2 55 1
     '';
-    switchV = ''
+    switchN = ''
       sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
       sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
     '';

@@ -16,11 +16,14 @@ in {
     mpv
     onlyoffice-desktopeditors
     picard
+    prismlauncher
     protonup
     protonvpn-gui
     python312Full
     qbittorrent
     signal-desktop
+    scrcpy
+    qtscrcpy
     steamtinkerlaunch
     teams-for-linux
     thunderbird

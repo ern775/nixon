@@ -5,7 +5,7 @@ nvmlInit()
 myGPU = nvmlDeviceGetHandleByIndex(0)
 
 # Set Min and Max core clocks
-nvmlDeviceSetGpuLockedClocks(myGPU, 0, 3000)
+nvmlDeviceSetGpuLockedClocks(myGPU, 0, 2700)
 
 # Clock offset (0 by default)
 nvmlDeviceSetGpcClkVfOffset(myGPU, 240)
