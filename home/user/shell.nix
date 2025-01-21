@@ -6,9 +6,9 @@
     '';
     rebuild = "sudo nixos-rebuild switch --flake ~/system";
     rebuildBoot = "sudo nixos-rebuild boot --flake ~/system";
-    fullRebuild = "sudo nixos-rebuild switch --flake ~/system && rm -f .gtkrc-2.0.backup && home-manager switch --flake ~/system -b backup";
-    fullRebuildBoot = "sudo nixos-rebuild boot --flake ~/system && rm -f .gtkrc-2.0.backup && home-manager switch --flake ~/system -b backup";
-    homeRebuild = "rm -f .gtkrc-2.0.backup && home-manager switch --flake ~/system -b backup";
+    fullRebuild = "sudo nixos-rebuild switch --flake ~/system && rm -f ~/.gtkrc-2.0.backup && home-manager switch --flake ~/system -b backup";
+    fullRebuildBoot = "sudo nixos-rebuild boot --flake ~/system && rm -f ~/.gtkrc-2.0.backup && home-manager switch --flake ~/system -b backup";
+    homeRebuild = "rm -f ~/.gtkrc-2.0.backup && home-manager switch --flake ~/system -b backup";
     flakeUpdate  = "sudo nix flake update --flake ~/system";
     switchP = ''
       sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix

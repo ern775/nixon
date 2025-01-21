@@ -5,11 +5,9 @@ in {
   environment = {
     systemPackages = with pkgs; [
       alejandra
-      cloudflare-warp
       exfatprogs
       git
       home-manager
-      input-remapper
       kate
       lshw
       nixd
@@ -18,7 +16,6 @@ in {
       (python3.withPackages (p: with p; [pynvml]))
       p7zip
       rar
-      steam-run
       sysfsutils
       undervolt
       qdirstat

@@ -5,18 +5,21 @@ in {
   home.packages = with pkgs; [
     android-tools
     bottles
+    cloudflare-warp
     dopamine
     jamesdsp
     jdk17
+    ffmpeg-full
+    input-remapper
     kdePackages.kcalc
-    librewolf
+    (librewolf.override { nativeMessagingHosts = [ pkgs.plasma-browser-integration ]; })
     mangohud
     media-downloader
     miru
-    mpv
+    # mpv
     onlyoffice-desktopeditors
     picard
-    prismlauncher
+    # prismlauncher
     protonup
     protonvpn-gui
     python312Full
@@ -25,7 +28,8 @@ in {
     scrcpy
     qtscrcpy
     steamtinkerlaunch
-    teams-for-linux
+    steam-run
+    # teams-for-linux
     thunderbird
     vesktop
     vlc
