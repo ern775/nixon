@@ -12,11 +12,12 @@ in {
     ffmpeg-full
     input-remapper
     kdePackages.kcalc
+    kdePackages.kclock
     (librewolf.override { nativeMessagingHosts = [ pkgs.plasma-browser-integration ]; })
     mangohud
     media-downloader
     miru
-    # mpv
+    mpv
     onlyoffice-desktopeditors
     picard
     # prismlauncher
