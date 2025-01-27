@@ -22,6 +22,7 @@ in {
     picard
     # prismlauncher
     protonup
+    protonup-qt
     protonvpn-gui
     python312Full
     qbittorrent

@@ -6,9 +6,11 @@ in {
     systemPackages = with pkgs; [
       alejandra
       exfatprogs
+      gcc
       git
       home-manager
       kate
+      kdiskmark
       lshw
       nixd
       nvtopPackages.full
