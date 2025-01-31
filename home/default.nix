@@ -1,10 +1,20 @@
 {...}: {
   imports = [
     ./user
+    ./configurations
   ];
 
-  home.username = "eren";
-  home.homeDirectory = "/home/eren";
-  home.stateVersion = "24.05";
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
+
+  home = {
+    username = "eren";
+    homeDirectory = "/home/eren";
+    stateVersion = "24.05";
+  };
+
   programs.home-manager.enable = true;
 }

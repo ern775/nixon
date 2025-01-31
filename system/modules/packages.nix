@@ -8,6 +8,7 @@ in {
       exfatprogs
       gcc
       git
+      goverlay
       home-manager
       kate
       kdiskmark
