@@ -6,7 +6,6 @@ in {
     systemPackages = with pkgs; [
       alejandra
       exfatprogs
-      gcc
       git
       goverlay
       home-manager
@@ -17,7 +16,6 @@ in {
       nvtopPackages.full
       pciutils
       (python3.withPackages (p: with p; [pynvml]))
-      p7zip
       rar
       sysfsutils
       undervolt

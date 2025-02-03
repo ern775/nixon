@@ -1,6 +1,10 @@
-{pkgs, ...}: let
-  # system = "x86_64-linux";
-  # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  system = "x86_64-linux";
+  pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
 in {
   home.packages = with pkgs; [
     android-tools
@@ -13,7 +17,7 @@ in {
     input-remapper
     kdePackages.kcalc
     kdePackages.kclock
-    (librewolf.override { nativeMessagingHosts = [ pkgs.plasma-browser-integration ]; })
+    (librewolf.override {nativeMessagingHosts = [pkgs.plasma-browser-integration];})
     mangohud
     media-downloader
     miru
@@ -24,7 +28,6 @@ in {
     protonup
     protonup-qt
     protonvpn-gui
-    python312Full
     qbittorrent
     signal-desktop
     scrcpy
@@ -33,7 +36,7 @@ in {
     steam-run
     # teams-for-linux
     thunderbird
-    vesktop
+    pkgsStable.vesktop
     vlc
     vscodium-fhs
     yt-dlp

@@ -1,8 +1,6 @@
 {...}: {
   programs = {
-    direnv.enable = true;
     partition-manager.enable = true;
-    htop.enable = true;
     kdeconnect.enable = true;
     steam = {
       enable = true;

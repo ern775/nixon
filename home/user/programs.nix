@@ -1,3 +1,0 @@
-{
-  direnv.enable = true;
-}
