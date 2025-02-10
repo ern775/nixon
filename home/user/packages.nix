@@ -29,8 +29,6 @@ in {
     protonup-qt
     protonvpn-gui
     qbittorrent
-    signal-desktop
-    scrcpy
     qtscrcpy
     steamtinkerlaunch
     steam-run

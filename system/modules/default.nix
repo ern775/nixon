@@ -10,6 +10,7 @@
     ./hp.nix
     ./intel.nix
     ./internationalisation.nix
+    ./journal.nix
     ./networking.nix
     ./packages.nix
     ./programs.nix

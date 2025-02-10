@@ -4,7 +4,6 @@
   ...
 }: {
   systemd = {
-    coredump.extraConfig = "Storage=none";
     services = {
       novideo = {
         enable = true;
