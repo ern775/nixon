@@ -1,2 +1,1 @@
-# nixon
-nixon
+# NixOS Configuration for my Victus-15
