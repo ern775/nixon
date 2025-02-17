@@ -1,43 +1,43 @@
 {...}: let
-  myAliases = {
-    cleanup = ''
+  aliases = {
+    cleanup = "
       sudo nix-collect-garbage -d
       nix-collect-garbage -d
-    '';
+    ";
     rebuild = "sudo nixos-rebuild switch --flake ~/system";
     rebuildBoot = "sudo nixos-rebuild boot --flake ~/system";
     fullRebuild = "sudo nixos-rebuild switch --flake ~/system && rm -f ~/.gtkrc-2.0.backup && home-manager switch --flake ~/system -b backup";
     fullRebuildBoot = "sudo nixos-rebuild boot --flake ~/system && rm -f ~/.gtkrc-2.0.backup && home-manager switch --flake ~/system -b backup";
     homeRebuild = "rm -f ~/.gtkrc-2.0.backup && home-manager switch --flake ~/system -b backup";
-    flakeUpdate  = "sudo nix flake update --flake ~/system";
-    switchP = ''
+    flakeUpdate = "sudo nix flake update --flake ~/system";
+    switchP = "
       sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix
       sudo undervolt --turbo 0 -p1 35 5 -p2 45 1
-    '';
-    switchV = ''
+    ";
+    switchV = "
       sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix
       sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
-    '';
-    switchE = ''
+    ";
+    switchE = "
       sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
       sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
-    '';
-    switchB = ''
+    ";
+    switchB = "
       sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
       sudo undervolt --turbo 1 -p1 10 5 -p2 15 1
-    '';
-    switchG = ''
+    ";
+    switchG = "
       sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
       sudo undervolt --turbo 0 -p1 35 5 -p2 45 1
-    '';
-    switchM = ''
+    ";
+    switchM = "
       sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
       sudo undervolt --turbo 0 -p1 50 5 -p2 55 1
-    '';
-    switchN = ''
+    ";
+    switchN = "
       sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
       sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
-    '';
+    ";
     intelWatt = "sudo chmod o+r /sys/class/powercap/intel-rapl\:0/energy_uj";
   };
 in {
@@ -46,7 +46,11 @@ in {
       enable = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
-      shellAliases = myAliases;
+      shellAliases = aliases;
+      history = {
+        expireDuplicatesFirst = true;
+        ignoreAllDups = true;
+      };
       oh-my-zsh = {
         enable = true;
         plugins = [

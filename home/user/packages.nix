@@ -23,6 +23,7 @@ in {
     miru
     mpv
     onlyoffice-desktopeditors
+    parabolic
     picard
     # prismlauncher
     protonup
@@ -36,7 +37,6 @@ in {
     thunderbird
     pkgsStable.vesktop
     vlc
-    vscodium-fhs
     yt-dlp
     zapzap
   ];

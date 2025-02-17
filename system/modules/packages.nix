@@ -7,7 +7,6 @@ in {
       alejandra
       exfatprogs
       git
-      goverlay
       home-manager
       kate
       kdiskmark
@@ -29,5 +28,6 @@ in {
       plasma-browser-integration
       elisa
     ];
+    pathsToLink = [ "/share/zsh" ];
   };
 }
