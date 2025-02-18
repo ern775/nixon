@@ -14,6 +14,7 @@ in {
     jamesdsp
     jdk17
     ffmpeg-full
+    godot_4
     input-remapper
     kdePackages.kcalc
     kdePackages.kclock
