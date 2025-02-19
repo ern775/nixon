@@ -1,7 +1,8 @@
 {
   imports = [
-    ./cursor.nix
+    # ./cursor.nix
     ./mangohud.nix
+    ./stylix.nix
     ./vscodium.nix
     ./xdg.nix
     ./zsh.nix

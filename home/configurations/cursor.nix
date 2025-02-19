@@ -12,7 +12,10 @@
     name = "DMZ-Black";
     package = pkgs.vanilla-dmz;
     size = 24;
-    gtk.enable = true;
-    x11.enable = true;
+    # gtk.enable = true;
+    # x11 = {
+    #   enable = true;
+    #   defaultCursor = "DMZ-Black";
+    # };
   };
 }
