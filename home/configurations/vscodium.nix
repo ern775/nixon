@@ -30,6 +30,9 @@
       "git.enableSmartCommit" = true;
       "git.confirmSync" = false;
       "git.autofetch" = true;
+      "nix.hiddenLanguageServerErrors" = [
+        "textDocument/formatting"
+      ];
     };
   };
 }

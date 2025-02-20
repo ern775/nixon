@@ -10,6 +10,7 @@
     noto-fonts
     noto-fonts-emoji
     jetbrains-mono
+    base16-schemes
   ];
 
   stylix = {
@@ -21,10 +22,7 @@
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
 
-    image = pkgs.fetchurl {
-      url = "https://codeberg.org/lunik1/nixos-logo-gruvbox-wallpaper/raw/branch/master/png/gruvbox-dark-blue.png";
-      sha256 = "fa37d3baf975549a1c37e60da74e1854e351d39e065fea7fcb1357cb286c35cb";
-    };
+    image = ../images/gruvbox-dark-blue.png;
 
     cursor = {
       name = "DMZ-Black";
@@ -65,6 +63,7 @@
       qt.enable = false;
       vesktop.enable = true;
       xresources.enable = true;
+      kitty.enable = true;
     };
   };
 }
