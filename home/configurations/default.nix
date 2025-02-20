@@ -1,6 +1,5 @@
 {
   imports = [
-    # ./cursor.nix
     ./git.nix
     ./gtk2.nix
     ./kitty.nix

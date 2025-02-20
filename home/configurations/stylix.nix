@@ -13,10 +13,6 @@
     base16-schemes
   ];
 
-  gtk.enable = true;
-  qt.enable = true;
-  xsession.enable = true;
-
   stylix = {
     enable = true;
 
@@ -24,14 +20,14 @@
 
     polarity = "dark";
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-terminal-dark.yaml";
 
     image = ../images/gruvbox-dark-blue.png;
 
     cursor = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
-      size = 22;
+      size = 20;
     };
 
     fonts = {
@@ -53,14 +49,16 @@
       };
 
       sizes = {
-        terminal = 10;
         applications = 10;
+        desktop = 8;
+        popups = 8;
+        terminal = 10;
       };
     };
 
     targets = {
-      vscode.enable = false;
-      librewolf.enable = false;
+      vscode.enable = true;
+      librewolf.enable = true;
       cava.enable = true;
       gtk.enable = true;
       mangohud.enable = false;
