@@ -39,6 +39,7 @@ in {
     pkgsStable.vesktop
     vlc
     yt-dlp
+    xsettingsd
     zapzap
   ];
   home.sessionVariables = {

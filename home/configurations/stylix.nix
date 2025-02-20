@@ -6,12 +6,16 @@
   imports = [inputs.stylix.homeManagerModules.stylix];
 
   home.packages = with pkgs; [
-    vanilla-dmz
+    bibata-cursors
     noto-fonts
     noto-fonts-emoji
     jetbrains-mono
     base16-schemes
   ];
+
+  gtk.enable = true;
+  qt.enable = true;
+  xsession.enable = true;
 
   stylix = {
     enable = true;
@@ -25,9 +29,9 @@
     image = ../images/gruvbox-dark-blue.png;
 
     cursor = {
-      name = "DMZ-Black";
-      package = pkgs.vanilla-dmz;
-      size = 24;
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+      size = 22;
     };
 
     fonts = {
