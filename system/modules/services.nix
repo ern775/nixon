@@ -6,5 +6,6 @@
     printing.enable = true;
     cloudflare-warp.enable = true;
     input-remapper.enable = true;
+    gvfs.enable = true;
   };
 }

@@ -8,7 +8,7 @@ in {
       exfatprogs
       git
       home-manager
-      kate
+      kdePackages.kate
       kdiskmark
       lshw
       nixd
@@ -25,9 +25,9 @@ in {
     ];
     plasma6.excludePackages = with pkgs.kdePackages; [
       khelpcenter
-      plasma-browser-integration
       elisa
+      drkonqi
     ];
-    pathsToLink = [ "/share/zsh" ];
+    pathsToLink = ["/share/zsh"];
   };
 }

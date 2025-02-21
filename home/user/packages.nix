@@ -9,19 +9,21 @@ in {
   home.packages = with pkgs; [
     android-tools
     bottles
+    cava
     cloudflare-warp
     dopamine
     jamesdsp
     jdk17
+    fastfetch
     ffmpeg-full
+    haruna
     godot_4
     input-remapper
     kdePackages.kcalc
     kdePackages.kclock
-    (librewolf.override {nativeMessagingHosts = [pkgs.plasma-browser-integration];})
+    (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
     mangohud
     media-downloader
-    miru
     mpv
     onlyoffice-desktopeditors
     parabolic
@@ -42,7 +44,4 @@ in {
     xsettingsd
     zapzap
   ];
-  home.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\\\${HOME}/.steam/root/compatibilitytools.d";
-  };
 }

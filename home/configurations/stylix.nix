@@ -16,7 +16,7 @@
   stylix = {
     enable = true;
 
-    autoEnable = false;
+    autoEnable = true;
 
     polarity = "dark";
 
@@ -57,7 +57,7 @@
     };
 
     targets = {
-      vscode.enable = true;
+      vscode.enable = false;
       librewolf.enable = true;
       cava.enable = true;
       gtk.enable = true;
@@ -66,6 +66,9 @@
       vesktop.enable = true;
       xresources.enable = true;
       kitty.enable = true;
+      hyprland.enable = true;
+      wpaperd.enable = false;
+      hyprpaper.enable = true;
     };
   };
 }

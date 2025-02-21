@@ -2,7 +2,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium-fhs;
-    userSettings = {
+    profiles.default.userSettings = {
       "nix.serverPath" = "nixd";
       "nix.enableLanguageServer" = true;
       "nix.serverSettings" = {
