@@ -64,7 +64,7 @@
       mangohud.enable = false;
       qt.enable = false;
       vesktop.enable = true;
-      xresources.enable = true;
+      xresources.enable = false;
       kitty.enable = true;
       hyprland.enable = true;
       wpaperd.enable = false;

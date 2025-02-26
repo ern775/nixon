@@ -188,11 +188,15 @@ misc {
     # libnotify
     hyprpaper
     rofi-wayland
-    xfce.thunar
     qt5.qtwayland
     qt6.qtwayland
     gvfs
     hyprshot
+    xfce.thunar-archive-plugin
+    xfce.thunar-bare
+    xfce.thunar-media-tags-plugin
+    xfce.thunar-vcs-plugin
+    xfce.thunar-volman
   ];
   xdg.portal = {
     enable = true;
