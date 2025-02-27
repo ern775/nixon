@@ -16,7 +16,7 @@
   stylix = {
     enable = true;
 
-    autoEnable = true;
+    autoEnable = false;
 
     polarity = "dark";
 
@@ -68,7 +68,8 @@
       kitty.enable = true;
       hyprland.enable = true;
       wpaperd.enable = false;
-      hyprpaper.enable = true;
+      hyprpaper.enable = false;
+      swaylock.enable = false;
     };
   };
 }

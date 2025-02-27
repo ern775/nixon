@@ -3,16 +3,20 @@
     enable = true;
     systemd.variables = [ "--all" ];
     extraConfig = "
+
+env = AQ_DRM_DEVICES,/dev/dri/card1
+
 $mainMod = SUPER
 bind = $mainMod, Return, exec, kitty
+bind = $mainMod SHIFT, Return, exec, codium
 bind = $mainMod, Q, killactive, 
 bind = $mainMod, M, exec, wlogout --protocol layer-shell
-bind = $mainMod, E, exec, thunar 
+bind = $mainMod, E, exec, thunar
 bind = $mainMod, V, togglefloating, 
 bind = $mainMod, D, exec, rofi -show drun
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, S, togglesplit, # dwindle
-bind = $mainMod SHIFT, Q, exec, swaylock
+bind = $mainMod SHIFT, Q, exec, hyprlock
 bind = , PRINT, exec, hyprshot -m region --clipboard-only
 
 bind = $mainMod, h, movefocus, l
@@ -52,13 +56,16 @@ bind = $mainMod SHIFT, h, movewindow, l
 bind = $mainMod SHIFT, k, movewindow, u
 bind = $mainMod SHIFT, j, movewindow, d
 
-bind = $mainMod, b, exec, firefox
-bind = $mainMod, c, exec, telegram-desktop
+bind = $mainMod, b, exec, librewolf
 
-bind = , XF86MonBrightnessUp, exec, brightnessctl -q s +10%
-bind = , XF86MonBrightnessDown, exec, brightnessctl -q s 10%-
-bind = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
-bind = , XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
+bind = , XF86MonBrightnessUp, exec, brightnessctl -q s +5%
+bind = SHIFT, XF86MonBrightnessUp, exec, brightnessctl -q s +1%
+bind = , XF86MonBrightnessDown, exec, brightnessctl -q s 5%-
+bind = SHIFT, XF86MonBrightnessDown, exec, brightnessctl -q s 1%-
+bind = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +2%
+bind = SHIFT, XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +1%
+bind = , XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -2%
+bind = SHIFT, XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -1%
 bind = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bind = , XF86AudioPlay, exec, playerctl play-pause
 bind = , XF86AudioPause, exec, playerctl pause
@@ -184,14 +191,18 @@ misc {
   };
   home.packages = with pkgs; [
     waybar
+    hyprlock
+    wlogout
     # mako
     # libnotify
     hyprpaper
     rofi-wayland
+    brightnessctl
     qt5.qtwayland
     qt6.qtwayland
     gvfs
     hyprshot
+    networkmanagerapplet
     xfce.thunar-archive-plugin
     xfce.thunar-bare
     xfce.thunar-media-tags-plugin
@@ -207,15 +218,16 @@ misc {
   };
 
   services.hyprpaper = {
+    enable = true;
     settings = {
       ipc = "on";
       splash = false;
       splash_offset = 2.0;
 
-      preload = ["~/system/home/images/home/images/gruvbox-dark-blue.png"];
+      preload = ["~/system/home/images/gruvbox-dark-blue.png"];
 
       wallpaper = [
-        ", ~/system/home/images/home/images/gruvbox-dark-blue.png"
+        ", ~/system/home/images/gruvbox-dark-blue.png"
       ];
     };
   };
