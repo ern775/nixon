@@ -12,6 +12,7 @@ bind = $mainMod SHIFT, Return, exec, codium
 bind = $mainMod, Q, killactive, 
 bind = $mainMod, M, exec, wlogout --protocol layer-shell
 bind = $mainMod, E, exec, thunar
+bind = $mainMod, b, exec, librewolf
 bind = $mainMod, V, togglefloating, 
 bind = $mainMod, D, exec, rofi -show drun
 bind = $mainMod, P, pseudo, # dwindle
@@ -56,8 +57,6 @@ bind = $mainMod SHIFT, h, movewindow, l
 bind = $mainMod SHIFT, k, movewindow, u
 bind = $mainMod SHIFT, j, movewindow, d
 
-bind = $mainMod, b, exec, librewolf
-
 bind = , XF86MonBrightnessUp, exec, brightnessctl -q s +5%
 bind = SHIFT, XF86MonBrightnessUp, exec, brightnessctl -q s +1%
 bind = , XF86MonBrightnessDown, exec, brightnessctl -q s 5%-
@@ -89,6 +88,20 @@ exec-once = waybar & hyprpaper
 exec-once = swayidle -w
 exec-once = dbus-update-activation-environment --systemd --all
 
+monitor = , highres, auto, 1.25
+
+# unscale XWayland
+xwayland {
+  force_zero_scaling = true
+}
+
+# toolkit-specific scale
+env = GDK_SCALE,1
+env = XCURSOR_SIZE,20
+
+env = QT_QPA_PLATFORM,wayland
+env = ELECTRON_OZONE_PLATFORM_HINT,auto
+
 input {
     kb_layout = tr
 
@@ -98,6 +111,11 @@ input {
     kb_rules =
 
     follow_mouse = 1
+
+    numlock_by_default = true
+
+    sensitivity = 1.3
+    accel_profile = flat
 
     touchpad {
         natural_scroll = yes
@@ -135,11 +153,11 @@ windowrulev2 = float, class:^(steam)$,title:^(Friends List)$
 
 # Workspace assign
 
-windowrulev2 = workspace: 1, class:^(kitty)$
-windowrulev2 = workspace: 2, class:^(firefox)$
-windowrulev2 = workspace: 5, class:^(steam)$
-windowrulev2 = workspace: 10, class:^(org.telegram.desktop)$
-windowrulev2 = workspace: 10, class:^(vesktop)$
+# windowrulev2 = workspace: 1, class:^(kitty)$
+# windowrulev2 = workspace: 2, class:^(firefox)$
+# windowrulev2 = workspace: 5, class:^(steam)$
+# windowrulev2 = workspace: 10, class:^(org.telegram.desktop)$
+# windowrulev2 = workspace: 10, class:^(vesktop)$
 general {
     gaps_in = 5
     gaps_out = 10 
@@ -186,6 +204,8 @@ gestures {
 
 misc {
     force_default_wallpaper = 0
+    disable_hyprland_logo = true
+    disable_splash_rendering = true
 }
 ";
   };
