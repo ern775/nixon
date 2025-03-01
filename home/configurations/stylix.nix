@@ -50,8 +50,8 @@
 
       sizes = {
         applications = 10;
-        desktop = 8;
-        popups = 8;
+        desktop = 10;
+        popups = 10;
         terminal = 10;
       };
     };
@@ -67,9 +67,10 @@
       xresources.enable = false;
       kitty.enable = true;
       hyprland.enable = true;
-      wpaperd.enable = false;
       hyprpaper.enable = false;
-      swaylock.enable = false;
+      hyprlock.enable = true;
+      hyprlock.useWallpaper = false;
+      waybar.enable = false;
     };
   };
 }

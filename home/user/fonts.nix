@@ -8,5 +8,7 @@
     noto-fonts-cjk-sans
     font-awesome
     nerd-fonts.noto
+    jetbrains-mono
+    nerd-fonts.jetbrains-mono
   ];
 }

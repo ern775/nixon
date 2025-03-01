@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.variables = [ "--all" ];
+    systemd.variables = ["--all"];
     extraConfig = "
 
 env = AQ_DRM_DEVICES,/dev/dri/card1
@@ -213,6 +213,7 @@ misc {
     waybar
     hyprlock
     wlogout
+    blueman
     # mako
     # libnotify
     hyprpaper

@@ -8,6 +8,7 @@
 in {
   home.packages = with pkgs; [
     android-tools
+    blueman
     bottles
     cava
     cloudflare-warp
@@ -28,6 +29,7 @@ in {
     mpv
     onlyoffice-desktopeditors
     parabolic
+    pavucontrol
     picard
     # prismlauncher
     protonup
