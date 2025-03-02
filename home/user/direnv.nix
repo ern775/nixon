@@ -5,7 +5,6 @@
       enableBashIntegration = true;
       nix-direnv.enable = true;
     };
-
     bash.enable = true;
   };
 }

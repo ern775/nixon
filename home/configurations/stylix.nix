@@ -16,7 +16,7 @@
   stylix = {
     enable = true;
 
-    autoEnable = false;
+    autoEnable = true;
 
     polarity = "dark";
 
@@ -64,13 +64,17 @@
       mangohud.enable = false;
       qt.enable = false;
       vesktop.enable = true;
-      xresources.enable = false;
-      kitty.enable = true;
-      hyprland.enable = true;
+      xresources.enable = true;
+      kitty.enable = true;  
+      hyprland.enable = false;
+      hyprland.hyprpaper.enable = false;
       hyprpaper.enable = false;
       hyprlock.enable = true;
       hyprlock.useWallpaper = false;
       waybar.enable = false;
+      kde.enable = false;
+      mako.enable = true;
+      gnome.enable = false;
     };
   };
 }

@@ -8,7 +8,6 @@
 in {
   home.packages = with pkgs; [
     android-tools
-    blueman
     bottles
     cava
     cloudflare-warp
@@ -19,11 +18,11 @@ in {
     ffmpeg-full
     haruna
     godot_4
-    input-remapper
+    # input-remapper
     kdePackages.kcalc
     kdePackages.kclock
     (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
-    lutris
+    # lutris
     mangohud
     media-downloader
     mpv
@@ -46,5 +45,6 @@ in {
     yt-dlp
     xsettingsd
     zapzap
+    # inputs.zen-browser.packages."${system}".default
   ];
 }

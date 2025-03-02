@@ -47,10 +47,13 @@ in {
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = aliases;
+      dotDir = ".config/zsh";
       history = {
         expireDuplicatesFirst = true;
         ignoreAllDups = true;
         ignoreDups = true;
+        saveNoDups = true;
+        append = true;
       };
       oh-my-zsh = {
         enable = true;

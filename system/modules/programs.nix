@@ -9,7 +9,7 @@
     };
     gamemode.enable = true;
     gamescope.enable = true;
+    # thunar.enable = true;
     zsh.enable = true;
-    thunar.enable = true;
   };
 }

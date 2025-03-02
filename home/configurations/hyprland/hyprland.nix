@@ -213,10 +213,9 @@ misc {
     waybar
     hyprlock
     wlogout
-    blueman
     # mako
     # libnotify
-    hyprpaper
+    # hyprpaper
     rofi-wayland
     brightnessctl
     qt5.qtwayland
@@ -224,11 +223,11 @@ misc {
     gvfs
     hyprshot
     networkmanagerapplet
-    xfce.thunar-archive-plugin
-    xfce.thunar-bare
-    xfce.thunar-media-tags-plugin
-    xfce.thunar-vcs-plugin
-    xfce.thunar-volman
+    # xfce.thunar-archive-plugin
+    # xfce.thunar-bare
+    # xfce.thunar-media-tags-plugin
+    # xfce.thunar-vcs-plugin
+    # xfce.thunar-volman
   ];
   xdg.portal = {
     enable = true;
@@ -238,18 +237,18 @@ misc {
     ];
   };
 
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      ipc = "on";
-      splash = false;
-      splash_offset = 2.0;
+  # services.hyprpaper = {
+  #   enable = true;
+  #   settings = {
+  #     ipc = "on";
+  #     splash = false;
+  #     splash_offset = 2.0;
 
-      preload = ["~/system/home/images/gruvbox-dark-blue.png"];
+  #     preload = ["~/system/home/images/gruvbox-dark-blue.png"];
 
-      wallpaper = [
-        ", ~/system/home/images/gruvbox-dark-blue.png"
-      ];
-    };
-  };
+  #     wallpaper = [
+  #       ", ~/system/home/images/gruvbox-dark-blue.png"
+  #     ];
+  #   };
+  # };
 }
