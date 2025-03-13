@@ -155,14 +155,14 @@
       # throttling_status_graph
 
       ### Display miscellaneous information
-      # engine_version=1
-      # engine_short_names=1
-      # gpu_name=1
-      # vulkan_driver=1
-      # wine=1
-      # exec_name=1
-      # winesync=1
-      # present_mode=1
+      # engine_version = true;
+      # engine_short_names = true;
+      # gpu_name = true;
+      # vulkan_driver = true;
+      # wine = true;
+      # exec_name = true;
+      # winesync = true;
+      # present_mode = true;
 
       ### Display loaded MangoHud architecture
       # arch

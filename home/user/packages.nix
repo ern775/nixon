@@ -12,7 +12,7 @@ in {
     cava
     cloudflare-warp
     dopamine
-    jamesdsp
+    pkgsStable.jamesdsp
     jdk17
     fastfetch
     ffmpeg-full
@@ -26,6 +26,7 @@ in {
     mangohud
     media-downloader
     mpv
+    nicotine-plus
     onlyoffice-desktopeditors
     parabolic
     pavucontrol

@@ -11,18 +11,18 @@
         "10-clock-rate" = {
           "context.properties" = {
             "default.clock.rate" = 48000;
-            "default.clock.allowed-rates" = [48000 96000];
-            "default.clock.min-quantum" = 512;
+            "default.clock.allowed-rates" = [44100 48000 88200 96000];
+            "default.clock.min-quantum" = 1024;
             "default.clock.max-quantum" = 8192;
-            "default.clock.quantum" = 512;
+            "default.clock.quantum" = 1024;
             "default.clock.quantum-limit" = 8192;
-            "default.clock.quantum-floor" = 128;
+            "default.clock.quantum-floor" = 256;
           };
         };
       };
       wireplumber = {
         enable = true;
-        
+
         # source: https://wiki.archlinux.org/title/PipeWire#Noticeable_audio_delay_or_audible_pop/crack_when_starting_playback
         configPackages = [
           (pkgs.writeTextDir
