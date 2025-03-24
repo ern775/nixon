@@ -17,21 +17,23 @@ in {
     fastfetch
     ffmpeg-full
     haruna
-    godot_4
+    godot
     # input-remapper
     kdePackages.kcalc
     kdePackages.kclock
-    (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
+    # (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
     # lutris
     mangohud
     media-downloader
     mpv
     nicotine-plus
     onlyoffice-desktopeditors
+    peazip
     parabolic
     pavucontrol
     picard
     # prismlauncher
+    kdePackages.plasma-browser-integration
     protonup
     protonup-qt
     protonvpn-gui
@@ -40,6 +42,7 @@ in {
     steamtinkerlaunch
     steam-run
     # teams-for-linux
+    testdisk-qt
     thunderbird
     pkgsStable.vesktop
     vlc

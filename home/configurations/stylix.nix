@@ -59,13 +59,14 @@
     targets = {
       vscode.enable = false;
       librewolf.enable = true;
+      librewolf.profileNames = ["Default"];
       cava.enable = true;
       gtk.enable = true;
       mangohud.enable = false;
       qt.enable = false;
       vesktop.enable = true;
       xresources.enable = true;
-      kitty.enable = true;  
+      kitty.enable = true;
       hyprland.enable = false;
       hyprland.hyprpaper.enable = false;
       hyprpaper.enable = false;

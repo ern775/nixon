@@ -2,6 +2,16 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium-fhs;
+    mutableExtensionsDir = true;
+    # profiles.default.extensions = with pkgs.vscode-extensions; [
+    #   llvm-vs-code-extensions.vscode-clangd
+    #   bbenoist.nix
+    #   jnoortheen.nix-ide
+    #   ms-python.python
+    #   ms-python.debugpy
+    #   mkhl.direnv
+    #   arrterian.nix-env-selector
+    # ];
     # profiles.default.userSettings = {
     #   "nix.serverPath" = "nixd";
     #   "nix.enableLanguageServer" = true;
@@ -33,6 +43,7 @@
     #   "nix.hiddenLanguageServerErrors" = [
     #     "textDocument/formatting"
     #   ];
-    # };
+    #   "clangd.path" = "${lib.getExe' pkgs.clang-tools "clangd"}";
+    #   };
   };
 }

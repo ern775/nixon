@@ -14,7 +14,7 @@
       ################ PERFORMANCE #################
 
       ### Limit the application FPS. Comma-separated list of one or more FPS values (e.g. 0,30,60). 0 means unlimited (unless VSynced)
-      fps_limit = "144,0,60";
+      fps_limit = "144,0,5,60";
 
       ### early = wait before present, late = wait after present
       # fps_limit_method=
