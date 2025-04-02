@@ -8,6 +8,6 @@
     intel-compute-runtime
     vpl-gpu-rt
   ];
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; QT_QPA_PLATFORM = "wayland";}; # Force intel-media-driver
   # boot.kernelParams = ["i915.force_probe=46a6"];
 }

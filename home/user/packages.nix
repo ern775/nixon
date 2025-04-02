@@ -8,6 +8,7 @@
 in {
   home.packages = with pkgs; [
     android-tools
+    anki-bin
     bottles
     cava
     cloudflare-warp
@@ -17,6 +18,7 @@ in {
     fastfetch
     ffmpeg-full
     haruna
+    intel-gpu-tools
     godot
     # input-remapper
     kdePackages.kcalc

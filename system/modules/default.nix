@@ -17,6 +17,7 @@
     ./programs.nix
     ./security.nix
     ./services.nix
+    ./stylix.nix
     ./systemd.nix
     ./users.nix
   ];
