@@ -34,7 +34,6 @@
       sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
     ";
     switchB = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
       sudo undervolt --turbo 1 -p1 10 5 -p2 15 1
     ";
     switchG = "

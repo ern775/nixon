@@ -17,6 +17,7 @@ in {
     jdk17
     fastfetch
     ffmpeg-full
+    handbrake
     haruna
     intel-gpu-tools
     godot

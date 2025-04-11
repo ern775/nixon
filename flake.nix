@@ -34,7 +34,6 @@
     self,
     nixpkgs,
     home-manager,
-    stylix,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -43,7 +42,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./system/configuration.nix
-          stylix.nixosModules.stylix
         ];
       };
     };
