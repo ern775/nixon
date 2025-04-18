@@ -25,7 +25,7 @@ in {
     kdePackages.kcalc
     kdePackages.kclock
     # (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
-    # lutris
+    lutris
     mangohud
     media-downloader
     mpv
