@@ -8,7 +8,7 @@
     ./nix.nix
     ./hardware.nix
     ./hp.nix
-    ./hyprland.nix
+    # ./hyprland.nix
     ./intel.nix
     ./internationalisation.nix
     ./journal.nix

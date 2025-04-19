@@ -1,6 +1,6 @@
 {
   imports = [
-    ./hyprland
+    # ./hyprland
     ./git.nix
     ./gtk2.nix
     ./kitty.nix

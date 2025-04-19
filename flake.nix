@@ -36,6 +36,7 @@
     home-manager,
     ...
   } @ inputs: {
+    secrets = builtins.fromJSON (builtins.readFile "${self}/secrets.json");
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

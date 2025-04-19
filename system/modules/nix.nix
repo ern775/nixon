@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{inputs, secrets, ...}: {
   nixpkgs.config.allowUnfree = true;
 
   zramSwap = {
@@ -35,5 +35,6 @@
     };
     optimise.automatic = true;
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+    extraOptions = "access-tokens = github.com=${secrets.github_token}\n";
   };
 }

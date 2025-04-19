@@ -20,10 +20,11 @@ in {
     handbrake
     haruna
     intel-gpu-tools
-    godot
+    # godot
     # input-remapper
     kdePackages.kcalc
     kdePackages.kclock
+    kile
     # (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
     lutris
     mangohud
@@ -39,13 +40,14 @@ in {
     kdePackages.plasma-browser-integration
     protonup
     protonup-qt
-    protonvpn-gui
+    pkgsStable.protonvpn-gui
     qbittorrent
     qtscrcpy
     steamtinkerlaunch
     steam-run
     # teams-for-linux
     testdisk-qt
+    texliveFull
     thunderbird
     pkgsStable.vesktop
     vlc
