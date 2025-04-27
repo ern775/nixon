@@ -36,12 +36,11 @@
     home-manager,
     ...
   } @ inputs: let
-    secrets = builtins.fromJSON (builtins.readFile "~/system/secrets.json");
   in {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs secrets;};
+        specialArgs = {inherit inputs;};
         modules = [
           ./system/configuration.nix
         ];

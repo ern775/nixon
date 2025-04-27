@@ -18,23 +18,24 @@ in {
     fastfetch
     ffmpeg-full
     handbrake
-    haruna
+    # haruna
     intel-gpu-tools
     # godot
     # input-remapper
     kdePackages.kcalc
     kdePackages.kclock
-    kile
+    # kile
     # (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
-    lutris
+    # lutris
     mangohud
     media-downloader
     mpv
     nicotine-plus
     onlyoffice-desktopeditors
+    opusTools
     peazip
-    parabolic
-    pavucontrol
+    # parabolic
+    # pavucontrol
     picard
     # prismlauncher
     kdePackages.plasma-browser-integration
@@ -47,8 +48,9 @@ in {
     steam-run
     # teams-for-linux
     testdisk-qt
-    texliveFull
+    # texliveFull
     thunderbird
+    umu-launcher
     pkgsStable.vesktop
     vlc
     yt-dlp

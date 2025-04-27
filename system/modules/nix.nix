@@ -1,10 +1,12 @@
-{inputs, secrets, ...}: {
+{inputs, lib, ...}: {
   nixpkgs.config.allowUnfree = true;
 
   zramSwap = {
     enable = true;
     memoryPercent = 100;
   };
+
+  swapDevices = lib.mkForce [];
 
   console.keyMap = "trq";
 
@@ -35,6 +37,5 @@
     };
     optimise.automatic = true;
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-    extraOptions = "access-tokens = github.com=${secrets.github_token}\n";
   };
 }
