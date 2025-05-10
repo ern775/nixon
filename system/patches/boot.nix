@@ -12,5 +12,4 @@ in {
       patches = [./rndis-patch];
     }))
   ];
-  boot.initrd.prepend = ["./acpi_override"];
 }

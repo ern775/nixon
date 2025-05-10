@@ -2,7 +2,7 @@
   services = {
     fwupd.enable = true;
     system76-scheduler.enable = true;
-    printing.enable = true;
+    printing.enable = false;
     cloudflare-warp.enable = true;
     # input-remapper.enable = true;
     gvfs.enable = true;
