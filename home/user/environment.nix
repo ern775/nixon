@@ -10,5 +10,6 @@
     # QT_QPA_PLATFORMTHEME = "qt6ct";
     # WLR_NO_HARDWARE_CURSORS = "1";
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\\\${HOME}/.steam/root/compatibilitytools.d";
+    MANGOHUD = "1";
   };
 }

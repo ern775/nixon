@@ -44,6 +44,7 @@ in {
     pkgsStable.protonvpn-gui
     qbittorrent
     qtscrcpy
+    spoofdpi
     steamtinkerlaunch
     steam-run
     # teams-for-linux

@@ -58,6 +58,7 @@ in {
       syntaxHighlighting.enable = true;
       shellAliases = aliases;
       dotDir = ".config/zsh";
+      envExtra = "MANGOHUD=1\n";
       history = {
         expireDuplicatesFirst = true;
         ignoreAllDups = true;
