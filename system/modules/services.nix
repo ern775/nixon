@@ -1,8 +1,14 @@
-{lib, ...}: {
+{ lib, pkgs, ... }:
+{
   services = {
     fwupd.enable = true;
     system76-scheduler.enable = true;
-    printing.enable = false;
+    # printing = {
+    #   enable = true;
+    #   drivers = with pkgs; [
+    #     canon-capt
+    #   ];
+    # };
     cloudflare-warp.enable = true;
     # input-remapper.enable = true;
     gvfs.enable = true;

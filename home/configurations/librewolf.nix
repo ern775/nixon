@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.librewolf = {
     package = pkgs.librewolf-wayland;
     enable = true;

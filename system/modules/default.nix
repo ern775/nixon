@@ -1,6 +1,6 @@
-{...}: {
+{ ... }:
+{
   imports = [
-    ./agl.nix
     ./audio.nix
     ./boot.nix
     ./display.nix
@@ -12,12 +12,16 @@
     ./intel.nix
     ./internationalisation.nix
     ./journal.nix
+    # ./nbfc.nix
     ./networking.nix
     ./packages.nix
+    ./plasma.nix
     ./programs.nix
     ./security.nix
     ./services.nix
+    ./sudo.nix
     ./systemd.nix
     ./users.nix
+    # ./virtualisation.nix
   ];
 }

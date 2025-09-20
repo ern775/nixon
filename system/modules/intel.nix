@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # nixpkgs.config.packageOverrides = pkgs: {
   #   intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};
   # };
@@ -9,6 +10,9 @@
     vpl-gpu-rt
     libvdpau-va-gl
   ];
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; QT_QPA_PLATFORM = "wayland";}; # Force intel-media-driver
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+    QT_QPA_PLATFORM = "wayland";
+  }; # Force intel-media-driver
   # boot.kernelParams = ["i915.force_probe=46a6"];
 }

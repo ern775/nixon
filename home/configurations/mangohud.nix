@@ -161,7 +161,7 @@
       # vulkan_driver = true;
       # wine = true;
       # exec_name = true;
-      # winesync = true;
+      winesync = true;
       # present_mode = true;
 
       ### Display loaded MangoHud architecture
@@ -174,7 +174,7 @@
       # histogram
 
       ### Display GameMode / vkBasalt running status
-      gamemode = false;
+      gamemode = true;
       # vkbasalt
 
       ### Gamescope related options
@@ -206,7 +206,7 @@
       show_fps_limit = true;
 
       ### Display the current resolution
-      resolution = false;
+      resolution = true;
 
       ### Display current display session
       # display_server

@@ -1,15 +1,18 @@
 {
   home.sessionVariables = {
     BROWSER = "librewolf";
-    EDITOR = "vscodium-fhs";
+    EDITOR = "codium";
     TERMINAL = "kitty";
     NIXOS_OZONE_WL = "1";
     XCURSOR_SIZE = "20";
-    QT_QPA_PLATFORM = "wayland";
+    QT_QPA_PLATFORM = "wayland;xcb";
+    XDG_SESSION_TYPE = "wayland";
+    GDK_BACKEND = "wayland";
+    SDL_VIDEODRIVER = "wayland";
     # VDPAU_DRIVER = "nvidia";
     # QT_QPA_PLATFORMTHEME = "qt6ct";
     # WLR_NO_HARDWARE_CURSORS = "1";
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\\\${HOME}/.steam/root/compatibilitytools.d";
-    MANGOHUD = "1";
+    # PROTON_USE_NTSYNC = "1";
+    # WINE_USE_TAKE_FOCUS = "1";
   };
 }

@@ -2,8 +2,9 @@
   pkgs,
   inputs,
   ...
-}: {
-  imports = [inputs.stylix.homeManagerModules.stylix];
+}:
+{
+  imports = [ inputs.stylix.homeModules.stylix ];
 
   home.packages = with pkgs; [
     bibata-cursors
@@ -59,11 +60,12 @@
     targets = {
       vscode.enable = false;
       librewolf.enable = true;
-      librewolf.profileNames = ["Default"];
+      librewolf.profileNames = [ "Default" ];
       cava.enable = true;
       gtk.enable = true;
       mangohud.enable = false;
       qt.enable = false;
+      vencord.enable = true;
       vesktop.enable = true;
       xresources.enable = true;
       kitty.enable = true;

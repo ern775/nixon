@@ -2,25 +2,35 @@
   pkgs,
   inputs,
   ...
-}: let
+}:
+let
   system = "x86_64-linux";
   pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
-in {
+  # nero-umu = pkgs.callPackage ../../pkgs/nero-umu/package.nix { };
+  # dopamine = pkgs.callPackage ../../pkgs/dopamine/package.nix { };
+  # faugus-launcher = pkgs.callPackage ../../pkgs/faugus-launcher/package.nix {};
+  hayase = pkgs.callPackage ../../pkgs/hayase/package.nix { };
+  # mindustry-beta = pkgs.callPackage ../../pkgs/mindustry/package.nix { };
+in
+{
   home.packages = with pkgs; [
     android-tools
     anki-bin
-    bottles
+    # (bottles.override { removeWarningPopup = true; })
+    byedpi
     cava
     cloudflare-warp
+    cobang
     dopamine
     pkgsStable.jamesdsp
-    jdk17
+    jdk
     fastfetch
     ffmpeg-full
-    handbrake
+    # handbrake
     # haruna
     intel-gpu-tools
-    # godot
+    intel-undervolt
+    godot
     # input-remapper
     kdePackages.kcalc
     kdePackages.kclock
@@ -29,34 +39,53 @@ in {
     # lutris
     mangohud
     media-downloader
+    mindustry-wayland
     mpv
-    nicotine-plus
+    # nicotine-plus
+    nix-init
     onlyoffice-desktopeditors
     opusTools
-    peazip
     # parabolic
     # pavucontrol
     picard
     # prismlauncher
-    kdePackages.plasma-browser-integration
     protonup
     protonup-qt
     pkgsStable.protonvpn-gui
     qbittorrent
+    # qemu
     qtscrcpy
-    spoofdpi
+    sgdboop
+    signal-desktop
     steamtinkerlaunch
-    steam-run
-    # teams-for-linux
-    testdisk-qt
+    # steam-run
+    teams-for-linux
+    telegram-desktop
+    # testdisk-qt
     # texliveFull
     thunderbird
+    tor-browser
     umu-launcher
-    pkgsStable.vesktop
     vlc
     yt-dlp
     xsettingsd
     zapzap
-    # inputs.zen-browser.packages."${system}".default
+    nero-umu
+    # faugus-launcher
+    hayase
+  ];
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      nero-umu = prev.nero-umu.overrideAttrs (old: {
+        patches = (old.patches or []) ++ [ ../../pkgs/nero-umu/neroprefix.patch ];
+        preFixup = (old.preFixup or "") + ''
+          qtWrapperArgs+=(
+            "--set" "PROTON_USE_NTSYNC" "1" \
+            "--set" "WINE_USE_TAKE_FOCUS" "1"
+          )
+        '';
+      });
+    })
   ];
 }

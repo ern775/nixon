@@ -1,4 +1,5 @@
-{inputs, lib, ...}: {
+{ inputs, lib, ... }:
+{
   nixpkgs.config.allowUnfree = true;
 
   zramSwap = {
@@ -6,16 +7,19 @@
     memoryPercent = 100;
   };
 
-  swapDevices = lib.mkForce [];
+  swapDevices = lib.mkForce [ ];
 
   console.keyMap = "trq";
 
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       auto-optimise-store = true;
-      keep-outputs = true;
-      keep-derivations = true;
+      # keep-outputs = false;
+      # keep-derivations = false;
       substituters = [
         "https://nix-community.cachix.org"
         "https://cache.nixos.org/"
@@ -31,11 +35,12 @@
       ];
     };
     gc = {
-      automatic = true;
+      automatic = false;
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
     optimise.automatic = true;
-    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    extraOptions = "warn-dirty = false";
   };
 }

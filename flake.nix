@@ -3,17 +3,13 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgsStable.url = "nixpkgs/nixos-24.11";
+    nixpkgsStable.url = "nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
       url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # zen-browser = {
@@ -30,31 +26,34 @@
     # };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
-  in {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./system/configuration.nix
-        ];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
+    in
+    {
+      nixosConfigurations = {
+        nixos = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./system/configuration.nix
+          ];
+        };
       };
-    };
 
-    homeConfigurations = {
-      eren = home-manager.lib.homeManagerConfiguration {
-        extraSpecialArgs = {inherit self inputs;};
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        modules = [
-          ./home
-        ];
+      homeConfigurations = {
+        eren = home-manager.lib.homeManagerConfiguration {
+          extraSpecialArgs = { inherit self inputs; };
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          modules = [
+            ./home
+          ];
+        };
       };
     };
-  };
 }

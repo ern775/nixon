@@ -1,64 +1,74 @@
-{...}: let
+{ pkgs, config, ... }:
+let
   aliases = {
     cleanup = "
       sudo nix-collect-garbage -d
       nix-collect-garbage -d
     ";
-    rebuild = "sudo nixos-rebuild switch";
-    rebuildBoot = "sudo nixos-rebuild boot";
+    rebuild = "
+      sudo nixos-rebuild switch
+    ";
+    rebuildBoot = "
+      sudo nixos-rebuild boot
+    ";
     fullRebuild = "
       sudo nixos-rebuild switch
-      rm -f ~/.config/gtk-2.0/gtkrc.backup
       home-manager switch -b backup
     ";
     fullRebuildBoot = "
       sudo nixos-rebuild boot
-      rm -f ~/.config/gtk-2.0/gtkrc.backup
       home-manager switch -b backup
     ";
     homeRebuild = "
-      rm -f ~/.config/gtk-2.0/gtkrc.backup
       home-manager switch -b backup
     ";
-    flakeUpdate = "sudo nix flake update --flake ~/system";
-    switchP = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix
-      sudo undervolt --turbo 0 -p1 35 5 -p2 45 1
-    ";
-    switchV = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix
-      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
-    ";
-    switchE = "
+    flakeUpdate = "nix flake update --flake ~/system";
+    switchDefault = "
       sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
       sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
     ";
-    switchB = "
+    switchGame = "
+      sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
+      sudo undervolt --turbo 0 -p1 35 5 -p2 35 1
+    ";
+    switchPerformance = "
+      sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix
+      sudo undervolt --turbo 0 -p1 35 5 -p2 35 1
+    ";
+    switchVideo = "
+      sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix
+      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
+    ";
+    switchNovideo = "
+      sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
+      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
+    ";
+    switchMax = "
+      sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
+      sudo undervolt --turbo 0 -p1 100 5 -p2 100 1
+    ";
+    switchBattery = "
       sudo undervolt --turbo 1 -p1 10 5 -p2 15 1
     ";
-    switchG = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
-      sudo undervolt --turbo 0 -p1 35 5 -p2 45 1
+    intelWatt = "sudo chmod o+r /sys/class/powercap/intel-rapl\:*/energy_uj";
+    umu = "PROTONPATH=GE-Proton umu-run";
+    vesktop = "vesktop --proxy-server=socks5://127.0.0.1:1080";
+    protonSymlinkUpdate = "
+      ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/:.*//'` $HOME/.local/share/Steam/compatibilitytools.d/${pkgs.proton-ge-bin.version}
+      ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/:.*//'` $HOME/.local/share/Steam/compatibilitytools.d/GE-Proton
+      ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/.*://'` $HOME/.local/share/Steam/compatibilitytools.d/Proton-Spritz
     ";
-    switchM = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
-      sudo undervolt --turbo 0 -p1 50 5 -p2 55 1
-    ";
-    switchN = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
-      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
-    ";
-    intelWatt = "sudo chmod o+r /sys/class/powercap/intel-rapl\:0/energy_uj";
+    sshCasper = "ssh casper@10.241.173.250";
   };
-in {
+in
+{
   programs = {
     zsh = {
       enable = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = aliases;
-      dotDir = ".config/zsh";
-      envExtra = "MANGOHUD=1\n";
+      dotDir = "${config.xdg.configHome}/zsh";
       history = {
         expireDuplicatesFirst = true;
         ignoreAllDups = true;

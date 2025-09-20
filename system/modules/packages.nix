@@ -1,20 +1,29 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   # system = "x86_64-linux";
   # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
-in {
+  # omenrgb = pkgs.callPackage ../../pkgs/omenrgb/package.nix { };
+in
+{
   environment = {
     systemPackages = with pkgs; [
       alejandra
       exfatprogs
       git
+      ghostscript
       home-manager
       kdePackages.kate
+      kdePackages.ark
+      kdePackages.qtwayland
       kdiskmark
       lshw
+      man-pages
       nixd
+      nixfmt-rfc-style
+      nixfmt-tree
       nvtopPackages.full
+      p7zip-rar
       pciutils
-      (python3.withPackages (p: with p; [pynvml]))
       rar
       sysfsutils
       undervolt
@@ -28,7 +37,7 @@ in {
       elisa
       drkonqi
     ];
-    pathsToLink = ["/share/zsh"];
+    pathsToLink = [ "/share" ];
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
 }

@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   hardware = {
     bluetooth = {
       enable = true;
@@ -44,7 +45,7 @@
     xserver = {
       enable = true;
       exportConfiguration = true;
-      videoDrivers = ["nvidia"];
+      videoDrivers = [ "nvidia" ];
       xkb = {
         layout = "tr";
         variant = "";

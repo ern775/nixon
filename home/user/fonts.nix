@@ -1,5 +1,9 @@
-{pkgs, ...}: {
-  fonts.fontconfig.enable = true;
+{ pkgs, ... }:
+{
+  fonts.fontconfig = {
+    enable = true;
+    antialiasing = true;
+  };
 
   home.packages = with pkgs; [
     noto-fonts
@@ -7,8 +11,7 @@
     unifont
     noto-fonts-cjk-sans
     font-awesome
-    nerd-fonts.noto
     jetbrains-mono
-    nerd-fonts.jetbrains-mono
+    noto-fonts-color-emoji
   ];
 }
