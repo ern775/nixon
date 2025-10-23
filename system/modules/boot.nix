@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   boot = {
     loader = {
@@ -16,8 +16,11 @@
     };
     kernelModules = [ "ntsync" ];
     extraModulePackages = [
-      # (config.boot.kernelPackages.callPackage ../../pkgs/acer-predator-turbo-rgb/package.nix { })
+      (config.boot.kernelPackages.callPackage ../../pkgs/hp-wmi-fan-and-backlight-control/default.nix { })
       # (config.boot.kernelPackages.callPackage ../../pkgs/hp-omen-wmi/package.nix { })
     ];
+    extraModprobeConfig = ''
+      options hp-wmi force_fan_control_support=true
+    '';
   };
 }

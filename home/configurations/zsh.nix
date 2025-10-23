@@ -54,6 +54,7 @@ let
     umu = "PROTONPATH=GE-Proton umu-run";
     vesktop = "vesktop --proxy-server=socks5://127.0.0.1:1080";
     protonSymlinkUpdate = "
+      find ~/.local/share/Steam/compatibilitytools.d -type l -delete
       ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/:.*//'` $HOME/.local/share/Steam/compatibilitytools.d/${pkgs.proton-ge-bin.version}
       ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/:.*//'` $HOME/.local/share/Steam/compatibilitytools.d/GE-Proton
       ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/.*://'` $HOME/.local/share/Steam/compatibilitytools.d/Proton-Spritz

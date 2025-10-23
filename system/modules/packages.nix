@@ -2,7 +2,7 @@
 let
   # system = "x86_64-linux";
   # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
-  # omenrgb = pkgs.callPackage ../../pkgs/omenrgb/package.nix { };
+  victus-control = pkgs.callPackage ../../pkgs/victus-control/package.nix { };
 in
 {
   environment = {
@@ -22,15 +22,18 @@ in
       nixfmt-rfc-style
       nixfmt-tree
       nvtopPackages.full
+      openssh
       p7zip-rar
       pciutils
       rar
       sysfsutils
       undervolt
       qdirstat
+      vim
       xsettingsd
       xorg.xrdb
       wget
+      victus-control
     ];
     plasma6.excludePackages = with pkgs.kdePackages; [
       khelpcenter

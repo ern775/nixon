@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    # ./boot.nix
-    # ./sleeptoram.nix
+    ./boot.nix
   ];
 }

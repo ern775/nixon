@@ -30,20 +30,20 @@
       ];
     };
   };
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    openFirewall = true;
-    settings = {
-      PasswordAuthentication = true;
-      AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
-      UseDns = true;
-      X11Forwarding = false;
-      PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-    };
-  };
-  services.fail2ban.enable = true;
-  systemd.services.sshd.wantedBy = lib.mkForce [ ];
+  # services.openssh = {
+  #   enable = true;
+  #   ports = [ 22 ];
+  #   openFirewall = true;
+  #   settings = {
+  #     PasswordAuthentication = true;
+  #     AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+  #     UseDns = true;
+  #     X11Forwarding = false;
+  #     PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+  #   };
+  # };
+  # services.fail2ban.enable = true;
+  # systemd.services.sshd.wantedBy = lib.mkForce [ ];
   services.zerotierone = {
     enable = true;
     joinNetworks = [ "68BEA79ACFDBC771" ];

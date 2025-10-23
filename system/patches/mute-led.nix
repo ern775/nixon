@@ -1,11 +1,11 @@
-{
+  {
   pkgs,
   lib,
   kernel ? pkgs.linuxPackages_latest.kernel,
 }:
 
 pkgs.stdenv.mkDerivation {
-  pname = "usb";
+  pname = "mute-led";
   inherit (kernel)
     src
     version
@@ -16,7 +16,7 @@ pkgs.stdenv.mkDerivation {
   kernel_dev = kernel.dev;
   kernelVersion = kernel.modDirVersion;
 
-  modulePath = "drivers/net/usb";
+  modulePath = "sound/hda/codecs/realtek";
 
   buildPhase = ''
     BUILT_KERNEL=$kernel_dev/lib/modules/$kernelVersion/build
@@ -38,7 +38,7 @@ pkgs.stdenv.mkDerivation {
   '';
 
   meta = {
-    description = "usb";
+    description = "mute-led";
     license = lib.licenses.gpl2;
   };
 }

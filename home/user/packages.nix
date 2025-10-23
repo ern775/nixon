@@ -6,11 +6,12 @@
 let
   system = "x86_64-linux";
   pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
-  # nero-umu = pkgs.callPackage ../../pkgs/nero-umu/package.nix { };
+  # nero = pkgs.callPackage ../../pkgs/nero-umu/package.nix { };
   # dopamine = pkgs.callPackage ../../pkgs/dopamine/package.nix { };
   # faugus-launcher = pkgs.callPackage ../../pkgs/faugus-launcher/package.nix {};
   hayase = pkgs.callPackage ../../pkgs/hayase/package.nix { };
   # mindustry-beta = pkgs.callPackage ../../pkgs/mindustry/package.nix { };
+  jdownloader2 = pkgs.callPackage ../../pkgs/jdownloader2/package.nix { inherit inputs; };
 in
 {
   home.packages = with pkgs; [
@@ -19,7 +20,6 @@ in
     # (bottles.override { removeWarningPopup = true; })
     byedpi
     cava
-    cloudflare-warp
     cobang
     dopamine
     pkgsStable.jamesdsp
@@ -28,18 +28,22 @@ in
     ffmpeg-full
     # handbrake
     # haruna
+    hunspell
+    hunspellDicts.en-gb-ise
+    hunspellDicts.tr_TR
     intel-gpu-tools
     intel-undervolt
     godot
     # input-remapper
     kdePackages.kcalc
     kdePackages.kclock
+    kdePackages.krdc
     # kile
     # (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
     # lutris
     mangohud
     media-downloader
-    mindustry-wayland
+    # mindustry-wayland
     mpv
     # nicotine-plus
     nix-init
@@ -49,7 +53,6 @@ in
     # pavucontrol
     picard
     # prismlauncher
-    protonup
     protonup-qt
     pkgsStable.protonvpn-gui
     qbittorrent
@@ -73,16 +76,20 @@ in
     nero-umu
     # faugus-launcher
     hayase
+    jdownloader2
   ];
 
   nixpkgs.overlays = [
     (final: prev: {
       nero-umu = prev.nero-umu.overrideAttrs (old: {
-        patches = (old.patches or []) ++ [ ../../pkgs/nero-umu/neroprefix.patch ];
+        patches = (old.patches or [ ]) ++ [
+          ../../pkgs/nero-umu/neroprefixsettings.cpp.patch
+          ../../pkgs/nero-umu/nerorunner.cpp.patch
+        ];
         preFixup = (old.preFixup or "") + ''
           qtWrapperArgs+=(
-            "--set" "PROTON_USE_NTSYNC" "1" \
             "--set" "WINE_USE_TAKE_FOCUS" "1"
+            "--set" "WINE_ENABLE_STEAM_STUB" "1"
           )
         '';
       });

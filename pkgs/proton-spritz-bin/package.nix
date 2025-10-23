@@ -9,11 +9,11 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "proton-ge-bin";
-  version = "spritz-cachyos-10.0-20250820-slr";
+  version = "spritz-cachyos-10.0-20251007-slr";
 
   src = fetchzip {
     url = "https://github.com/NelloKudo/proton-cachyos/releases/download/${finalAttrs.version}/proton-${finalAttrs.version}-x86_64_v3.tar.xz";
-    hash = "sha256-YMXX7T5nRHNzu279SnfGLLdPc17edIH9IAGo7TSnHjA=";
+    hash = "sha256-B3R7tX3Y9cyB7N9PRKOv02zAIW+eebXMY4j5x0D2T/U=";
   };
 
   dontUnpack = true;

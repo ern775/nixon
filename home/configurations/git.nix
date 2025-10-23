@@ -1,7 +1,13 @@
+{ pkgs, ... }:
 {
   programs.git = {
     enable = true;
-    userName = "ern775";
-    userEmail = "eren.demir2479090@gmail.com";
+    package = pkgs.gitFull;
+    settings = {
+      user = {
+        name = "ern775";
+        email = "eren.demir2479090@gmail.com";
+      };
+    };
   };
 }

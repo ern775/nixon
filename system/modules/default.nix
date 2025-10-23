@@ -11,17 +11,20 @@
     # ./hyprland.nix
     ./intel.nix
     ./internationalisation.nix
+    # ./ios.nix
     ./journal.nix
     # ./nbfc.nix
+    ./network.nix
     ./networking.nix
     ./packages.nix
     ./plasma.nix
     ./programs.nix
-    ./security.nix
     ./services.nix
     ./sudo.nix
     ./systemd.nix
     ./users.nix
     # ./virtualisation.nix
+    ./mysql.nix
+    ./network.nix
   ];
 }

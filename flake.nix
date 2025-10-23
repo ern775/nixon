@@ -12,6 +12,10 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jdownloader = {
+      url = "https://installer.jdownloader.org/JDownloader.jar";
+      flake = false;
+    };
     # zen-browser = {
     #   url = "github:0xc000022070/zen-browser-flake";
     #   inputs.nixpkgs.follows = "nixpkgs";
