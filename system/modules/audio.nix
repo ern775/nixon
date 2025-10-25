@@ -10,170 +10,30 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       jack.enable = true;
-      extraConfig.pipewire = {
-        "clock-rate" = {
-          "context.properties" = {
-            "default.clock.rate" = 48000;
-            "default.clock.allowed-rates" = [
-              44100
-              48000
-              88200
-              96000
-            ];
-            "default.clock.min-quantum" = 256;
-            "default.clock.max-quantum" = 1024;
-            "default.clock.quantum" = 512;
-            "default.clock.quantum-limit" = 8192;
-            "default.clock.quantum-floor" = 256;
+      extraConfig.pipewire =
+        {
+          "clock-rate" = {
+            "context.properties" = {
+              "default.clock.rate" = 48000;
+              "default.clock.allowed-rates" = [
+                44100
+                48000
+                88200
+                96000
+              ];
+              "default.clock.min-quantum" = 256;
+              "default.clock.max-quantum" = 1024;
+              "default.clock.quantum" = 512;
+              "default.clock.quantum-limit" = 8192;
+              "default.clock.quantum-floor" = 256;
+            };
           };
         };
-        "switch-on-connect" = {
-          "pulse.cmd" = [
-            {
-              "cmd" = "load-module";
-              "args" = "module-switch-on-connect";
-            }
-          ];
-        };
-        "Speaker-parametric-equalizer" = {
-          "context.modules" = [
-            {
-              name = "libpipewire-module-parametric-equalizer";
-              args = {
-                "equalizer.filepath" = builtins.toString equalizers/Speaker_ParametricEQ.txt;
-                "equalizer.description" = "Speaker Parametric EQ Sink";
-                "capture.props" = {
-                  "node.name" = "Speaker Parametric EQ Input";
-                  "media.class" = "Audio/Sink";
-                  "audio.position" = [
-                    "FL"
-                    "FR"
-                  ];
-                  "filter.smart" = true;
-                  "filter.smart.name" = "Speaker-peq";
-                  "filter.smart.target" = {
-                    "node.name" = "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Speaker__sink";
-                  };
-                  "node.dont-fallback" = false;
-                  "node.linger" = false;
-                  # "node.exclusive" = true;
-                  # "node.autoconnect" = true;
-                  # "node.passive" = true;
-                  # "priority.session" = 1001;
-                };
-                "playback.props" = {
-                  "node.name" = "Speaker Parametric EQ Output";
-                  "audio.position" = [
-                    "FL"
-                    "FR"
-                  ];
-                  "node.passive" = true;
-                  # "stream.dont-remix" = true;
-                  # "node.suspend-on-idle" = true;
-                  # "node.want-driver" = false;
-                  "node.dont-fallback" = true;
-                  "node.linger" = true;
-                  "target.object" = "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Speaker__sink";
-                };
-              };
-            }
-          ];
-        };
-        "Q10-parametric-equalizer" = {
-          "context.modules" = [
-            {
-              name = "libpipewire-module-parametric-equalizer";
-              args = {
-                "equalizer.filepath" = builtins.toString equalizers/Q10_ParametricEQ.txt;
-                "equalizer.description" = "Q10 Parametric EQ Sink";
-                "capture.props" = {
-                  "node.name" = "Q10 Parametric EQ Input";
-                  "media.class" = "Audio/Sink";
-                  "audio.position" = [
-                    "FL"
-                    "FR"
-                  ];
-                  "filter.smart" = true;
-                  "filter.smart.name" = "Q10-peq";
-                  "filter.smart.target" = {
-                    "node.name" = "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink";
-                  };
-                  "node.dont-fallback" = false;
-                  "node.linger" = false;
-                  # "node.exclusive" = true;
-                  # "node.autoconnect" = true;
-                  # "node.passive" = true;
-                  # "priority.session" = 1001;
-                };
-                "playback.props" = {
-                  "node.name" = "Q10 Parametric EQ Output";
-                  "audio.position" = [
-                    "FL"
-                    "FR"
-                  ];
-                  "node.passive" = true;
-                  # "stream.dont-remix" = true;
-                  # "node.suspend-on-idle" = true;
-                  # "node.want-driver" = false;
-                  "node.dont-fallback" = true;
-                  "node.linger" = true;
-                  "target.object" =
-                    "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink";
-                };
-              };
-            }
-          ];
-        };
-        "SpaceTravel-parametric-equalizer" = {
-          "context.modules" = [
-            {
-              name = "libpipewire-module-parametric-equalizer";
-              args = {
-                "equalizer.filepath" = builtins.toString equalizers/SpaceTravel_ParametricEQ.txt;
-                "equalizer.description" = "SpaceTravel Parametric EQ Sink";
-                "capture.props" = {
-                  "node.name" = "SpaceTravel Parametric EQ Input";
-                  "media.class" = "Audio/Sink";
-                  "audio.position" = [
-                    "FL"
-                    "FR"
-                  ];
-                  "filter.smart" = true;
-                  "filter.smart.name" = "SpaceTravel-peq";
-                  "filter.smart.target" = {
-                    "node.name" = "bluez_output.24_09_12_B3_35_A8.1";
-                  };
-                  "node.dont-fallback" = false;
-                  "node.linger" = false;
-                  # "node.exclusive" = true;
-                  # "node.autoconnect" = true;
-                  # "node.passive" = true;
-                  # "priority.session" = 1001;
-                };
-                "playback.props" = {
-                  "node.name" = "SpaceTravel Parametric EQ Output";
-                  "audio.position" = [
-                    "FL"
-                    "FR"
-                  ];
-                  "node.passive" = true;
-                  # "stream.dont-remix" = true;
-                  # "node.suspend-on-idle" = true;
-                  # "node.want-driver" = false;
-                  "node.dont-fallback" = true;
-                  "node.linger" = true;
-                  "target.object" = "bluez_output.24_09_12_B3_35_A8.1";
-                };
-              };
-            }
-          ];
-        };
-      };
       wireplumber = {
         enable = true;
         # source: https://wiki.archlinux.org/title/PipeWire#Noticeable_audio_delay_or_audible_pop/crack_when_starting_playback
         extraConfig = {
-          "51-disable-suspension" = {
+          "disable-suspension" = {
             "monitor.alsa.rules" = [
               {
                 matches = [
@@ -210,7 +70,7 @@
               }
             ];
           };
-          "98-disable-unused-nodes" = {
+          "disable-unused-nodes" = {
             "monitor.alsa.rules" = [
               {
                 matches = [
@@ -224,7 +84,98 @@
               }
             ];
           };
-          # "99-disable-nvidia" = {
+          "role-based-linking" = {
+            # "node.software-dsp.rules" = [
+            #   {
+            #     matches = [
+            #       {
+            #         "node.name" = "~alsa_output.*";
+            #       }
+            #     ];
+            #     actions.create-filter.hide-parent = true;
+            #   }
+            # ];
+            "wireplumber.profiles" = {
+              main = {
+                "node.software-dsp" = "required";
+                "filter.sink.smart-equalizer" = "required";
+              };
+            };
+            "wireplumber.settings" = {
+              "device.routes.default-sink-volume" = 0.008;
+              "device.routes.default-source-volume" = 0.064;
+              "node.stream.restore-target" = false;
+            };
+            "wireplumber.components" =
+              let
+                mkEqSink =
+                  {
+                    name,
+                    equalizerPath,
+                    targetDevice,
+                  }:
+                  {
+                    type = "pw-module";
+                    name = "libpipewire-module-parametric-equalizer";
+                    provides = "filter.sink.smart-equalizer";
+                    arguments = {
+                      "equalizer.filepath" = builtins.toString equalizerPath;
+                      "equalizer.description" = name + " Sink";
+                      "audio.position" = [
+                        "FL"
+                        "FR"
+                      ];
+                      "capture.props" = {
+                        "node.name" = name + " Input";
+                        "media.class" = "Audio/Sink";
+                        # "device.intended-roles" = [ "Multimedia" ];
+                        # "policy.role-based.target" = true;
+                        "filter.smart" = true;
+                        "filter.smart.name" = name;
+                        # "filter.smart.targetable" = true;
+                        "filter.smart.target" = {
+                          "node.name" = targetDevice;
+                        };
+                        # "node.dont-fallback" = true;
+                        # "node.linger" = false;
+                        # "node.exclusive" = true;
+                        # "node.autoconnect" = true;
+                        # "node.passive" = true;
+                        # "priority.session" = 1001;
+                      };
+                      "playback.props" = {
+                        "node.name" = name + " Output";
+                        "node.passive" = true;
+                        "media.role" = "DSP";
+                        # "stream.dont-remix" = true;
+                        # "node.suspend-on-idle" = true;
+                        # "node.want-driver" = false;
+                        "node.dont-fallback" = true;
+                        "node.linger" = true;
+                        "target.object" = targetDevice;
+                      };
+                    };
+                  };
+              in
+              [
+                (mkEqSink {
+                  name = "Speaker Parametric EQ";
+                  equalizerPath = equalizers/Speaker_ParametricEQ.txt;
+                  targetDevice = "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Speaker__sink";
+                })
+                (mkEqSink {
+                  name = "Q10 Parametric EQ";
+                  equalizerPath = equalizers/Q10_ParametricEQ.txt;
+                  targetDevice = "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink";
+                })
+                (mkEqSink {
+                  name = "Space Travel Parametric EQ";
+                  equalizerPath = equalizers/SpaceTravel_ParametricEQ.txt;
+                  targetDevice = "bluez_output.24_09_12_B3_35_A8.1";
+                })
+              ];
+          };
+          # "disable-nvidia" = {
           #   "monitor.alsa.rules" = [
           #     {
           #       matches = [
@@ -237,6 +188,7 @@
           #       };
           #     }
           #   ];
+          # };
         };
       };
     };
