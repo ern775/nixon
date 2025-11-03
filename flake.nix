@@ -16,6 +16,14 @@
       url = "https://installer.jdownloader.org/JDownloader.jar";
       flake = false;
     };
+    nero-umu = {
+      url = "github:ern775/Nero-umu";
+      flake = false;
+    };
+    proton-spritz = {
+      url = "https://github.com/NelloKudo/proton-cachyos/releases/download/spritz-cachyos-10.0-20251007-slr/proton-spritz-cachyos-10.0-20251007-slr-x86_64_v3.tar.xz";
+      flake = false;
+    };
     # zen-browser = {
     #   url = "github:0xc000022070/zen-browser-flake";
     #   inputs.nixpkgs.follows = "nixpkgs";

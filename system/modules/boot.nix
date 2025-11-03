@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   boot = {
     loader = {
@@ -16,11 +16,11 @@
     };
     kernelModules = [ "ntsync" ];
     extraModulePackages = [
-      (config.boot.kernelPackages.callPackage ../../pkgs/hp-wmi-fan-and-backlight-control/default.nix { })
+      # (config.boot.kernelPackages.callPackage ../../pkgs/hp-wmi-fan-and-backlight-control/default.nix { })
       # (config.boot.kernelPackages.callPackage ../../pkgs/hp-omen-wmi/package.nix { })
     ];
-    extraModprobeConfig = ''
-      options hp-wmi force_fan_control_support=true
-    '';
+    # extraModprobeConfig = ''
+    #   options hp-wmi force_fan_control_support=true
+    # '';
   };
 }

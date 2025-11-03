@@ -1,20 +1,17 @@
 {
   lib,
+  inputs,
   stdenvNoCC,
-  fetchzip,
   writeScript,
   # Can be overridden to alter the display name in steam
   # This could be useful if multiple versions should be installed together
   steamDisplayName ? "Proton-Spritz",
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
-  pname = "proton-ge-bin";
+  pname = "proton-spritz";
   version = "spritz-cachyos-10.0-20251007-slr";
 
-  src = fetchzip {
-    url = "https://github.com/NelloKudo/proton-cachyos/releases/download/${finalAttrs.version}/proton-${finalAttrs.version}-x86_64_v3.tar.xz";
-    hash = "sha256-B3R7tX3Y9cyB7N9PRKOv02zAIW+eebXMY4j5x0D2T/U=";
-  };
+  src = inputs.proton-spritz;
 
   dontUnpack = true;
   dontConfigure = true;
