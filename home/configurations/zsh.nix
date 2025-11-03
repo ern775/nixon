@@ -53,12 +53,12 @@ let
     intelWatt = "sudo chmod o+r /sys/class/powercap/intel-rapl\:*/energy_uj";
     umu = "PROTONPATH=GE-Proton umu-run";
     vesktop = "vesktop --proxy-server=socks5://127.0.0.1:1080";
-    protonSymlinkUpdate = "
-      find ~/.local/share/Steam/compatibilitytools.d -type l -delete
+    protonSymlinkUpdate = ''
+      find ~/.local/share/Steam/compatibilitytools.d -type l \( -name "GE-Proton" -o -name "Proton-Spritz" -o -name "${pkgs.proton-ge-bin.version}" \) -delete
       ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/:.*//'` $HOME/.local/share/Steam/compatibilitytools.d/${pkgs.proton-ge-bin.version}
       ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/:.*//'` $HOME/.local/share/Steam/compatibilitytools.d/GE-Proton
       ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/.*://'` $HOME/.local/share/Steam/compatibilitytools.d/Proton-Spritz
-    ";
+    '';
     sshCasper = "ssh casper@10.241.173.250";
   };
 in

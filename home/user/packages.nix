@@ -6,7 +6,14 @@
 let
   system = "x86_64-linux";
   pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
-  # nero = pkgs.callPackage ../../pkgs/nero-umu/package.nix { };
+  # nero = pkgs.callPackage ../../pkgs/nero-umu/package.nix { inherit inputs; };
+  # nero = (
+  #   pkgs.symlinkJoin {
+  #     name = "nero-umu";
+  #     buildInputs = [ pkgs.makeWrapper ];
+  #     paths = [ pkgs.nero-umu ];
+  #   }
+  # );
   # dopamine = pkgs.callPackage ../../pkgs/dopamine/package.nix { };
   # faugus-launcher = pkgs.callPackage ../../pkgs/faugus-launcher/package.nix {};
   hayase = pkgs.callPackage ../../pkgs/hayase/package.nix { };
@@ -49,6 +56,7 @@ in
     nix-init
     onlyoffice-desktopeditors
     opusTools
+    patchutils
     # parabolic
     # pavucontrol
     picard
@@ -82,16 +90,11 @@ in
   nixpkgs.overlays = [
     (final: prev: {
       nero-umu = prev.nero-umu.overrideAttrs (old: {
+        src = inputs.nero-umu;
         patches = (old.patches or [ ]) ++ [
           ../../pkgs/nero-umu/neroprefixsettings.cpp.patch
           ../../pkgs/nero-umu/nerorunner.cpp.patch
         ];
-        preFixup = (old.preFixup or "") + ''
-          qtWrapperArgs+=(
-            "--set" "WINE_USE_TAKE_FOCUS" "1"
-            "--set" "WINE_ENABLE_STEAM_STUB" "1"
-          )
-        '';
       });
     })
   ];
