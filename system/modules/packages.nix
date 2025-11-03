@@ -2,7 +2,7 @@
 let
   # system = "x86_64-linux";
   # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
-  victus-control = pkgs.callPackage ../../pkgs/victus-control/package.nix { };
+  # victus-control = pkgs.callPackage ../../pkgs/victus-control/package.nix { };
 in
 {
   environment = {
@@ -21,7 +21,6 @@ in
       nixd
       nixfmt-rfc-style
       nixfmt-tree
-      nvtopPackages.full
       openssh
       p7zip-rar
       pciutils
@@ -33,12 +32,11 @@ in
       xsettingsd
       xorg.xrdb
       wget
-      victus-control
     ];
     plasma6.excludePackages = with pkgs.kdePackages; [
       khelpcenter
       elisa
-      drkonqi
+      # drkonqi
     ];
     pathsToLink = [ "/share" ];
     sessionVariables.NIXOS_OZONE_WL = "1";

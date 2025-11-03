@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -55,5 +56,10 @@
       '';
     };
     hardware.bolt.enable = true;
+  };
+  systemd.services.undervolt.serviceConfig = lib.mkForce {
+    Type = "oneshot";
+    Restart = "no";
+    ExecStart = "${pkgs.undervolt}/bin/undervolt --power-limit-long 35 5 --power-limit-short 45 1 --turbo 1";
   };
 }

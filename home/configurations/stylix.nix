@@ -9,7 +9,7 @@
   home.packages = with pkgs; [
     bibata-cursors
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     jetbrains-mono
     base16-schemes
   ];
@@ -33,7 +33,7 @@
 
     fonts = {
       emoji = {
-        package = pkgs.noto-fonts-emoji;
+        package = pkgs.noto-fonts-color-emoji;
         name = "Noto Emoji";
       };
       monospace = {

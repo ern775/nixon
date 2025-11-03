@@ -145,11 +145,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761191301,
-        "narHash": "sha256-xsRL2Oyb4YRZZ1Tu4WzR2uFg1n931bH+PfLdFcqtLg8=",
+        "lastModified": 1762146130,
+        "narHash": "sha256-/XOEA0a61fZ45i/BpaSsyLNNbw/yKwjMbkB/IWSGLzU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "4958aafe7b237dc1e857fb0c916efff72075048f",
+        "rev": "b5ed4afc2277339bdf0e9edf59befff7350cf075",
         "type": "github"
       },
       "original": {
@@ -170,13 +170,29 @@
         "url": "https://installer.jdownloader.org/JDownloader.jar"
       }
     },
+    "nero-umu": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762037372,
+        "narHash": "sha256-vMqhCNrvjnU+CypSGMx+ZM/9F81JrrX3o4yWo8k1qow=",
+        "owner": "ern775",
+        "repo": "Nero-umu",
+        "rev": "ac7d10904647c2f3e6084b8529d7600be5f08da7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ern775",
+        "repo": "Nero-umu",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1761114652,
-        "narHash": "sha256-f/QCJM/YhrV/lavyCVz8iU3rlZun6d+dAiC3H+CDle4=",
+        "lastModified": 1761907660,
+        "narHash": "sha256-kJ8lIZsiPOmbkJypG+B5sReDXSD1KGu2VEPNqhRa/ew=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "01f116e4df6a15f4ccdffb1bcd41096869fb385c",
+        "rev": "2fb006b87f04c4d3bdf08cfdbc7fab9c13d94a15",
         "type": "github"
       },
       "original": {
@@ -187,11 +203,11 @@
     },
     "nixpkgsStable": {
       "locked": {
-        "lastModified": 1761016216,
-        "narHash": "sha256-G/iC4t/9j/52i/nm+0/4ybBmAF4hzR8CNHC75qEhjHo=",
+        "lastModified": 1761999846,
+        "narHash": "sha256-IYlYnp4O4dzEpL77BD/lj5NnJy2J8qbHkNSFiPBCbqo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "481cf557888e05d3128a76f14c76397b7d7cc869",
+        "rev": "3de8f8d73e35724bf9abef41f1bdbedda1e14a31",
         "type": "github"
       },
       "original": {
@@ -225,12 +241,27 @@
         "type": "github"
       }
     },
+    "proton-spritz": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759813638,
+        "narHash": "sha256-B3R7tX3Y9cyB7N9PRKOv02zAIW+eebXMY4j5x0D2T/U=",
+        "type": "tarball",
+        "url": "https://github.com/NelloKudo/proton-cachyos/releases/download/spritz-cachyos-10.0-20251007-slr/proton-spritz-cachyos-10.0-20251007-slr-x86_64_v3.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/NelloKudo/proton-cachyos/releases/download/spritz-cachyos-10.0-20251007-slr/proton-spritz-cachyos-10.0-20251007-slr-x86_64_v3.tar.xz"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "jdownloader": "jdownloader",
+        "nero-umu": "nero-umu",
         "nixpkgs": "nixpkgs",
         "nixpkgsStable": "nixpkgsStable",
+        "proton-spritz": "proton-spritz",
         "stylix": "stylix"
       }
     },
@@ -255,11 +286,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1761028816,
-        "narHash": "sha256-s1XiIeJHpODVWfzsPaK9e21iz1dQSCU3H4/1OxOsyps=",
+        "lastModified": 1762101397,
+        "narHash": "sha256-wGiL2K3kAyBBmIZpJEskaSIgyzzpg0zwfvri+Sy6/CI=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "b81dc0a385443099e7d231fe6275189e32c3b760",
+        "rev": "8c0640d5722a02178c8ee80a62c5f019cab4b3c1",
         "type": "github"
       },
       "original": {
