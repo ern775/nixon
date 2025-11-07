@@ -1,6 +1,6 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 let
-  proton-spritz-bin = pkgs.callPackage ../../pkgs/proton-spritz-bin/package.nix { inherit inputs; };
+  proton-spritz-bin = pkgs.callPackage ../../pkgs/proton-spritz-bin/package.nix { };
 in
 {
   programs = {

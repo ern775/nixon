@@ -14,7 +14,7 @@ let
   #     paths = [ pkgs.nero-umu ];
   #   }
   # );
-  # dopamine = pkgs.callPackage ../../pkgs/dopamine/package.nix { };
+  dopamine = pkgs.callPackage ../../pkgs/dopamine/package.nix { };
   # faugus-launcher = pkgs.callPackage ../../pkgs/faugus-launcher/package.nix {};
   hayase = pkgs.callPackage ../../pkgs/hayase/package.nix { };
   # mindustry-beta = pkgs.callPackage ../../pkgs/mindustry/package.nix { };
@@ -23,7 +23,7 @@ in
 {
   home.packages = with pkgs; [
     android-tools
-    anki-bin
+    # anki-bin
     # (bottles.override { removeWarningPopup = true; })
     byedpi
     cava
@@ -54,6 +54,7 @@ in
     mpv
     # nicotine-plus
     nix-init
+    nixpkgs-review
     onlyoffice-desktopeditors
     opusTools
     patchutils
@@ -61,13 +62,14 @@ in
     # pavucontrol
     picard
     # prismlauncher
+    protontricks
     protonup-qt
-    pkgsStable.protonvpn-gui
+    # pkgsStable.protonvpn-gui
     qbittorrent
     # qemu
-    qtscrcpy
+    # qtscrcpy
     sgdboop
-    signal-desktop
+    # signal-desktop
     steamtinkerlaunch
     # steam-run
     teams-for-linux

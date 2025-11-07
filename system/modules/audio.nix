@@ -73,11 +73,11 @@
                 88200
                 96000
               ];
-              "default.clock.min-quantum" = 512;
-              "default.clock.max-quantum" = 4096;
+              "default.clock.min-quantum" = 1024;
+              "default.clock.max-quantum" = 2048;
               "default.clock.quantum" = 1024;
-              "default.clock.quantum-limit" = 8192;
-              "default.clock.quantum-floor" = 512;
+              "default.clock.quantum-limit" = 4096;
+              "default.clock.quantum-floor" = 1024;
             };
           };
           "speaker-eq" = (
@@ -107,12 +107,12 @@
           # "pulse.default.format" = "S16";
           # "pulse.fix.format" = "S16LE";
           # "pulse.fix.rate" = "48000";
-          # "pulse.min.frag" = "512/48000"; # 1.3ms
+          "pulse.min.frag" = "1024/48000"; # 1.3ms
           # "pulse.min.req" = "512/48000"; # 1.3ms
           # "pulse.default.frag" = "64/48000"; # 1.3ms
           # "pulse.default.req" = "64/48000"; # 1.3ms
           # "pulse.max.req" = "64/48000"; # 1.3ms
-          "pulse.min.quantum" = "512/48000"; # 1.3ms
+          "pulse.min.quantum" = "1024/48000"; # 1.3ms
           # "pulse.max.quantum" = "64/48000"; # 1.3ms
         };
         # "stream.properties" = {

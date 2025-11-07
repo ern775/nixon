@@ -1,85 +1,42 @@
 {
   lib,
-  buildNpmPackage,
-  fetchFromGitHub,
-  electron,
-  makeBinaryWrapper,
+  fetchurl,
+  appimageTools,
+  nix-update-script,
 }:
-
-buildNpmPackage (finalAttrs: {
+appimageTools.wrapType2 rec {
   pname = "dopamine";
-  version = "3.0.0-preview.39";
+  version = "3.0.0";
 
-  src = fetchFromGitHub {
-    owner = "digimezzo";
-    repo = "dopamine";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-OBpUHb04M3mjDRsx5o5EM9ruMuQeRbgSXbaCtfPzlGI=";
+  src = fetchurl {
+    url = "https://github.com/digimezzo/dopamine/releases/download/v${version}/Dopamine-${version}.AppImage";
+    hash = "sha256-kvXan5J+rxJ/ugcEz9xytq3eQG0saWrYZjF7O1d6rTA=";
   };
 
-  # buildInputs = [];
+  extraInstallCommands =
+    let
+      contents = appimageTools.extract { inherit pname version src; };
+    in
+    ''
+      install -Dm644 ${contents}/dopamine.desktop $out/share/applications/dopamine.desktop
+      substituteInPlace $out/share/applications/dopamine.desktop \
+        --replace-fail 'Exec=AppRun' 'Exec=dopamine'
+      cp -r ${contents}/usr/share/icons $out/share
+    '';
 
-  nativeBuildInputs = [ makeBinaryWrapper ];
-
-  env.ELECTRON_SKIP_BINARY_DOWNLOAD = true;
-
-  npmDepsHash = "sha256-T8dI8Lb3RwHWopFvKx/YAp95zdIGPJoCKFwOL+SPCWA=";
-
-  npmPackFlags = [ "--ignore-scripts" ];
-
-  npmFlags = [ "--legacy-peer-deps" ];
-
-  makeCacheWritable = true;
-
-  # NODE_OPTIONS = "--openssl-legacy-provider";
-
-  # npmBuildScript = "npm run electron:linux";
-
-  # buildPhase = ''
-  #   runHook preBuild
-
-  #   npm run build:prod
-  #   npm exec electron-builder build \
-  #     --linux \
-  #     --config electron-builder.config.js
-
-  #   runHook postBuild
-  # '';
-
-  npmBuildFlags = [
-    "-c"
-    "production"
-  ];
-
-  postBuild = ''
-    npm exec electron-builder -- \
-      --dir \
-      -c.electronDist=${electron.dist} \
-      -c.electronVersion=${electron.version}
-  '';
-
-  installPhase = ''
-    runHook preInstall
-
-    mkdir -p $out
-
-    install -Dm644 $src/deployment/AUR/dopamine.desktop -t $out/share/applications
-    for size in 16 24 32 48 64 96 128 256 512; do
-      install -Dm644 "$src/build/icons/"$size"x"$size".png" "$out/share/icons/hicolor/"$size"x"$size"/apps/dopamine.png"
-    done
-
-    runHook postInstall
-  '';
-
-  # forceGitDeps = true;
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=unstable" ]; };
 
   meta = {
-    description = "The audio player that keeps it simple";
+    changelog = "https://github.com/digimezzo/dopamine/blob/${version}/CHANGELOG.md";
+    description = "Audio player that keeps it simple";
     homepage = "https://github.com/digimezzo/dopamine";
-    changelog = "https://github.com/digimezzo/dopamine/releases/tag/${finalAttrs.src.rev}";
     license = lib.licenses.gpl3Only;
     mainProgram = "dopamine";
+    maintainers = with lib.maintainers; [
+      Guanran928
+      ern775
+    ];
     platforms = [ "x86_64-linux" ];
-    maintainers = with lib.maintainers; [ ern775 ];
+    sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
   };
-})
+}

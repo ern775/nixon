@@ -1,6 +1,6 @@
 {
   lib,
-  inputs,
+  fetchzip,
   stdenvNoCC,
   writeScript,
   # Can be overridden to alter the display name in steam
@@ -9,9 +9,12 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "proton-spritz";
-  version = "spritz-cachyos-10.0-20251007-slr";
+  version = "spritz-cachyos-10.0-20251006-slr";
 
-  src = inputs.proton-spritz;
+  src = fetchzip {
+    url = "https://github.com/NelloKudo/proton-cachyos/releases/download/${finalAttrs.version}/proton-${finalAttrs.version}-x86_64_v3.tar.xz";
+    hash = "sha256-sg84xz2rTAIvt4KkYFYhUqtp+lCh5HKPIfRz2+VTQlM=";
+  };
 
   dontUnpack = true;
   dontConfigure = true;
