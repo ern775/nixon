@@ -21,10 +21,13 @@
     ./plasma.nix
     ./programs.nix
     ./services.nix
+    # ./stylix.nix
     ./sudo.nix
     ./systemd.nix
     ./users.nix
     # ./virtualisation.nix
+    # ./webdav.nix
+
     ./mysql.nix
     ./network.nix
   ];

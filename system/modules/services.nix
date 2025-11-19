@@ -21,5 +21,8 @@
         KillUserProcesses = false;
       };
     };
+    orca.enable = false;
   };
+
+  systemd.services.cloudflare-warp.serviceConfig.LogLevelMax = "notice"; # simply suppress all logs from warp
 }

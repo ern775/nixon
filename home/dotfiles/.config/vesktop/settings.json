@@ -1,0 +1,13 @@
+{
+    "discordBranch": "stable",
+    "minimizeToTray": true,
+    "arRPC": false,
+    "splashColor": "rgb(239, 239, 240)",
+    "hardwareVideoAcceleration": true,
+    "customTitleBar": true,
+    "staticTitle": false,
+    "clickTrayToShowHide": true,
+    "splashBackground": "rgb(23, 29, 35)",
+    "splashPixelated": false,
+    "enableSplashScreen": false
+}

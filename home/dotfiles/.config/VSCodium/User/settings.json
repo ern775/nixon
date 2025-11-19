@@ -1,0 +1,58 @@
+{
+    "nix.serverPath": "nixd",
+    "nix.enableLanguageServer": true,
+    "nix.serverSettings": {
+        "nixd": {
+            "formatting": {
+                "command": [
+                    "nixfmt"
+                ],
+            },
+            "options": {
+                "nixos": {
+                    "expr": "(builtins.getFlake \"/home/eren/system\").nixosConfigurations.nixos.options",
+                },
+                "home_manager": {
+                    "expr": "(builtins.getFlake \"/home/eren/system\").homeConfigurations.\"eren\".options",
+                },
+            },
+        },
+    },
+    "explorer.confirmDelete": false,
+    "nix.formatterPath": "nixfmt",
+    "nix.hiddenLanguageServerErrors": [
+        "textDocument/definition",
+    ],
+    "editor.minimap.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "python.autoComplete.extraPaths": [],
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "direnv.watchForChanges": false,
+    "direnv.restart.automatic": true,
+    "nixEnvSelector.useFlakes": true,
+    "python.terminal.launchArgs": [],
+    "workbench.startupEditor": "none",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "qt-core.additionalQtPaths": [
+        {
+            "name": "Qt-6.9.2-linux-g++_from_PATH",
+            "path": "/nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/bin/qtpaths"
+        }
+    ],
+}

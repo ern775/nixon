@@ -108,7 +108,7 @@
           # "pulse.fix.format" = "S16LE";
           # "pulse.fix.rate" = "48000";
           "pulse.min.frag" = "1024/48000"; # 1.3ms
-          # "pulse.min.req" = "512/48000"; # 1.3ms
+          # "pulse.min.req" = "1024/48000"; # 1.3ms
           # "pulse.default.frag" = "64/48000"; # 1.3ms
           # "pulse.default.req" = "64/48000"; # 1.3ms
           # "pulse.max.req" = "64/48000"; # 1.3ms
@@ -116,7 +116,7 @@
           # "pulse.max.quantum" = "64/48000"; # 1.3ms
         };
         # "stream.properties" = {
-        #   "node.latency" = "512/48000"; # 1.3ms
+        #   "node.latency" = "1024/48000"; # 1.3ms
         #   "resample.quality" = 4;
         #   "resample.disable" = false;
         # };
@@ -127,8 +127,8 @@
         extraConfig = {
           "disable-suspension" = {
             "wireplumber.settings" = {
-              "device.routes.default-sink-volume" = 0.008;
-              "device.routes.default-source-volume" = 0.064;
+              "device.routes.default-sink-volume" = 0.008; # 0.2^3
+              "device.routes.default-source-volume" = 0.064; # 0.4^3
               "node.stream.restore-target" = false;
             };
             "monitor.alsa.rules" = [

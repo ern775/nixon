@@ -1,0 +1,9 @@
+--- a/package.json	2025-12-06 00:37:39.392626266 +0300
++++ b/package.json	2025-12-06 00:38:14.545736513 +0300
+@@ -1,5 +1,6 @@
+ {
+   "name": "whatsapp-electron",
++  "desktopName": "com.github.dagmoller.whatsapp-electron",
+   "version": "1.1.1",
+   "description": "DagMoller's WhatsApp Electron Multi-Account App",
+   "author": "Diego Aguirre (DagMoller)",

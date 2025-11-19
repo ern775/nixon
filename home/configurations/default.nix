@@ -1,12 +1,11 @@
 {
   imports = [
     # ./hyprland
-    # ./dconf.nix
+    ./dotfiles.nix
     ./git.nix
     ./gtk2.nix
     ./kitty.nix
     ./librewolf.nix
-    ./mangohud.nix
     ./stylix.nix
     ./vesktop.nix
     ./vscodium.nix

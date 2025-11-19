@@ -6,14 +6,6 @@
 {
   imports = [ inputs.stylix.homeModules.stylix ];
 
-  home.packages = with pkgs; [
-    bibata-cursors
-    noto-fonts
-    noto-fonts-color-emoji
-    jetbrains-mono
-    base16-schemes
-  ];
-
   stylix = {
     enable = true;
 
@@ -59,12 +51,13 @@
 
     targets = {
       vscode.enable = false;
-      librewolf.enable = true;
-      librewolf.profileNames = [ "Default" ];
+      librewolf.enable = false;
+      # librewolf.profileNames = [ "Default" ];
       cava.enable = true;
-      gtk.enable = true;
+      gtk.enable = false;
       mangohud.enable = false;
       qt.enable = false;
+      # qt.platform = "kde";
       vencord.enable = true;
       vesktop.enable = true;
       xresources.enable = true;

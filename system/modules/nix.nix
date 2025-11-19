@@ -17,7 +17,7 @@
         "nix-command"
         "flakes"
       ];
-      auto-optimise-store = true;
+      # auto-optimise-store = true;
       # keep-outputs = false;
       # keep-derivations = false;
       substituters = [

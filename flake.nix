@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgsStable.url = "nixpkgs/nixos-25.05";
+    nixpkgsStable.url = "nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +19,18 @@
     nero-umu = {
       url = "github:ern775/Nero-umu";
       flake = false;
+    };
+    dopamine = {
+      url = "path:/home/eren/Git-Projects/dopamine/release/Dopamine-3.0.1.AppImage";
+      flake = false;
+    };
+    nix-sweep = {
+      url = "github:jzbor/nix-sweep";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    custom-nixpkgs = {
+      url = "github:ern775/custom-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # zen-browser = {
     #   url = "github:0xc000022070/zen-browser-flake";

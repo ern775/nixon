@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.librewolf = {
     package = pkgs.librewolf;
@@ -6,5 +6,6 @@
     nativeMessagingHosts = [
       pkgs.kdePackages.plasma-browser-integration
     ];
+    settings = lib.mkForce { };
   };
 }

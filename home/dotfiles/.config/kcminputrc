@@ -1,0 +1,31 @@
+[Keyboard]
+NumLock=0
+
+[Libinput][1133][49309][Logitech G203 LIGHTSYNC Gaming Mouse]
+PointerAcceleration=-0.700
+PointerAccelerationProfile=1
+
+[Libinput][1267][12826][ELAN0788:00 04F3:321A Mouse]
+PointerAcceleration=0.000
+PointerAccelerationProfile=2
+
+[Libinput][1267][12826][ELAN0788:00 04F3:321A Touchpad]
+DisableWhileTyping=false
+Enabled=true
+NaturalScroll=true
+PointerAcceleration=0.000
+PointerAccelerationProfile=2
+ScrollFactor=0.3
+ScrollMethod=1
+
+[Libinput][7847][102][2.4G Mouse]
+PointerAcceleration=0.070
+PointerAccelerationProfile=1
+
+[Libinput][9639][64035][Compx 2.4G Receiver Mouse]
+PointerAccelerationProfile=1
+
+[Mouse]
+X11LibInputXAccelProfileFlat=true
+cursorSize=20
+cursorTheme=default

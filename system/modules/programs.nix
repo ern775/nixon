@@ -24,5 +24,6 @@ in
     gamescope.enable = true;
     # thunar.enable = true;
     zsh.enable = true;
+    gpu-screen-recorder.enable = true;
   };
 }

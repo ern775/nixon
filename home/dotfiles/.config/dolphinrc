@@ -1,0 +1,51 @@
+MenuBar=Disabled
+
+[ContentDisplay]
+DirectorySizeMode=ContentSize
+
+[Dolphin]
+SortHiddenLast=true
+Timestamp=2025,6,6,10,29,51.644
+Version=4
+VisibleRoles=Icons_text,Icons_size
+
+[ExtractDialog]
+1536x864 screen: Height=540
+1536x864 screen: Width=1024
+1920x1080 screen: Height=540
+1920x1080 screen: Width=1256
+
+[General]
+GlobalViewProps=false
+OpenExternallyCalledFolderInNewTab=true
+ShowSelectionToggle=false
+ShowStatusBar=FullWidth
+ShowZoomSlider=false
+Version=202
+ViewPropsTimestamp=2024,12,6,23,4,20.606
+
+[IconsMode]
+PreviewSize=80
+
+[InformationPanel]
+dateFormat=ShortFormat
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[Notification Messages]
+ConfirmOpenManyFolders=false
+warnAboutRisksBeforeActingAsAdmin=false
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
+
+[Search]
+What=FileContents
+
+[Settings]
+HiddenFilesShown=true

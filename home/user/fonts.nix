@@ -6,12 +6,11 @@
   };
 
   home.packages = with pkgs; [
-    noto-fonts
     ubuntu-classic
     unifont
-    noto-fonts-cjk-sans
     font-awesome
+    noto-fonts-cjk-sans
     jetbrains-mono
-    noto-fonts-color-emoji
+    nerd-fonts.jetbrains-mono
   ];
 }

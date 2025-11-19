@@ -3,7 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ./modules
-    ./patches
+    # ./patches
   ];
 
   system.stateVersion = "24.11";

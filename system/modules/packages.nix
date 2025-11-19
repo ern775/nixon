@@ -1,14 +1,22 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}:
 let
   # system = "x86_64-linux";
   # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
   # victus-control = pkgs.callPackage ../../pkgs/victus-control/package.nix { };
+  homeConfig = inputs.self.homeConfigurations.eren.config;
 in
 {
   environment = {
     systemPackages = with pkgs; [
       alejandra
+      appimage-run
       exfatprogs
+      file
       git
       ghostscript
       home-manager
@@ -18,6 +26,7 @@ in
       kdiskmark
       lshw
       man-pages
+      neovim
       nixd
       nixfmt-rfc-style
       nixfmt-tree
@@ -36,9 +45,29 @@ in
     plasma6.excludePackages = with pkgs.kdePackages; [
       khelpcenter
       elisa
-      # drkonqi
     ];
-    pathsToLink = [ "/share" ];
+    pathsToLink = [
+      "/share"
+      "/share/zsh"
+    ];
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
+  environment.etc."current-system-packages".text =
+    let
+      systemPackages = builtins.map (p: "${p.name}") config.environment.systemPackages;
+      homePackages = builtins.map (p: "${p.name}") homeConfig.home.packages;
+      sorted = builtins.sort builtins.lessThan (systemPackages ++ homePackages);
+      formatted = pkgs.lib.strings.concatLines sorted;
+    in
+    formatted;
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      espeak = prev.espeak.override {
+        mbrolaSupport = false;
+        pcaudiolibSupport = false;
+        sonicSupport = false;
+      };
+    })
+  ];
 }

@@ -4,15 +4,16 @@
     enable = true;
     systemd.variables = [ "--all" ];
     extraConfig = "
-
 env = AQ_DRM_DEVICES,/dev/dri/card1
+
+env = QT_QPA_PLATFORMTHEME,qt6ct
 
 $mainMod = SUPER
 bind = $mainMod, Return, exec, kitty
 bind = $mainMod SHIFT, Return, exec, codium
 bind = $mainMod, Q, killactive, 
 bind = $mainMod, M, exec, wlogout --protocol layer-shell
-bind = $mainMod, E, exec, thunar
+bind = $mainMod, E, exec, dolphin
 bind = $mainMod, b, exec, librewolf
 bind = $mainMod, V, togglefloating, 
 bind = $mainMod, D, exec, rofi -show drun
@@ -89,7 +90,7 @@ exec-once = waybar & hyprpaper
 exec-once = swayidle -w
 exec-once = dbus-update-activation-environment --systemd --all
 
-monitor = , highres, auto, 1.25
+monitor = , highres, auto, 1
 
 # unscale XWayland
 xwayland {
@@ -124,25 +125,25 @@ input {
 
     sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 }
-windowrule = float, file_progress
-windowrule = float, confirm
-windowrule = float, dialog
-windowrule = float, download
-windowrule = float, notification
-windowrule = float, error
-windowrule = float, splash
-windowrule = float, confirmreset
-windowrule = float, title:Open File
-windowrule = float, title:branchdialog
-windowrule = float,viewnior
-windowrule = float, pavucontrol-qt
-windowrule = float, pavucontrol
-windowrule = float, file-roller
-windowrule = fullscreen, wlogout
-windowrule = float, title:wlogout
-windowrule = fullscreen, title:wlogout
-windowrule = idleinhibit stayfocused, mpv
-windowrulev2 = float, title:^(Media viewer)$
+# windowrule = float, file_progress
+# windowrule = float, confirm
+# windowrule = float, dialog
+# windowrule = float, download
+# windowrule = float, notification
+# windowrule = float, error
+# windowrule = float, splash
+# windowrule = float, confirmreset
+# windowrule = float, title:Open File
+# windowrule = float, title:branchdialog
+# windowrule = float,viewnior
+# windowrule = float, pavucontrol-qt
+# windowrule = float, pavucontrol
+# windowrule = float, file-roller
+# windowrule = fullscreen, wlogout
+# windowrule = float, title:wlogout
+# windowrule = fullscreen, title:wlogout
+# windowrule = idleinhibit stayfocused, mpv
+# windowrulev2 = float, title:^(Media viewer)$
 
 # Picture in picture windows
 windowrulev2 = float, title:^(Picture-in-Picture)$
@@ -199,9 +200,9 @@ dwindle {
     preserve_split = yes 
 }
 
-gestures {
-    workspace_swipe = off
-}
+# gestures {
+#     workspace_swipe = off
+# }
 
 misc {
     force_default_wallpaper = 0
@@ -217,7 +218,7 @@ misc {
     # mako
     # libnotify
     # hyprpaper
-    rofi-wayland
+    rofi
     brightnessctl
     qt5.qtwayland
     qt6.qtwayland
