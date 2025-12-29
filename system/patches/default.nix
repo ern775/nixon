@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
-    ./boot.nix
+    # ./boot.nix
+    ./fix-kbd-backlight.nix
   ];
 }

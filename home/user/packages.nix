@@ -5,7 +5,7 @@
 }:
 let
   system = "x86_64-linux";
-  pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
+  # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
   nix-sweep = inputs.nix-sweep.packages.${system}.default;
   # nero = pkgs.callPackage ../../pkgs/nero-umu/package.nix { };
   # nero = (
@@ -21,7 +21,7 @@ let
   # mindustry-beta = pkgs.callPackage ../../pkgs/mindustry/package.nix { };
   jdownloader2 = pkgs.callPackage ../../pkgs/jdownloader2/package.nix { inherit inputs; };
   # vlc-3-0-20 = pkgs.callPackage ../../pkgs/vlc/package.nix { };
-  iloader = pkgs.callPackage ../../pkgs/iloader/package.nix { };
+  # iloader = pkgs.callPackage ../../pkgs/iloader/package.nix { };
   # whatsapp-electron = pkgs.callPackage ../../pkgs/whatsapp-electron/package.nix { };
 in
 {
@@ -55,15 +55,16 @@ in
     kdePackages.kclock
     kdePackages.krdc
     kdePackages.kde-gtk-config
+    kdePackages.kimageformats
     # kile
     # (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
-    libreoffice-qt6
+    # libreoffice-qt6
     # lutris
     mangohud
     media-downloader
     # mindustry-wayland
     mpv
-    ncdu
+    # ncdu
     # nicotine-plus
     nix-init
     nix-sweep
@@ -85,7 +86,7 @@ in
     signal-desktop
     # steamtinkerlaunch
     # steam-run
-    teams-for-linux
+    # teams-for-linux
     telegram-desktop
     # testdisk-qt
     # texliveFull
@@ -101,8 +102,8 @@ in
     # faugus-launcher
     # hayase
     jdownloader2
-    iloader
-    vscode-fhs
+    # iloader
+    # vscode-fhs
   ];
 
   nixpkgs.overlays = [
@@ -121,14 +122,19 @@ in
         pcaudiolibSupport = false;
         sonicSupport = false;
       };
-      zapzap = prev.zapzap.overrideAttrs (old: {
-        buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.qt6.qtbase ];
-      });
-      whatsapp-electron = prev.whatsapp-electron.overrideAttrs (old: {
-        patches = (old.patches or [ ]) ++ [
-          ../../pkgs/whatsapp-electron/wayland-icon.patch
-        ];
-      });
+      # zapzap = prev.zapzap.overrideAttrs (old: {
+      #   buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.qt6.qtbase ];
+      # });
+      # whatsapp-electron = prev.whatsapp-electron.overrideAttrs (old: {
+      #   patches = (old.patches or [ ]) ++ [
+      #     ../../pkgs/whatsapp-electron/wayland-icon.patch
+      #   ];
+      # });
+      # sgdboop = prev.sgdboop.overrideAttrs (old: {
+      #   patches = (old.patches or [ ]) ++ [
+      #     ../../pkgs/sgdboop/remove-unused-arg.patch
+      #   ];
+      # });
     })
   ];
 }

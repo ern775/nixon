@@ -21,33 +21,30 @@ let
       home-manager switch -b backup
     ";
     flakeUpdate = "nix flake update --flake ~/system";
-    switchDefault = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
-      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
-    ";
-    switchGame = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-low-power.nix
-      sudo undervolt --turbo 0 -p1 35 5 -p2 35 1
-    ";
-    switchPerformance = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix
-      sudo undervolt --turbo 0 -p1 35 5 -p2 35 1
-    ";
-    switchVideo = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-high-power.nix
-      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
-    ";
-    switchNovideo = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
-      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
-    ";
-    switchMax = "
-      sudo nix-shell ~/system/scripts/nvidia-oc-max-power.nix
-      sudo undervolt --turbo 0 -p1 100 5 -p2 100 1
-    ";
-    switchBattery = "
+    cpulow = ''
       sudo undervolt --turbo 1 -p1 10 5 -p2 15 1
-    ";
+    '';
+    cpudef = ''
+      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
+    '';
+    cpumid = ''
+      sudo undervolt --turbo 0 -p1 35 5 -p2 35 1
+    '';
+    cpumax = ''
+      sudo undervolt --turbo 0 -p1 100 5 -p2 100 1
+    '';
+    gpulow = ''
+      sudo nvidia-smi -lgc 0,1680
+      sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=255
+    '';
+    gpumid = ''
+      sudo nvidia-smi -lgc 0,1995
+      sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=240
+    '';
+    gpumax = ''
+      sudo nvidia-smi -lgc 0,3360
+      sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=240
+    '';
     intelWatt = "sudo chmod o+r /sys/class/powercap/intel-rapl\:*/energy_uj";
     vesktop = "vesktop --proxy-server=socks5://127.0.0.1:1080";
     protonSymlinkUpdate = ''

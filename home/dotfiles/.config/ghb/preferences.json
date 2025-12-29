@@ -41,7 +41,7 @@
         "allow_tweaks": false,
         "auto_name": true,
         "auto_name_template": "{source}",
-        "default_source": "/home/eren/Pictures/Screencasts/Video_2025-11-29_20-46-22.mkv",
+        "default_source": "/home/eren/Videos/luna.mp4",
         "destination_dir": "/home/eren/Downloads",
         "hbfd": false,
         "hbfd_feature": false,

@@ -22,7 +22,9 @@
       };
     };
     orca.enable = false;
+    dbus.implementation = "broker";
   };
 
   systemd.services.cloudflare-warp.serviceConfig.LogLevelMax = "notice"; # simply suppress all logs from warp
+  systemd.timers.fwupd-refresh.enable = false;
 }

@@ -53,6 +53,11 @@
         {
             "name": "Qt-6.9.2-linux-g++_from_PATH",
             "path": "/nix/store/dkfr32yi7p8cdxsnll05q1kax19fl7ay-qtbase-6.9.2/bin/qtpaths"
+        },
+        {
+            "name": "Qt-6.10.1-linux-g++_from_PATH",
+            "path": "/nix/store/jq8mka96cq81mfzm4svzmbalna8asqfn-qtbase-6.10.1/bin/qtpaths"
         }
     ],
+    "editor.unicodeHighlight.ambiguousCharacters": false,
 }

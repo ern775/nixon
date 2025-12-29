@@ -1,6 +1,6 @@
 {
   pkgs,
-  inputs,
+  config,
   ...
 }:
 {
@@ -8,9 +8,10 @@
     services = {
       novideo = {
         script = ''
-          ${pkgs.nix}/bin/nix-shell -I nixpkgs=${inputs.nixpkgs} /home/eren/system/scripts/nvidia-oc-low-power.nix
+          ${config.hardware.nvidia.package.bin}/bin/nvidia-smi -lgc 0,1680
+          ${config.hardware.nvidia.package.settings}/bin/nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=255
         '';
-        wantedBy = [ "multi-user.target" ];
+        wantedBy = [ "default.target" ];
         serviceConfig = {
           Type = "oneshot";
         };
@@ -19,7 +20,7 @@
         script = ''
           ${pkgs.byedpi}/bin/ciadpi -r 1+s
         '';
-        wantedBy = ["default.target"];
+        wantedBy = [ "default.target" ];
       };
     };
   };

@@ -5,7 +5,7 @@ ordering=applications:systemsettings.desktop,applications:vlc.desktop,applicatio
 ordering=applications:systemsettings.desktop,applications:vlc.desktop,applications:protonvpn-app.desktop,applications:steam.desktop,applications:com.rtosta.zapzap.desktop,applications:com.usebottles.bottles.desktop,applications:vesktop.desktop,applications:dopamine.desktop
 
 [Favorites-org.kde.plasma.kickoff.favorites.instance-38-061fff6b-d515-4671-9de5-7b7b4449a77c]
-ordering=applications:systemsettings.desktop,applications:xyz.TOS.Nero.desktop,applications:vesktop.desktop,applications:Altus.desktop,applications:steam.desktop,applications:dopamine.desktop,applications:vlc.desktop,applications:jdownloader2.desktop
+ordering=applications:systemsettings.desktop,applications:xyz.TOS.Nero.desktop,applications:Altus.desktop,applications:vesktop.desktop,applications:steam.desktop,applications:dopamine.desktop,applications:vlc.desktop,applications:jdownloader2.desktop
 
 [Favorites-org.kde.plasma.kickoff.favorites.instance-38-global]
-ordering=applications:systemsettings.desktop,applications:xyz.TOS.Nero.desktop,applications:vesktop.desktop,applications:Altus.desktop,applications:steam.desktop,applications:dopamine.desktop,applications:vlc.desktop,applications:jdownloader2.desktop
+ordering=applications:systemsettings.desktop,applications:xyz.TOS.Nero.desktop,applications:Altus.desktop,applications:vesktop.desktop,applications:steam.desktop,applications:dopamine.desktop,applications:vlc.desktop,applications:jdownloader2.desktop

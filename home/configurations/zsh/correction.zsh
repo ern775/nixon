@@ -5,6 +5,7 @@ if [[ "$ENABLE_CORRECTION" == "true" ]]; then
   alias mv='nocorrect mv'
   alias sudo='nocorrect sudo'
   alias su='nocorrect su'
+  alias nvidia-settings='noglob nvidia-settings'
 
   setopt correct_all
 fi

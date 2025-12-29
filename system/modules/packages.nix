@@ -15,6 +15,7 @@ in
     systemPackages = with pkgs; [
       alejandra
       appimage-run
+      cpufrequtils
       exfatprogs
       file
       git
@@ -24,11 +25,12 @@ in
       kdePackages.ark
       kdePackages.qtwayland
       kdiskmark
+      libarchive
       lshw
       man-pages
       neovim
       nixd
-      nixfmt-rfc-style
+      nixfmt
       nixfmt-tree
       openssh
       p7zip-rar
@@ -36,6 +38,7 @@ in
       rar
       sysfsutils
       undervolt
+      unzip
       qdirstat
       vim
       xsettingsd
@@ -54,8 +57,8 @@ in
   };
   environment.etc."current-system-packages".text =
     let
-      systemPackages = builtins.map (p: "${p.name}") config.environment.systemPackages;
-      homePackages = builtins.map (p: "${p.name}") homeConfig.home.packages;
+      systemPackages = map (p: "${p.name}") config.environment.systemPackages;
+      homePackages = map (p: "${p.name}") homeConfig.home.packages;
       sorted = builtins.sort builtins.lessThan (systemPackages ++ homePackages);
       formatted = pkgs.lib.strings.concatLines sorted;
     in

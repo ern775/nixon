@@ -22,6 +22,27 @@
               "NOPASSWD"
             ];
           }
+          {
+            command = "${currentSystem}/bin/nvidia-smi";
+            options = [
+              "SETENV"
+              "NOPASSWD"
+            ];
+          }
+          {
+            command = "${currentSystem}/bin/nvidia-settings";
+            options = [
+              "SETENV"
+              "NOPASSWD"
+            ];
+          }
+          {
+            command = "${currentSystem}/bin/undervolt";
+            options = [
+              "SETENV"
+              "NOPASSWD"
+            ];
+          }
         ];
     }
   ];

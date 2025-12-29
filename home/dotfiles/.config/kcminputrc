@@ -21,6 +21,8 @@ ScrollMethod=1
 [Libinput][7847][102][2.4G Mouse]
 PointerAcceleration=0.070
 PointerAccelerationProfile=1
+ScrollFactor=0.75
+ScrollMethod=0
 
 [Libinput][9639][64035][Compx 2.4G Receiver Mouse]
 PointerAccelerationProfile=1

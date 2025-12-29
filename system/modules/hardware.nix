@@ -18,7 +18,7 @@
       modesetting.enable = true;
       powerManagement.enable = true;
       powerManagement.finegrained = true;
-      dynamicBoost.enable = true;
+      dynamicBoost.enable = false;
       open = true;
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -36,7 +36,6 @@
     fstrim.enable = true;
     undervolt = {
       enable = true;
-      package = pkgs.undervolt;
       turbo = 1;
       p1.limit = 35;
       p1.window = 5;
@@ -57,9 +56,8 @@
     };
     hardware.bolt.enable = true;
   };
-  systemd.services.undervolt.serviceConfig = lib.mkForce {
-    Type = "oneshot";
-    Restart = "no";
-    ExecStart = "${pkgs.undervolt}/bin/undervolt --power-limit-long 35 5 --power-limit-short 45 1 --turbo 1";
+  powerManagement = { 
+    enable = true;
+    cpufreq.min = 400000;
   };
 }

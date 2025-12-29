@@ -15,7 +15,6 @@
     # ./ios.nix
     ./journal.nix
     # ./nbfc.nix
-    ./network.nix
     ./networking.nix
     ./packages.nix
     ./plasma.nix
@@ -28,7 +27,8 @@
     # ./virtualisation.nix
     # ./webdav.nix
 
-    ./mysql.nix
-    ./network.nix
+    # ./silent-boot.nix
+    # ./mysql.nix
+    # ./network.nix
   ];
 }
