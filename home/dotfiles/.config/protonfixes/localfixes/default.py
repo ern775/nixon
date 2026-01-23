@@ -53,8 +53,9 @@ def main() -> None:
         except FileNotFoundError:
             log.warn("No umu-genshin protonfix found for current proton, falling back to UMU_USE_STEAM")
             util.set_environment('UMU_USE_STEAM', '1')
+            util.set_environment('WINE_DISABLE_VULKAN_OPWR', '1')
 
-    # All around fix for mouse dropping inputs, same setting can be set by adding ```"UseTakeFocus"="N"``` under ```[Software\\Wine\\X11 Driver]``` in the ```user.reg``` file
+    # All around fix for mouse dropping inputs, same setting can be set by adding `"UseTakeFocus"="N"` under `[Software\\Wine\\X11 Driver]` in the `user.reg` file
     if ("GenshinImpact" in sys.argv[2]) or ("StarRail" in sys.argv[2]):
         log.info("Unity game found, enabling fix for mouse inputs")
         util.regedit_add(

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}:
+{ config, ... }:
 {
   systemd = {
     services = {
@@ -15,12 +11,6 @@
         serviceConfig = {
           Type = "oneshot";
         };
-      };
-      byedpi = {
-        script = ''
-          ${pkgs.byedpi}/bin/ciadpi -r 1+s
-        '';
-        wantedBy = [ "default.target" ];
       };
     };
   };

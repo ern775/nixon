@@ -41,7 +41,7 @@
         "allow_tweaks": false,
         "auto_name": true,
         "auto_name_template": "{source}",
-        "default_source": "/home/eren/Videos/luna.mp4",
+        "default_source": "/home/eren/Videos/Video_2026-01-16_22-37-36.mkv",
         "destination_dir": "/home/eren/Downloads",
         "hbfd": false,
         "hbfd_feature": false,

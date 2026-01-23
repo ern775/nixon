@@ -9,5 +9,15 @@
     "clickTrayToShowHide": true,
     "splashBackground": "rgb(23, 29, 35)",
     "splashPixelated": false,
-    "enableSplashScreen": false
+    "enableSplashScreen": false,
+    "audio": {
+        "workaround": false,
+        "onlySpeakers": true,
+        "onlyDefaultSpeakers": true,
+        "ignoreVirtual": true,
+        "granularSelect": false,
+        "ignoreInputMedia": true,
+        "ignoreDevices": true,
+        "deviceSelect": false
+    }
 }

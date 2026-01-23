@@ -39,6 +39,7 @@ MenuBar=Disabled
 
 [Notification Messages]
 ConfirmOpenManyFolders=false
+ConfirmRenameFileType=false
 warnAboutRisksBeforeActingAsAdmin=false
 
 [PreviewSettings]

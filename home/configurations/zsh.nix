@@ -48,10 +48,12 @@ let
     intelWatt = "sudo chmod o+r /sys/class/powercap/intel-rapl\:*/energy_uj";
     vesktop = "vesktop --proxy-server=socks5://127.0.0.1:1080";
     protonSymlinkUpdate = ''
-      find ~/.local/share/Steam/compatibilitytools.d -type l \( -name "GE-Proton*" -o -name "Proton-Spritz" \) -delete
-      ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/:.*//'` $HOME/.local/share/Steam/compatibilitytools.d/${pkgs.proton-ge-bin.version}
-      ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/:.*//'` $HOME/.local/share/Steam/compatibilitytools.d/GE-Proton
-      ln -sfn `steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS | sed 's/.*://'` $HOME/.local/share/Steam/compatibilitytools.d/Proton-Spritz
+      find ~/.local/share/Steam/compatibilitytools.d -type l \( -name "GE-Proton*" -o -name "DW-Proton" \) -delete
+      TOOLS_PATHS=`steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS`
+      ln -sfn $TOOLS_PATHS[(ws[:])1] $HOME/.local/share/Steam/compatibilitytools.d/${pkgs.proton-ge-bin.version}
+      ln -sfn $TOOLS_PATHS[(ws[:])1] $HOME/.local/share/Steam/compatibilitytools.d/GE-Proton
+      ln -sfn $TOOLS_PATHS[(ws[:])3] $HOME/.local/share/Steam/compatibilitytools.d/DW-Proton
+      unset TOOLS_PATHS
     '';
   };
 in

@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
-  proton-spritz-bin = pkgs.callPackage ../../pkgs/proton-spritz-bin/package.nix { };
+  system = "x86_64-linux";
+  dw-proton = inputs.dw-proton.packages.${system}.dw-proton;
 in
 {
   programs = {
@@ -17,7 +18,7 @@ in
       dedicatedServer.openFirewall = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin
-        proton-spritz-bin
+        dw-proton
       ];
     };
     gamemode.enable = true;

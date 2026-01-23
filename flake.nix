@@ -20,16 +20,20 @@
       url = "github:ern775/Nero-umu";
       flake = false;
     };
-    dopamine = {
-      url = "path:/home/eren/Git-Projects/dopamine/release/Dopamine-3.0.1.AppImage";
-      flake = false;
-    };
+    # dopamine = {
+    #   url = "https://github.com/digimezzo/dopamine/releases/download/v3.0.2/Dopamine-3.0.2.AppImage";
+    #   flake = false;
+    # };
     nix-sweep = {
       url = "github:jzbor/nix-sweep";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     custom-nixpkgs = {
       url = "github:ern775/custom-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dw-proton = {
+      url = "github:imaviso/dwproton-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # zen-browser = {

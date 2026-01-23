@@ -23,6 +23,10 @@
     };
     orca.enable = false;
     dbus.implementation = "broker";
+    byedpi = {
+      enable = true;
+      extraArgs = [ "--tlsrec" "1+s" ];
+    };
   };
 
   systemd.services.cloudflare-warp.serviceConfig.LogLevelMax = "notice"; # simply suppress all logs from warp

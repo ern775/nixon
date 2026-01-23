@@ -119,17 +119,24 @@
         "type": "github"
       }
     },
-    "dopamine": {
-      "flake": false,
+    "dw-proton": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1766249970,
-        "narHash": "sha256-mYPSUTu/seDJ68jc9nOBKZ4jIn4BgUdFDls4Z8shgsY=",
-        "path": "/home/eren/Git-Projects/dopamine/release/Dopamine-3.0.1.AppImage",
-        "type": "path"
+        "lastModified": 1767800749,
+        "narHash": "sha256-IFir60lDKbsKo88N/76qjnhqWxZReDA5eELLaspAinI=",
+        "owner": "imaviso",
+        "repo": "dwproton-flake",
+        "rev": "8ef992d744db3fafa27f2b1817b33ab3ecbeeeb0",
+        "type": "github"
       },
       "original": {
-        "path": "/home/eren/Git-Projects/dopamine/release/Dopamine-3.0.1.AppImage",
-        "type": "path"
+        "owner": "imaviso",
+        "repo": "dwproton-flake",
+        "type": "github"
       }
     },
     "firefox-gnome-theme": {
@@ -211,11 +218,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768434960,
-        "narHash": "sha256-cJbFn17oyg6qAraLr+NVeNJrXsrzJdrudkzI4H2iTcg=",
+        "lastModified": 1769015285,
+        "narHash": "sha256-MlqzCJbckJsgwfkRs64H2xaX2Uxl4o6Z9XYfkYS1N/E=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b4d88c9ac42ae1a745283f6547701da43b6e9f9b",
+        "rev": "ec0247a7a19f641595c24ac1ea4df6461d1cdb36",
         "type": "github"
       },
       "original": {
@@ -288,11 +295,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1768305791,
-        "narHash": "sha256-AIdl6WAn9aymeaH/NvBj0H9qM+XuAuYbGMZaP0zcXAQ=",
+        "lastModified": 1769018530,
+        "narHash": "sha256-MJ27Cy2NtBEV5tsK+YraYr2g851f3Fl1LpNHDzDX15c=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1412caf7bf9e660f2f962917c14b1ea1c3bc695e",
+        "rev": "88d3861acdd3d2f0e361767018218e51810df8a1",
         "type": "github"
       },
       "original": {
@@ -303,11 +310,11 @@
     },
     "nixpkgsStable": {
       "locked": {
-        "lastModified": 1768323494,
-        "narHash": "sha256-yBXJLE6WCtrGo7LKiB6NOt6nisBEEkguC/lq/rP3zRQ=",
+        "lastModified": 1768940263,
+        "narHash": "sha256-sJERJIYTKPFXkoz/gBaBtRKke82h4DkX3BBSsKbfbvI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2c3e5ec5df46d3aeee2a1da0bfedd74e21f4bf3a",
+        "rev": "3ceaaa8bc963ced4d830e06ea2d0863b6490ff03",
         "type": "github"
       },
       "original": {
@@ -344,7 +351,7 @@
     "root": {
       "inputs": {
         "custom-nixpkgs": "custom-nixpkgs",
-        "dopamine": "dopamine",
+        "dw-proton": "dw-proton",
         "home-manager": "home-manager",
         "jdownloader": "jdownloader_2",
         "nero-umu": "nero-umu",
@@ -375,11 +382,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1768403292,
-        "narHash": "sha256-9DCTgR4Dhzzh5zldoHltJRx33tVuy5eHOd5T5+w05JI=",
+        "lastModified": 1768744881,
+        "narHash": "sha256-3+h7OxqfrPIB/tRsiZXWE9sCbTm7NQN5Ie428p+S6BA=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "3894cae75cf50d9a8f707768b229c90e2654d8bc",
+        "rev": "06684f00cfbee14da96fd4307b966884de272d3a",
         "type": "github"
       },
       "original": {
