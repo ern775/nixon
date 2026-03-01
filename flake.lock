@@ -100,17 +100,16 @@
     },
     "custom-nixpkgs": {
       "inputs": {
-        "jdownloader": "jdownloader",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1767068723,
-        "narHash": "sha256-NJpXNZiBgpa27L9ewjkmaX0MfSr91VPBd9/aDA9S7Fo=",
+        "lastModified": 1772210710,
+        "narHash": "sha256-iBY2oYK55JR8vXy3PVnvUglQuR6y21sDe0dWfeCCWtg=",
         "owner": "ern775",
         "repo": "custom-nixpkgs",
-        "rev": "d2c94523b7adb1784f385037c231047252cc6b66",
+        "rev": "65b2e55566a01717c8e87db7196d5c53b5e85e10",
         "type": "github"
       },
       "original": {
@@ -126,11 +125,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767800749,
-        "narHash": "sha256-IFir60lDKbsKo88N/76qjnhqWxZReDA5eELLaspAinI=",
+        "lastModified": 1771242501,
+        "narHash": "sha256-7azh4I/Qxz9e3liYmslBptv/wcCZfs2mjbLueKgz6PE=",
         "owner": "imaviso",
         "repo": "dwproton-flake",
-        "rev": "8ef992d744db3fafa27f2b1817b33ab3ecbeeeb0",
+        "rev": "4455649c5773abfc22244b36b5c542282dc76112",
         "type": "github"
       },
       "original": {
@@ -218,51 +217,27 @@
         ]
       },
       "locked": {
-        "lastModified": 1769015285,
-        "narHash": "sha256-MlqzCJbckJsgwfkRs64H2xaX2Uxl4o6Z9XYfkYS1N/E=",
+        "lastModified": 1771851181,
+        "narHash": "sha256-gFgE6mGUftwseV3DUENMb0k0EiHd739lZexPo5O/sdQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ec0247a7a19f641595c24ac1ea4df6461d1cdb36",
+        "rev": "9a4b494b1aa1b93d8edf167f46dc8e0c0011280c",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
-      }
-    },
-    "jdownloader": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-AQuueYVfZvH1VPlG0HAk+YMtWQmE2Q68XuwTdrjh0/w=",
-        "type": "file",
-        "url": "https://installer.jdownloader.org/JDownloader.jar"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://installer.jdownloader.org/JDownloader.jar"
-      }
-    },
-    "jdownloader_2": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-AQuueYVfZvH1VPlG0HAk+YMtWQmE2Q68XuwTdrjh0/w=",
-        "type": "file",
-        "url": "https://installer.jdownloader.org/JDownloader.jar"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://installer.jdownloader.org/JDownloader.jar"
       }
     },
     "nero-umu": {
       "flake": false,
       "locked": {
-        "lastModified": 1765917688,
-        "narHash": "sha256-+BLE7VVGUsGtmM5GUkdDfpIgDej+nsati17m9AmEw8k=",
+        "lastModified": 1766693227,
+        "narHash": "sha256-+rnWgZHBJhu90t+RSQee9bhLiUjhSAs4n8FNbhQvfiM=",
         "owner": "ern775",
         "repo": "Nero-umu",
-        "rev": "ef117073b521ebe07dcb255b42e7a09b5d9bbc93",
+        "rev": "3b225cd2bbc7bcac7b58491cbd9d139646bbe872",
         "type": "github"
       },
       "original": {
@@ -280,11 +255,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765575848,
-        "narHash": "sha256-6+LnI6H0FoJ6QbEGJX1bpFqc7fW3j8lLhziWLM7yExg=",
+        "lastModified": 1771512220,
+        "narHash": "sha256-GjDuRnSMMZMuu3hsmX5Sz58QXVIgXaxJ3GhaPP8iFPk=",
         "owner": "jzbor",
         "repo": "nix-sweep",
-        "rev": "19fe6298a5d4c309fe34f3780393a9116d319d6b",
+        "rev": "33ffa87b9e0572a6370e8c4ca26223cef189d1d1",
         "type": "github"
       },
       "original": {
@@ -295,26 +270,27 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1769018530,
-        "narHash": "sha256-MJ27Cy2NtBEV5tsK+YraYr2g851f3Fl1LpNHDzDX15c=",
+        "lastModified": 1771369470,
+        "narHash": "sha256-0NBlEBKkN3lufyvFegY4TYv5mCNHbi5OmBDrzihbBMQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "88d3861acdd3d2f0e361767018218e51810df8a1",
+        "rev": "0182a361324364ae3f436a63005877674cf45efb",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable",
-        "type": "indirect"
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0182a361324364ae3f436a63005877674cf45efb",
+        "type": "github"
       }
     },
     "nixpkgsStable": {
       "locked": {
-        "lastModified": 1768940263,
-        "narHash": "sha256-sJERJIYTKPFXkoz/gBaBtRKke82h4DkX3BBSsKbfbvI=",
+        "lastModified": 1771903837,
+        "narHash": "sha256-sdaqdnsQCv3iifzxwB22tUwN/fSHoN7j2myFW5EIkGk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3ceaaa8bc963ced4d830e06ea2d0863b6490ff03",
+        "rev": "e764fc9a405871f1f6ca3d1394fb422e0a0c3951",
         "type": "github"
       },
       "original": {
@@ -353,12 +329,13 @@
         "custom-nixpkgs": "custom-nixpkgs",
         "dw-proton": "dw-proton",
         "home-manager": "home-manager",
-        "jdownloader": "jdownloader_2",
         "nero-umu": "nero-umu",
         "nix-sweep": "nix-sweep",
         "nixpkgs": "nixpkgs",
         "nixpkgsStable": "nixpkgsStable",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "tuxov": "tuxov",
+        "victus-tui": "victus-tui"
       }
     },
     "stylix": {
@@ -382,11 +359,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1768744881,
-        "narHash": "sha256-3+h7OxqfrPIB/tRsiZXWE9sCbTm7NQN5Ie428p+S6BA=",
+        "lastModified": 1771787992,
+        "narHash": "sha256-Vg4bGwwenNYI8p3nJTl9FRyeIyrjATeZrZr+GyUSDrw=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "06684f00cfbee14da96fd4307b966884de272d3a",
+        "rev": "30054cca073b49b42a71289edec858f535b27fe9",
         "type": "github"
       },
       "original": {
@@ -489,6 +466,39 @@
         "owner": "tinted-theming",
         "repo": "base16-zed",
         "type": "github"
+      }
+    },
+    "tuxov": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1770359797,
+        "narHash": "sha256-hFO5CphW6gv4EpRN3P0yXXNMROTf0tnzR5QPWQ5eEtw=",
+        "owner": "TUXOV",
+        "repo": "hp-wmi-fan-and-backlight-control",
+        "rev": "180ec684038dac2d1138371089bafe7d6844122f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TUXOV",
+        "repo": "hp-wmi-fan-and-backlight-control",
+        "type": "github"
+      }
+    },
+    "victus-tui": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1770634212,
+        "narHash": "sha256-lxuvEnQqGjrNC5RLqKw7TxZTWpASGJpjNgfqZK/gxXg=",
+        "path": "/home/eren/Git-Projects/my-hp-wmi-control-panel-tui",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/eren/Git-Projects/my-hp-wmi-control-panel-tui",
+        "type": "path"
       }
     }
   },

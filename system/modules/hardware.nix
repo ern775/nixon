@@ -21,7 +21,7 @@
       dynamicBoost.enable = false;
       open = true;
       nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      # package = config.boot.kernelPackages.nvidiaPackages.stable;
       prime = {
         offload = {
           enable = true;
@@ -56,7 +56,7 @@
     };
     hardware.bolt.enable = true;
   };
-  powerManagement = { 
+  powerManagement = {
     enable = true;
     cpufreq.min = 400000;
   };

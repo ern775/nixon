@@ -12,8 +12,8 @@
     "enableSplashScreen": false,
     "audio": {
         "workaround": false,
-        "onlySpeakers": true,
-        "onlyDefaultSpeakers": true,
+        "onlySpeakers": false,
+        "onlyDefaultSpeakers": false,
         "ignoreVirtual": true,
         "granularSelect": false,
         "ignoreInputMedia": true,

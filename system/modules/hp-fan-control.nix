@@ -1,16 +1,22 @@
-{ pkgs, config, ... }:
+{ pkgs, inputs, ... }:
 let
-  victus-control = (pkgs.callPackage ../../pkgs/victus-control/package.nix { });
+  system = "x86_64-linux";
+  victus-control = inputs.custom-nixpkgs.packages.${system}.victus-control;
 in
 {
-  boot = {
-    extraModulePackages = [
-      (config.boot.kernelPackages.callPackage ../../pkgs/hp-wmi-fan-and-backlight-control/default.nix { })
-    ];
-    extraModprobeConfig = ''
-      options hp-wmi force_fan_control_support=true
-    '';
+  imports = [ inputs.tuxov.nixosModules.default ];
+  hardware.hp-wmi-control = {
+    enable = true;
+    victus-15-support.enable = true;
   };
+  # boot = {
+  #   # extraModulePackages = [
+  #   #   (config.boot.kernelPackages.callPackage ../../pkgs/hp-wmi-fan-and-backlight-control/default.nix { })
+  #   # ];
+  #   extraModprobeConfig = ''
+  #     options hp-wmi force_fan_control_support=true
+  #   '';
+  # };
   environment.systemPackages = [ victus-control ];
   systemd = {
     packages = [

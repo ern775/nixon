@@ -5,7 +5,8 @@
 }:
 let
   system = "x86_64-linux";
-  # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
+  pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
+  custom-nixpkgs = inputs.custom-nixpkgs.packages.${system};
   nix-sweep = inputs.nix-sweep.packages.${system}.default;
   # nero = pkgs.callPackage ../../pkgs/nero-umu/package.nix { };
   # nero = (
@@ -15,19 +16,20 @@ let
   #     paths = [ pkgs.nero-umu ];
   #   }
   # );
-  dopamine = pkgs.callPackage ../../pkgs/dopamine/package.nix { };
+  # dopamine = pkgs.callPackage ../../pkgs/dopamine/package.nix { };
   # faugus-launcher = pkgs.callPackage ../../pkgs/faugus-launcher/package.nix {};
   # hayase = pkgs.callPackage ../../pkgs/hayase/package.nix { };
   # mindustry-beta = pkgs.callPackage ../../pkgs/mindustry/package.nix { };
-  jdownloader2 = pkgs.callPackage ../../pkgs/jdownloader2/package.nix { inherit inputs; };
+  # jdownloader2 = pkgs.callPackage ../../pkgs/jdownloader2/package.nix { inherit inputs; };
   # vlc-3-0-20 = pkgs.callPackage ../../pkgs/vlc/package.nix { };
   # iloader = pkgs.callPackage ../../pkgs/iloader/package.nix { };
   # whatsapp-electron = pkgs.callPackage ../../pkgs/whatsapp-electron/package.nix { };
   # seanime = pkgs.callPackage ../../pkgs/seanime/package.nix { };
+  my-hp-wmi-control-panel-tui = pkgs.callPackage ../../pkgs/my-hp-wmi-control-panel-tui/package.nix { inherit inputs; };
 in
 {
   home.packages = with pkgs; [
-    altus
+    # altus
     android-tools
     # anki-bin
     # (bottles.override { removeWarningPopup = true; })
@@ -57,6 +59,10 @@ in
     kdePackages.krdc
     kdePackages.kde-gtk-config
     kdePackages.kimageformats
+    kdePackages.kolourpaint
+    kdePackages.ksystemlog
+    kdePackages.sddm-kcm
+    wayland-utils
     # kile
     # (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
     # libreoffice-qt6
@@ -70,8 +76,10 @@ in
     nix-init
     nix-sweep
     nixpkgs-review
+    nvfetcher
+    obsidian
     onlyoffice-desktopeditors
-    opusTools
+    # opus-tools
     patchutils
     # parabolic
     # pavucontrol
@@ -87,6 +95,7 @@ in
     signal-desktop
     # steamtinkerlaunch
     # steam-run
+    tcpdump
     # teams-for-linux
     telegram-desktop
     # testdisk-qt
@@ -98,14 +107,16 @@ in
     vlc
     yt-dlp
     xsettingsd
-    # zapzap
+    zapzap
     nero-umu
     # faugus-launcher
     # hayase
-    jdownloader2
+    custom-nixpkgs.jdownloader2
+    # custom-nixpkgs.seanime-denshi
     # iloader
-    # vscode-fhs
-    # seanime
+    vscode-fhs
+    custom-nixpkgs.seanime-denshi
+    # my-hp-wmi-control-panel-tui
   ];
 
   nixpkgs.overlays = [
@@ -137,6 +148,22 @@ in
       #     ../../pkgs/sgdboop/remove-unused-arg.patch
       #   ];
       # });
+      #   vscode = prev.vscode.overrideAttrs (previous: {
+      #     src = prev.fetchurl {
+      #       name = "VSCode_1.108.2_linux-x64.tar.gz";
+      #       url = "https://update.code.visualstudio.com/1.108.2/linux-x64/stable";
+      #       hash = "sha256-RqBae6s6y2XnXqtKbrKkMRwALKLfNE7mBFwOwwomG10=";
+      #     };
+      #     vscodeServer = prev.srcOnly {
+      #       name = "vscode-server-c9d77990917f3102ada88be140d28b038d1dd7c7.tar.gz";
+      #       src = prev.fetchurl {
+      #         name = "vscode-server-c9d77990917f3102ada88be140d28b038d1dd7c7.tar.gz";
+      #         url = "https://update.code.visualstudio.com/commit:c9d77990917f3102ada88be140d28b038d1dd7c7/server-linux-x64/stable";
+      #         hash = "sha256-bUnM+editWCYiiqR3mlIw4BRrM5gHd6T2GO65VKTDSE=";
+      #       };
+      #       stdenv = prev.stdenvNoCC;
+      #     };
+      #   });
     })
   ];
 }

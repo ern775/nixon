@@ -2,6 +2,7 @@
 let
   system = "x86_64-linux";
   dw-proton = inputs.dw-proton.packages.${system}.dw-proton;
+  proton-cachyos = inputs.custom-nixpkgs.packages.${system}.proton-cachyos;
 in
 {
   programs = {
@@ -19,6 +20,7 @@ in
       extraCompatPackages = with pkgs; [
         proton-ge-bin
         dw-proton
+        proton-cachyos
       ];
     };
     gamemode.enable = true;
@@ -26,5 +28,9 @@ in
     # thunar.enable = true;
     zsh.enable = true;
     gpu-screen-recorder.enable = true;
+    virt-manager.enable = true;
+    localsend.enable = true;
   };
+  users.groups.libvirtd.members = [ "eren" ];
+  virtualisation.libvirtd.enable = true;
 }

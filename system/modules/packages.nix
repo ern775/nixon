@@ -42,12 +42,13 @@ in
       qdirstat
       vim
       xsettingsd
-      xorg.xrdb
+      xrdb
       wget
     ];
     plasma6.excludePackages = with pkgs.kdePackages; [
       khelpcenter
       elisa
+      discover
     ];
     pathsToLink = [
       "/share"

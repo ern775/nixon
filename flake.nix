@@ -2,7 +2,7 @@
   description = "nixon os";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs?rev=0182a361324364ae3f436a63005877674cf45efb";
     nixpkgsStable.url = "nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -11,10 +11,6 @@
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    jdownloader = {
-      url = "https://installer.jdownloader.org/JDownloader.jar";
-      flake = false;
     };
     nero-umu = {
       url = "github:ern775/Nero-umu";
@@ -48,6 +44,15 @@
     #   url = "github:thiagokokada/nix-alien";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    tuxov = {
+      url = "github:TUXOV/hp-wmi-fan-and-backlight-control";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    victus-tui = {
+      url = "path:/home/eren/Git-Projects/my-hp-wmi-control-panel-tui";
+      flake = false;
+    };
+    # nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
   outputs =

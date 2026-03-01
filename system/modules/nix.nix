@@ -18,8 +18,8 @@
         "flakes"
       ];
       # auto-optimise-store = true;
-      # keep-outputs = false;
-      # keep-derivations = false;
+      # keep-outputs = true;
+      # keep-derivations = true;
       substituters = [
         "https://nix-community.cachix.org"
         "https://ezkea.cachix.org"

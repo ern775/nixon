@@ -21,7 +21,7 @@ let
       home-manager switch -b backup
     ";
     flakeUpdate = "nix flake update --flake ~/system";
-    cpulow = ''
+    cpubat = ''
       sudo undervolt --turbo 1 -p1 10 5 -p2 15 1
     '';
     cpudef = ''
@@ -33,7 +33,7 @@ let
     cpumax = ''
       sudo undervolt --turbo 0 -p1 100 5 -p2 100 1
     '';
-    gpulow = ''
+    gpudef = ''
       sudo nvidia-smi -lgc 0,1680
       sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=255
     '';
@@ -52,7 +52,8 @@ let
       TOOLS_PATHS=`steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS`
       ln -sfn $TOOLS_PATHS[(ws[:])1] $HOME/.local/share/Steam/compatibilitytools.d/${pkgs.proton-ge-bin.version}
       ln -sfn $TOOLS_PATHS[(ws[:])1] $HOME/.local/share/Steam/compatibilitytools.d/GE-Proton
-      ln -sfn $TOOLS_PATHS[(ws[:])3] $HOME/.local/share/Steam/compatibilitytools.d/DW-Proton
+      ln -sfn $TOOLS_PATHS[(ws[:])2] $HOME/.local/share/Steam/compatibilitytools.d/DW-Proton
+      ln -sfn $TOOLS_PATHS[(ws[:])3] $HOME/.local/share/Steam/compatibilitytools.d/Proton-Cachyos
       unset TOOLS_PATHS
     '';
   };

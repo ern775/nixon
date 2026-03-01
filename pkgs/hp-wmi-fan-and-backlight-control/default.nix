@@ -7,35 +7,28 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "hp-wmi-fan-and-backlight-control";
-  version = "0.0.2-unstable-2025-10-18";
+  version = "0.0.3";
 
   src = fetchFromGitHub {
     owner = "Vilez0";
     repo = "hp-wmi-fan-and-backlight-control";
-    rev = "41f83a53235b2e2429fbb5ab887d3a915aabadfe";
-    hash = "sha256-duhnkpBF1K233IU3HRCZMZhEanU+Ru5NlpkMQKCYMLs=";
+    tag = finalAttrs.version;
+    hash = "sha256-QTIVw9aoBaDt1XsjIMfUF8Pt/+ct7H1Asb1L6m7Xo7A=";
   };
 
-  setSourceRoot = ''
-    export sourceRoot=$(pwd)/source
+  postPatch = ''
+    sed -i 's@depmod -a@@g' Makefile
   '';
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
 
   makeFlags = kernelModuleMakeFlags ++ [
     "KDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
-    "-C"
-    "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
-    "M=$(sourceRoot)"
   ];
 
   enableParallelBuilding = true;
 
-  buildFlags = [ "modules" ];
-
-  installFlags = [ "INSTALL_MOD_PATH=${placeholder "out"}" ];
-
-  installTargets = [ "modules_install" ];
+  installFlags = [ "INSTALL_MOD_PATH=$(out)" ];
 
   meta = with lib; {
     description = "Linux kernel module for HP Laptops";

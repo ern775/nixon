@@ -1,8 +1,10 @@
 { ... }:
 {
   imports = [
+    ./audio-mic-boost-fix.nix
     ./audio.nix
     ./boot.nix
+    # ./cachyos-kernel.nix
     ./display.nix
     ./fonts.nix
     ./nix.nix

@@ -12,5 +12,6 @@
     noto-fonts-cjk-sans
     jetbrains-mono
     nerd-fonts.jetbrains-mono
+    work-sans
   ];
 }

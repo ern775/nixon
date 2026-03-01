@@ -5,13 +5,13 @@
     # system76-scheduler.enable = true;
     # printing = {
     #   enable = true;
-    #   drivers = with pkgs; [
-    #     canon-capt
-    #   ];
+    #   # drivers = with pkgs; [
+    #   #   canon-capt
+    #   # ];
     # };
     cloudflare-warp = {
       enable = true;
-      package = (pkgs.cloudflare-warp.override {headless = true;}); # disable warp-taskbar
+      package = (pkgs.cloudflare-warp.override { headless = true; }); # disable warp-taskbar
     };
     # input-remapper.enable = true;
     gvfs.enable = true;
@@ -25,7 +25,10 @@
     dbus.implementation = "broker";
     byedpi = {
       enable = true;
-      extraArgs = [ "--tlsrec" "1+s" ];
+      extraArgs = [
+        "--disorder=1"
+        "--tlsrec=1+s"
+      ];
     };
   };
 

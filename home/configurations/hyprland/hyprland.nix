@@ -146,11 +146,11 @@ input {
 # windowrulev2 = float, title:^(Media viewer)$
 
 # Picture in picture windows
-windowrulev2 = float, title:^(Picture-in-Picture)$
-windowrulev2 = pin, title:^(Picture-in-Picture)$
-windowrulev2 = float, class:^(vesktop)$,title:^(Discord Popout)$ 
-windowrulev2 = pin, class:^(vesktop)$,title:^(Discord Popout)$ 
-windowrulev2 = float, class:^(steam)$,title:^(Friends List)$
+# windowrulev2 = float, title:^(Picture-in-Picture)$
+# windowrulev2 = pin, title:^(Picture-in-Picture)$
+# windowrulev2 = float, class:^(vesktop)$,title:^(Discord Popout)$ 
+# windowrulev2 = pin, class:^(vesktop)$,title:^(Discord Popout)$ 
+# windowrulev2 = float, class:^(steam)$,title:^(Friends List)$
 
 
 # Workspace assign

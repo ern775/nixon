@@ -10,17 +10,21 @@
   wrapGAppsHook4,
   desktop-file-utils,
 }:
-
 stdenv.mkDerivation (finalAttrs: {
   pname = "victus-control";
-  version = "0-unstable-2025-10-28";
+  version = "0-unstable-2025-12-12";
 
   src = fetchFromGitHub {
     owner = "Vilez0";
     repo = "victus-control";
-    rev = "e6c645785aa207c02e29bb7b4373fd71a749d6c6";
-    hash = "sha256-O0RcY9pPKXASBt74gwukm7YKrYaavWCf8VRrsmFLfDM=";
+    rev = "3cf7d22921a24adb7fe6e806c912679ef81f8c77";
+    hash = "sha256-vpRbDA8gfCDx9NJX4EVqPWa49RAU73ZpHu4Y14C6CvQ=";
   };
+
+  postPatch = ''
+    substituteInPlace backend/src/fan.cpp \
+      --replace-fail '4500' '10000'
+  '';
 
   nativeBuildInputs = [
     meson
@@ -50,11 +54,12 @@ stdenv.mkDerivation (finalAttrs: {
     runHook postInstall
   '';
 
-  meta = with lib; {
+  meta = {
     homepage = "https://github.com/Vilez0/victus-control";
     description = "Victus Control";
     mainProgram = "victus-control";
-    license = licenses.gpl3;
-    platforms = platforms.linux;
+    maintainers = with lib.maintainers; [ ern775 ];
+    license = lib.licenses.gpl3;
+    platforms = lib.platforms.linux;
   };
 })
