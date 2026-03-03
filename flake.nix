@@ -2,7 +2,7 @@
   description = "nixon os";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs?rev=0182a361324364ae3f436a63005877674cf45efb";
+    nixpkgs.url = "github:NixOS/nixpkgs";
     nixpkgsStable.url = "nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager";

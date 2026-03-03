@@ -115,7 +115,7 @@ in
     # custom-nixpkgs.seanime-denshi
     # iloader
     vscode-fhs
-    custom-nixpkgs.seanime-denshi
+    custom-nixpkgs.seanime.denshi
     # my-hp-wmi-control-panel-tui
   ];
 

@@ -51,7 +51,7 @@
                       "node.name" = name + " Output";
                       "node.passive" = true;
                       # "media.role" = "DSP";
-                      # "stream.dont-remix" = true;
+                      "stream.dont-remix" = true;
                       # "node.suspend-on-idle" = true;
                       # "node.want-driver" = false;
                       "node.dont-fallback" = true;
@@ -64,22 +64,6 @@
             };
         in
         {
-          "clock-rate" = {
-            "context.properties" = {
-              "default.clock.rate" = 48000;
-              "default.clock.allowed-rates" = [
-                44100
-                48000
-                88200
-                96000
-              ];
-              "default.clock.min-quantum" = 1024;
-              "default.clock.max-quantum" = 2048;
-              "default.clock.quantum" = 1024;
-              "default.clock.quantum-limit" = 4096;
-              "default.clock.quantum-floor" = 1024;
-            };
-          };
           "speaker-eq" = (
             mkEqSink {
               name = "Speaker Parametric EQ";
@@ -98,9 +82,25 @@
             mkEqSink {
               name = "Space Travel Parametric EQ";
               equalizerPath = equalizers/SpaceTravel_ParametricEQ.txt;
-              targetDevice = "bluez_output.24_09_12_B3_35_A8.1";
+              targetDevice = "bluez_output_internal.24_09_12_B3_35_A8.1";
             }
           );
+          "clock-rate" = {
+            "context.properties" = {
+              "default.clock.rate" = 48000;
+              "default.clock.allowed-rates" = [
+                44100
+                48000
+                88200
+                96000
+              ];
+              "default.clock.min-quantum" = 1024;
+              "default.clock.max-quantum" = 2048;
+              "default.clock.quantum" = 1024;
+              "default.clock.quantum-limit" = 4096;
+              "default.clock.quantum-floor" = 1024;
+            };
+          };
         };
       extraConfig.pipewire-pulse."92-low-latency" = {
         "pulse.properties" = {
@@ -153,16 +153,28 @@
               {
                 matches = [
                   {
+                    # Matches all bluetooth devices.
+                    device.name = "~bluez_card.*";
+                  }
+                ];
+                actions.update-props = {
+                  "bluez5.dummy-avrcp-player" = true;
+                };
+              }
+              {
+                matches = [
+                  {
                     # Matches all sources
-                    "node.name" = "~bluez_input.*";
+                    "node.name" = "~bluez_input*";
                   }
                   {
                     # Matches all sinks
-                    "node.name" = "~bluez_output.*";
+                    "node.name" = "~bluez_output*";
                   }
                 ];
                 actions.update-props = {
                   "session.suspend-timeout-seconds" = 0;
+                  # "bluez5.dummy-avrcp-player" = true;
                 };
               }
             ];
