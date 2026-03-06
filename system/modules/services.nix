@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   services = {
     fwupd.enable = true;
@@ -11,6 +11,7 @@
     # };
     cloudflare-warp = {
       enable = true;
+      openFirewall = true;
       package = (pkgs.cloudflare-warp.override { headless = true; }); # disable warp-taskbar
     };
     # input-remapper.enable = true;
@@ -33,5 +34,18 @@
   };
 
   systemd.services.cloudflare-warp.serviceConfig.LogLevelMax = "notice"; # simply suppress all logs from warp
+  # older cloudflare-warp version
+  nixpkgs.overlays = [
+    (final: prev: {
+      cloudflare-warp = prev.cloudflare-warp.overrideAttrs (old: rec {
+        version = "2025.10.186.0";
+        src = pkgs.fetchurl {
+          url = "https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_${version}_amd64.deb";
+          hash = "sha256-l+csDSBXRAFb2075ciCAlE0bS5F48mAIK/Bv1r3Q8GE=";
+        };
+      });
+    })
+  ];
+
   systemd.timers.fwupd-refresh.enable = false;
 }

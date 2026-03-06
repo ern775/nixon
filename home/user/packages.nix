@@ -25,7 +25,9 @@ let
   # iloader = pkgs.callPackage ../../pkgs/iloader/package.nix { };
   # whatsapp-electron = pkgs.callPackage ../../pkgs/whatsapp-electron/package.nix { };
   # seanime = pkgs.callPackage ../../pkgs/seanime/package.nix { };
-  my-hp-wmi-control-panel-tui = pkgs.callPackage ../../pkgs/my-hp-wmi-control-panel-tui/package.nix { inherit inputs; };
+  my-hp-wmi-control-panel-tui = pkgs.callPackage ../../pkgs/my-hp-wmi-control-panel-tui/package.nix {
+    inherit inputs;
+  };
 in
 {
   home.packages = with pkgs; [
