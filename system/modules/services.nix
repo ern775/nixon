@@ -38,10 +38,10 @@
   nixpkgs.overlays = [
     (final: prev: {
       cloudflare-warp = prev.cloudflare-warp.overrideAttrs (old: rec {
-        version = "2025.10.186.0";
+        version = "2025.9.558.0";
         src = pkgs.fetchurl {
           url = "https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_${version}_amd64.deb";
-          hash = "sha256-l+csDSBXRAFb2075ciCAlE0bS5F48mAIK/Bv1r3Q8GE=";
+          hash = "sha256-eYPy8YnP/vvYmvvjvF6Y0gSzdglsvoPW6CJ5npjrtpo=";
         };
       });
     })

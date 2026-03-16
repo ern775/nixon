@@ -31,6 +31,4 @@ in
     virt-manager.enable = true;
     localsend.enable = true;
   };
-  users.groups.libvirtd.members = [ "eren" ];
-  virtualisation.libvirtd.enable = true;
 }

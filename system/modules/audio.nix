@@ -41,7 +41,7 @@
                         "node.name" = targetDevice;
                       };
                       # "node.dont-fallback" = true;
-                      # "node.linger" = false;
+                      "node.linger" = true;
                       # "node.exclusive" = true;
                       # "node.autoconnect" = true;
                       # "node.passive" = true;
@@ -53,7 +53,10 @@
                       # "media.role" = "DSP";
                       "stream.dont-remix" = true;
                       # "node.suspend-on-idle" = true;
-                      # "node.want-driver" = false;
+
+                      "node.exclusive" = true;
+                      "node.want-driver" = true;
+
                       "node.dont-fallback" = true;
                       "node.linger" = true;
                       "target.object" = targetDevice;
@@ -158,7 +161,7 @@
                   }
                 ];
                 actions.update-props = {
-                  "bluez5.dummy-avrcp-player" = true;
+                  # "bluez5.dummy-avrcp-player" = true;
                 };
               }
               {
