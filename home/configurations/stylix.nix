@@ -9,7 +9,7 @@
   stylix = {
     enable = true;
 
-    autoEnable = true;
+    autoEnable = false;
 
     polarity = "dark";
 
@@ -22,6 +22,13 @@
       package = pkgs.bibata-cursors;
       size = 20;
     };
+
+    # icons = {
+    #   enable = true;
+    #   package = pkgs.kdePackages.breeze-icons;
+    #   dark = "Breeze-Dark";
+    #   light = "Breeze";
+    # };
 
     fonts = {
       emoji = {
@@ -51,13 +58,13 @@
 
     targets = {
       vscode.enable = false;
-      librewolf.enable = false;
+      # librewolf.enable = false;
       # librewolf.profileNames = [ "Default" ];
       cava.enable = true;
-      gtk.enable = false;
+      gtk.enable = true;
       mangohud.enable = false;
       qt.enable = false;
-      # qt.platform = "kde";
+      # qt.platform = "qtct";
       vencord.enable = true;
       vesktop.enable = true;
       xresources.enable = true;
@@ -65,8 +72,9 @@
       hyprland.enable = false;
       hyprland.hyprpaper.enable = false;
       hyprpaper.enable = false;
-      hyprlock.enable = true;
+      hyprlock.enable = false;
       hyprlock.useWallpaper = false;
+      hyprpanel.enable = false;
       waybar.enable = false;
       kde.enable = false;
       mako.enable = true;

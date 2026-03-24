@@ -1,6 +1,12 @@
 [Keyboard]
 NumLock=0
 
+[Libinput][11145][67][UGREEN Mouse]
+PointerAcceleration=0.600
+PointerAccelerationProfile=1
+ScrollFactor=1.5
+ScrollMethod=0
+
 [Libinput][1133][49309][Logitech G203 LIGHTSYNC Gaming Mouse]
 PointerAcceleration=-0.700
 PointerAccelerationProfile=1

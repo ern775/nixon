@@ -49,20 +49,27 @@
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
     "editor.formatOnType": false,
-    "qt-core.additionalQtPaths": [
-        {
-            "name": "Qt-6.10.2-linux-g++_from_PATH",
-            "path": "/nix/store/w4q31b93w262q2b75ri3jc7m3xd4i31h-qtbase-6.10.2/bin/qtpaths"
-        },
-        {
-            "name": "Qt-6.10.2-linux-g++_from_PATH",
-            "path": "/run/current-system/sw/bin/qtpaths"
-        }
-    ],
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "workbench.editorAssociations": {
         "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
         "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.ui": "default",
         "*.qrc": "qt-core.qrcEditor"
     },
+    "qt-qml.qmlls.useQmlImportPathEnvVar": true,
+    "qt-qml.doNotAskForQmllsDownload": true,
+    "qt-qml.qmlls.customExePath": "qmlls",
+    "qt-core.additionalQtPaths": [
+        {
+            "name": "Qt-6.10.2-linux-g++_from_PATH",
+            "path": "/run/current-system/sw/bin/qtpaths"
+        },
+        {
+            "name": "Qt-6.10.2-linux-g++_from_PATH",
+            "path": "/nix/store/9lf2mfhsk7s379mfsh8nqc4xabdg6dw6-qtbase-6.10.2/bin/qtpaths"
+        },
+        {
+            "name": "Qt-6.10.2-linux-g++_from_PATH",
+            "path": "/nix/store/w4q31b93w262q2b75ri3jc7m3xd4i31h-qtbase-6.10.2/bin/qtpaths"
+        }
+    ],
 }

@@ -12,6 +12,7 @@
         {
           "MangoHud".source = link "${configDir}/MangoHud";
           "ZapZap".source = link "${configDir}/ZapZap";
+          "hypr".source = link "${configDir}/hypr";
 
           "gpu-screen-recorder/config".source = link "${configDir}/gpu-screen-recorder/config";
           "Dopamine/config.json" = {
@@ -27,6 +28,7 @@
           "vlc/vlcrc".source = link "${configDir}/vlc/vlcrc";
           "VSCodium/User/settings.json".source = link "${configDir}/VSCodium/User/settings.json";
           "VSCodium/User/keybindings.json".source = link "${configDir}/VSCodium/User/keybindings.json";
+          "menus/applications.menu".source = link "${configDir}/menus/applications.menu";
 
           "dolphinrc".source = link "${configDir}/dolphinrc";
           "kactivitymanagerd-statsrc".source = link "${configDir}/kactivitymanagerd-statsrc";

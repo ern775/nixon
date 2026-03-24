@@ -1,52 +1,21 @@
 { pkgs, config, ... }:
 let
   aliases = {
-    cleanup = "
-      sudo nix-collect-garbage -d
-      nix-collect-garbage -d
-    ";
-    rebuild = "
-      sudo nixos-rebuild switch
-    ";
-    rebuildBoot = "
-      sudo nixos-rebuild boot
-    ";
-    fullRebuild = "
-      home-manager switch -b backup && sudo nixos-rebuild switch
-    ";
-    fullRebuildBoot = "
-      home-manager switch -b backup && sudo nixos-rebuild boot
-    ";
-    homeRebuild = "
-      home-manager switch -b backup
-    ";
+    cleanup = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
+    rebuild = "sudo nixos-rebuild switch";
+    rebuildBoot = "sudo nixos-rebuild boot";
+    fullRebuild = "home-manager switch -b backup && sudo nixos-rebuild switch";
+    fullRebuildBoot = "home-manager switch -b backup && sudo nixos-rebuild boot";
+    homeRebuild = "home-manager switch -b backup";
     flakeUpdate = "nix flake update --flake ~/system";
-    cpubat = ''
-      sudo undervolt --turbo 1 -p1 10 5 -p2 15 1
-    '';
-    cpudef = ''
-      sudo undervolt --turbo 1 -p1 35 5 -p2 45 1
-    '';
-    cpumid = ''
-      sudo undervolt --turbo 0 -p1 35 5 -p2 35 1
-    '';
-    cpumax = ''
-      sudo undervolt --turbo 0 -p1 100 5 -p2 100 1
-    '';
-    gpudef = ''
-      sudo nvidia-smi -lgc 0,1680
-      sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=255
-    '';
-    gpumid = ''
-      sudo nvidia-smi -lgc 0,1995
-      sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=240
-    '';
-    gpumax = ''
-      sudo nvidia-smi -lgc 0,3360
-      sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=240
-    '';
+    cpubat = ''sudo undervolt --turbo 1 -p1 10 5 -p2 15 1'';
+    cpudef = ''sudo undervolt --turbo 1 -p1 35 5 -p2 45 1'';
+    cpumid = ''sudo undervolt --turbo 0 -p1 35 5 -p2 35 1'';
+    cpumax = ''sudo undervolt --turbo 0 -p1 100 5 -p2 100 1'';
+    gpudef = ''sudo nvidia-smi -lgc 0,1680 && sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=255'';
+    gpumid = ''sudo nvidia-smi -lgc 0,1995 && sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=240'';
+    gpumax = ''sudo nvidia-smi -lgc 0,3360 && sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=240'';
     intelWatt = "sudo chmod o+r /sys/class/powercap/intel-rapl\:*/energy_uj";
-    vesktop = "vesktop --proxy-server=socks5://127.0.0.1:1080";
     protonSymlinkUpdate = ''
       find ~/.local/share/Steam/compatibilitytools.d -type l \( -name "GE-Proton*" -o -name "DW-Proton" \) -delete
       TOOLS_PATHS=`steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS`

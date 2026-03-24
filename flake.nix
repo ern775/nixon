@@ -2,7 +2,7 @@
   description = "nixon os";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgsStable.url = "nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -24,10 +24,10 @@
       url = "github:jzbor/nix-sweep";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nix-index-database = {
+    #   url = "github:nix-community/nix-index-database";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     custom-nixpkgs = {
       url = "github:ern775/custom-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,10 +38,6 @@
     };
     # zen-browser = {
     #   url = "github:0xc000022070/zen-browser-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # hyprland = {
-    #   url = "github:hyprwm/Hyprland";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     # nix-alien = {
@@ -57,6 +53,16 @@
       flake = false;
     };
     # nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    hyprland.url = "github:hyprwm/Hyprland";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.noctalia-qs.follows = "noctalia-qs";
+    };
+    noctalia-qs = {
+      url = "github:noctalia-dev/noctalia-qs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

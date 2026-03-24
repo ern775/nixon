@@ -2,6 +2,7 @@
   pkgs,
   config,
   inputs,
+  lib,
   ...
 }:
 let
@@ -15,6 +16,7 @@ in
     systemPackages = with pkgs; [
       alejandra
       appimage-run
+      brightnessctl
       cpufrequtils
       exfatprogs
       file
@@ -44,11 +46,13 @@ in
       xsettingsd
       xrdb
       wget
+      waypipe
     ];
     plasma6.excludePackages = with pkgs.kdePackages; [
       khelpcenter
       elisa
       discover
+      drkonqi
     ];
     pathsToLink = [
       "/share"
@@ -56,6 +60,7 @@ in
     ];
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
+
   environment.etc."current-system-packages".text =
     let
       systemPackages = map (p: "${p.name}") config.environment.systemPackages;

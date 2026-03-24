@@ -10,7 +10,7 @@
   home = {
     username = "eren";
     homeDirectory = "/home/eren";
-    stateVersion = "24.11";
+    stateVersion = "26.05";
     shell.enableShellIntegration = true;
   };
 

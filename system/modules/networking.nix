@@ -6,6 +6,10 @@
       enable = true;
       plugins = with pkgs; [ networkmanager-openvpn ];
     };
+    # proxy = {
+    #   default = "socks5h://127.0.0.1:1080";
+    #   noProxy = "127.0.0.1,localhost";
+    # };
     hosts = {
       "0.0.0.0" = [
         "overseauspider.yuanshen.com"
@@ -51,4 +55,5 @@
     enable = true;
     joinNetworks = [ "68BEA79ACFDBC771" ];
   };
+  services.tailscale.enable = true;
 }

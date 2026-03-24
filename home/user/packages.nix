@@ -37,8 +37,8 @@ in
     # (bottles.override { removeWarningPopup = true; })
     byedpi
     cava
-    cobang
-    dopamine
+    # cobang
+    custom-nixpkgs.dopamine
     # pkgsStable.jamesdsp
     jdk
     fastfetch
@@ -127,6 +127,7 @@ in
         src = inputs.nero-umu;
         patches = (old.patches or [ ]) ++ [
           ../../pkgs/nero-umu/custom-proton.patch
+          ../../pkgs/nero-umu/main.cpp.patch
         ];
       });
       handbrake = prev.handbrake.overrideAttrs (previous: {

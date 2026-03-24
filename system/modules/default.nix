@@ -11,7 +11,7 @@
     ./hardware.nix
     ./hp-fan-control.nix
     ./hp.nix
-    # ./hyprland.nix
+    ./hyprland.nix
     ./intel.nix
     ./internationalisation.nix
     # ./ios.nix
@@ -21,6 +21,7 @@
     ./packages.nix
     ./plasma.nix
     ./programs.nix
+    # ./qt.nix
     ./services.nix
     # ./stylix.nix
     ./sudo.nix
@@ -32,5 +33,6 @@
     # ./silent-boot.nix
     # ./mysql.nix
     # ./network.nix
+    # ./pihole.nix
   ];
 }

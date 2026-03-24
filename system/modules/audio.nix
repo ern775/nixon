@@ -24,7 +24,7 @@
                   name = "libpipewire-module-parametric-equalizer";
                   args = {
                     "equalizer.filepath" = equalizerPath;
-                    "equalizer.description" = name + " Sink";
+                    "equalizer.description" = name;
                     "audio.position" = [
                       "FL"
                       "FR"
@@ -50,7 +50,8 @@
                     "playback.props" = {
                       "node.name" = name + " Output";
                       "node.passive" = true;
-                      # "media.role" = "DSP";
+                      # "media.class" = "Audio/Sink";
+                      "media.role" = "DSP";
                       "stream.dont-remix" = true;
                       # "node.suspend-on-idle" = true;
 
@@ -85,7 +86,7 @@
             mkEqSink {
               name = "Space Travel Parametric EQ";
               equalizerPath = equalizers/SpaceTravel_ParametricEQ.txt;
-              targetDevice = "bluez_output_internal.24_09_12_B3_35_A8.1";
+              targetDevice = "bluez_output.24_09_12_B3_35_A8.1";
             }
           );
           "clock-rate" = {
