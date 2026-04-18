@@ -1,8 +1,7 @@
 { pkgs, inputs, ... }:
 let
   system = "x86_64-linux";
-  dw-proton = inputs.dw-proton.packages.${system}.dw-proton;
-  proton-cachyos = inputs.custom-nixpkgs.packages.${system}.proton-cachyos;
+  custom-nixpkgs = inputs.custom-nixpkgs.packages.${system};
 in
 {
   programs = {
@@ -19,8 +18,8 @@ in
       dedicatedServer.openFirewall = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin
-        dw-proton
-        proton-cachyos
+        custom-nixpkgs.dw-proton
+        custom-nixpkgs.proton-cachyos
       ];
     };
     gamemode.enable = true;

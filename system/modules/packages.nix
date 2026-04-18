@@ -20,6 +20,7 @@ in
       cpufrequtils
       exfatprogs
       file
+      jq
       git
       ghostscript
       home-manager
@@ -34,11 +35,13 @@ in
       nixd
       nixfmt
       nixfmt-tree
+      nix-prefetch
       openssh
       p7zip-rar
       pciutils
       rar
       sysfsutils
+      traceroute
       undervolt
       unzip
       qdirstat

@@ -18,11 +18,11 @@
             },
         },
     },
-    "explorer.confirmDelete": false,
     "nix.formatterPath": "nixfmt",
     "nix.hiddenLanguageServerErrors": [
         "textDocument/definition",
     ],
+    "explorer.confirmDelete": false,
     "editor.minimap.enabled": false,
     "explorer.confirmDragAndDrop": false,
     "security.workspace.trust.untrustedFiles": "open",
@@ -42,7 +42,6 @@
         "editor.wordBasedSuggestions": "off"
     },
     "direnv.watchForChanges": false,
-    "direnv.restart.automatic": true,
     "nixEnvSelector.useFlakes": true,
     "python.terminal.launchArgs": [],
     "workbench.startupEditor": "none",
@@ -70,6 +69,16 @@
         {
             "name": "Qt-6.10.2-linux-g++_from_PATH",
             "path": "/nix/store/w4q31b93w262q2b75ri3jc7m3xd4i31h-qtbase-6.10.2/bin/qtpaths"
+        },
+        {
+            "name": "Qt-6.10.2-linux-g++_from_PATH",
+            "path": "/nix/store/zr02g4db1jlwkjqywbm8xd2gz6vpgzsl-qt6-nero-env/bin/qtpaths"
         }
     ],
+    "Lua.workspace.library": [
+        "/run/current-system/sw/share/hypr/stubs"
+    ],
+    "Lua.diagnostics.globals": [
+        "hl"
+    ]
 }

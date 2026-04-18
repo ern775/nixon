@@ -8,6 +8,7 @@
       "wheel"
       "gamemode"
       "kvm"
+      "dialout"
     ];
     shell = pkgs.zsh;
   };

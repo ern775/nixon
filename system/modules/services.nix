@@ -25,13 +25,13 @@
     };
     orca.enable = false;
     dbus.implementation = "broker";
-    # byedpi = {
-    #   enable = true;
-    #   extraArgs = [
-    #     "--disorder=1"
-    #     "--tlsrec=1+s"
-    #   ];
-    # };
+    byedpi = {
+      enable = true;
+      extraArgs = [
+        "--disorder=1"
+        "--tlsrec=1+s"
+      ];
+    };
     # zapret = {
     #   enable = true;
     #   httpSupport = false;
@@ -84,17 +84,17 @@
 
   systemd.services.cloudflare-warp.serviceConfig.LogLevelMax = "notice"; # simply suppress all logs from warp
   # older cloudflare-warp version
-  nixpkgs.overlays = [
-    (final: prev: {
-      cloudflare-warp = prev.cloudflare-warp.overrideAttrs (old: rec {
-        version = "2025.9.558.0";
-        src = pkgs.fetchurl {
-          url = "https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_${version}_amd64.deb";
-          hash = "sha256-eYPy8YnP/vvYmvvjvF6Y0gSzdglsvoPW6CJ5npjrtpo=";
-        };
-      });
-    })
-  ];
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     cloudflare-warp = prev.cloudflare-warp.overrideAttrs (old: rec {
+  #       version = "2025.9.558.0";
+  #       src = pkgs.fetchurl {
+  #         url = "https://pkg.cloudflareclient.com/pool/noble/main/c/cloudflare-warp/cloudflare-warp_${version}_amd64.deb";
+  #         hash = "sha256-eYPy8YnP/vvYmvvjvF6Y0gSzdglsvoPW6CJ5npjrtpo=";
+  #       };
+  #     });
+  #   })
+  # ];
 
   systemd.timers.fwupd-refresh.enable = false;
 

@@ -335,10 +335,16 @@
 		</Menu>
 	</Menu>
 	<Menu>
+		<Name>Settingsmenu</Name>
+		<Directory>kf5-settingsmenu.directory</Directory>
+		<Include>
+			<Category>Settings</Category>
+		</Include>
+	</Menu>
+	<Menu>
 		<Name>System</Name>
 		<Directory>kf5-system.directory</Directory>
 		<Include>
-			<Category>Settings</Category>
 			<And>
 				<Category>System</Category>
 				<Not><Category>X-KDE-More</Category></Not>
@@ -393,13 +399,12 @@
 			</Include>
 		</Menu>
 	</Menu>
-	<Menu>
-		<Name>Help</Name>
-		<Directory>kf5-help.directory</Directory>
-		<Include>
-			<Category>Documentation</Category>
-		</Include>
-	</Menu>
+	<Include>
+		<And>
+			<Category>KDE</Category>
+			<Category>Core</Category>
+		</And>
+	</Include>
 	<DefaultMergeDirs/>
 	<MergeFile>applications-kmenuedit.menu</MergeFile>
 </Menu>

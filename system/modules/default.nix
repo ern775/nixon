@@ -19,7 +19,7 @@
     # ./nbfc.nix
     ./networking.nix
     ./packages.nix
-    ./plasma.nix
+    # ./plasma.nix
     ./programs.nix
     # ./qt.nix
     ./services.nix

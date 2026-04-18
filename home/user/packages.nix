@@ -67,7 +67,7 @@ in
     wayland-utils
     # kile
     # (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
-    # libreoffice-qt6
+    libreoffice-qt6-fresh
     # lutris
     mangohud
     media-downloader
@@ -118,6 +118,7 @@ in
     # iloader
     vscode-fhs
     custom-nixpkgs.seanime.denshi
+    custom-nixpkgs.gecit
     # my-hp-wmi-control-panel-tui
   ];
 
@@ -167,6 +168,45 @@ in
       #       stdenv = prev.stdenvNoCC;
       #     };
       #   });
+      vlc-nightly =
+        let
+          revision = "734cb67180e5fe97fabff8c99e3f10831e73c016";
+          vlc-without-qt5 = prev.vlc.override { withQt5 = false; };
+        in
+        vlc-without-qt5.overrideAttrs (old: {
+          version = "nightly";
+          src = final.fetchFromGitLab {
+            domain = "code.videolan.org";
+            owner = "videolan";
+            repo = "vlc";
+            rev = revision;
+            hash = "sha256-HGdzgqFdGCzVs+4CZU7HqPcgiDm0kImqC1axxwDZOm0=";
+          };
+
+          nativeBuildInputs = old.nativeBuildInputs ++ [
+            prev.qt6.wrapQtAppsHook
+            prev.bison
+          ];
+
+          buildInputs =
+            old.buildInputs
+            ++ (with prev.qt6; [
+              qtwayland
+              qtbase
+              qtsvg
+            ]);
+
+          postFixup = old.postFixup + ''
+            remove-references-to -t "${prev.qt6.qtbase.dev}" $out/lib/vlc/plugins/gui/libqt_plugin.so
+          '';
+
+          preConfigure = ''
+            echo ${revision} > src/revision.txt
+          '';
+          configureFlags = old.configureFlags ++ [
+            "--disable-skins2"
+          ];
+        });
     })
   ];
 }

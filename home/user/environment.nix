@@ -11,5 +11,7 @@
     SDL_VIDEODRIVER = "wayland";
     # VDPAU_DRIVER = "nvidia";
     # QT_QPA_PLATFORMTHEME = "qt6ct";
+    __GL_SHADER_DISK_CACHE = "1";
+    __GL_SHADER_DISK_CACHE_SIZE = "10737418240";
   };
 }

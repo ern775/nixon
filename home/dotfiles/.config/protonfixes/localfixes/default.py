@@ -49,18 +49,20 @@ def main() -> None:
             umu_genshin_module = importlib.util.module_from_spec(umu_genshin_spec)
             umu_genshin_spec.loader.exec_module(umu_genshin_module)
             log.info("Global umu-genshin protonfix found for current proton")
+            util.set_environment('WINE_ENABLE_TIMEOUT_FIX', '1')
             umu_genshin_module.main()
         except FileNotFoundError:
             log.warn("No umu-genshin protonfix found for current proton, falling back to UMU_USE_STEAM")
+            util.set_environment('WINE_ENABLE_TIMEOUT_FIX', '1')
             util.set_environment('UMU_USE_STEAM', '1')
             util.set_environment('WINE_DISABLE_VULKAN_OPWR', '1')
 
-    # All around fix for mouse dropping inputs, same setting can be set by adding `"UseTakeFocus"="N"` under `[Software\\Wine\\X11 Driver]` in the `user.reg` file
-    if ("GenshinImpact" in sys.argv[2]) or ("StarRail" in sys.argv[2]):
-        log.info("Unity game found, enabling fix for mouse inputs")
-        util.regedit_add(
-            'HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver',
-            'UseTakeFocus',
-            'REG_SZ',
-            'N',
-        )
+    # # All around fix for mouse dropping inputs, same setting can be set by adding `"UseTakeFocus"="N"` under `[Software\\Wine\\X11 Driver]` in the `user.reg` file
+    # if ("GenshinImpact" in sys.argv[2]) or ("StarRail" in sys.argv[2]):
+    #     log.info("Unity game found, enabling fix for mouse inputs")
+    #     util.regedit_add(
+    #         'HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver',
+    #         'UseTakeFocus',
+    #         'REG_SZ',
+    #         'N',
+    #     )
