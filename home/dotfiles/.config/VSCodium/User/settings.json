@@ -73,6 +73,10 @@
         {
             "name": "Qt-6.10.2-linux-g++_from_PATH",
             "path": "/nix/store/zr02g4db1jlwkjqywbm8xd2gz6vpgzsl-qt6-nero-env/bin/qtpaths"
+        },
+        {
+            "name": "Qt-6.11.0-linux-g++_from_PATH",
+            "path": "/nix/store/16wxyhp4a3gik8fqr3q1mpzmxn0z5ss7-qt6-nero-env/bin/qtpaths"
         }
     ],
     "Lua.workspace.library": [

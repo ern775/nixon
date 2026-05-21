@@ -41,7 +41,7 @@ def main() -> None:
     log_spec.loader.exec_module(log_module)
     log = log_module.log
 
-    if "GenshinImpact" in sys.argv[2]:
+    if any(game in sys.argv[2] for game in ["GenshinImpact", "ZenlessZoneZero"]):
         try:
             # For getting the official fix from umu-protonfixes
             umu_genshin_path = f"{util.protondir()}/protonfixes/gamefixes-umu/umu-genshin.py"

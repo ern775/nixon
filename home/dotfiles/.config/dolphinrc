@@ -2,6 +2,8 @@ MenuBar=Disabled
 
 [ContentDisplay]
 DirectorySizeMode=ContentSize
+RecursiveDirectorySizeLimit=15
+UsePermissionsFormat=CombinedFormat
 
 [Dolphin]
 SortHiddenLast=true
@@ -22,7 +24,7 @@ ShowSelectionToggle=false
 ShowStatusBar=FullWidth
 ShowZoomSlider=false
 Version=202
-ViewPropsTimestamp=2024,12,6,23,4,20.606
+ViewPropsTimestamp=2026,5,13,17,13,54.946
 
 [IconsMode]
 PreviewSize=80

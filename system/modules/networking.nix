@@ -33,9 +33,9 @@
   # };
   # services.fail2ban.enable = true;
   # systemd.services.sshd.wantedBy = lib.mkForce [ ];
-  services.zerotierone = {
-    enable = true;
-    joinNetworks = [ "68BEA79ACFDBC771" ];
-  };
+  # services.zerotierone = {
+  #   enable = true;
+  #   joinNetworks = [ "68BEA79ACFDBC771" ];
+  # };
   services.tailscale.enable = true;
 }

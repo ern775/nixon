@@ -18,7 +18,7 @@
         "flakes"
       ];
       # auto-optimise-store = true;
-      keep-outputs = false;
+      # keep-outputs = false;
       # keep-derivations = false;
       substituters = [
         "https://nix-community.cachix.org"
