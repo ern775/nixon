@@ -84,5 +84,6 @@
     ],
     "Lua.diagnostics.globals": [
         "hl"
-    ]
+    ],
+    "workbench.colorTheme": "Dark Modern"
 }

@@ -1,0 +1,22 @@
+{
+  "hideInactive": false,
+  "iconColor": "none",
+  "directory": "/home/eren/Videos",
+  "filenamePattern": "recording_yyyyMMdd_HHmmss",
+  "frameRate": "custom",
+  "customFrameRate": "144",
+  "audioCodec": "opus",
+  "videoCodec": "hevc",
+  "quality": "very_high",
+  "colorRange": "limited",
+  "showCursor": true,
+  "copyToClipboard": false,
+  "audioSource": "default_output",
+  "videoSource": "portal",
+  "resolution": "1920x1080",
+  "restorePortalSession": false,
+  "replayEnabled": false,
+  "replayDuration": "30",
+  "customReplayDuration": "30",
+  "replayStorage": "ram"
+}

@@ -35,6 +35,7 @@ in
     android-tools
     # anki-bin
     # (bottles.override { removeWarningPopup = true; })
+    brave
     byedpi
     cava
     # cobang
@@ -43,6 +44,7 @@ in
     jdk
     fastfetch
     ffmpeg-full
+    firefox
     fzf
     handbrake
     # haruna

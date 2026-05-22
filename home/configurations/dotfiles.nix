@@ -13,6 +13,8 @@
           "MangoHud".source = link "${configDir}/MangoHud";
           "ZapZap".source = link "${configDir}/ZapZap";
           "hypr".source = link "${configDir}/hypr";
+          "noctalia".source = link "${configDir}/noctalia";
+          "qBittorrent".source = link "${configDir}/qBittorrent";
 
           "gpu-screen-recorder/config".source = link "${configDir}/gpu-screen-recorder/config";
           "Dopamine/config.json" = {

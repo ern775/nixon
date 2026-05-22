@@ -1,0 +1,12 @@
+{
+  "notes": [
+    {
+      "id": "1776925405629",
+      "title": "Untitled Note",
+      "content": "- buzzer mesafeye göre az ya da çok ses çıkarması (PWM)\n- araç hızına göre buzzer ötme mesafesi değişmesi, demoda göstermek için manual hız arttırma gerekli (araç durduğunda ötmeyebilir)\n- wifi integrasyonu, her buzzer öttüğünde ne kadar öttüğü, aracın hızı, saat gibi verileri kaydeden bir web ui\n- kör nokta başı sensör sayısı arttırarak kör noktadaki objenin yaklaşık olarak nerede olduğunu gösterme\n- 2 farklı kör noktadan gelen verileri birleştirerek tırın yanındaki objenin tıra göre nasıl hareket ettiğini tespit etme (bisiklet yandan geçti, bisiklet kör noktada sürüyor)",
+      "modifiedAt": "2026-04-23T06:29:31.149Z"
+    }
+  ],
+  "showCountInBar": false,
+  "count": 1
+}
