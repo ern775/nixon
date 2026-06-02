@@ -29,5 +29,10 @@ in
     gpu-screen-recorder.enable = true;
     virt-manager.enable = true;
     localsend.enable = true;
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
   };
+  users.users.eren.extraGroups = [ "wireshark" ];
 }

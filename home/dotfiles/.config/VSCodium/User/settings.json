@@ -57,33 +57,21 @@
     "qt-qml.qmlls.useQmlImportPathEnvVar": true,
     "qt-qml.doNotAskForQmllsDownload": true,
     "qt-qml.qmlls.customExePath": "qmlls",
-    "qt-core.additionalQtPaths": [
-        {
-            "name": "Qt-6.10.2-linux-g++_from_PATH",
-            "path": "/run/current-system/sw/bin/qtpaths"
-        },
-        {
-            "name": "Qt-6.10.2-linux-g++_from_PATH",
-            "path": "/nix/store/9lf2mfhsk7s379mfsh8nqc4xabdg6dw6-qtbase-6.10.2/bin/qtpaths"
-        },
-        {
-            "name": "Qt-6.10.2-linux-g++_from_PATH",
-            "path": "/nix/store/w4q31b93w262q2b75ri3jc7m3xd4i31h-qtbase-6.10.2/bin/qtpaths"
-        },
-        {
-            "name": "Qt-6.10.2-linux-g++_from_PATH",
-            "path": "/nix/store/zr02g4db1jlwkjqywbm8xd2gz6vpgzsl-qt6-nero-env/bin/qtpaths"
-        },
-        {
-            "name": "Qt-6.11.0-linux-g++_from_PATH",
-            "path": "/nix/store/16wxyhp4a3gik8fqr3q1mpzmxn0z5ss7-qt6-nero-env/bin/qtpaths"
-        }
-    ],
     "Lua.workspace.library": [
         "/run/current-system/sw/share/hypr/stubs"
     ],
     "Lua.diagnostics.globals": [
         "hl"
     ],
-    "workbench.colorTheme": "Dark Modern"
+    "workbench.colorTheme": "Dark Modern",
+    "qt-core.additionalQtPaths": [
+        {
+            "name": "Qt-6.11.0-linux-g++-x86_64_from_PATH",
+            "path": "/nix/store/r61cxa63wa9d9183gazkgpaj6ab7vjn2-qt6-nero-env/bin/qtpaths"
+        },
+        {
+            "name": "Qt-6.11.0-linux-g++-x86_64_from_PATH",
+            "path": "/run/current-system/sw/bin/qtpaths"
+        }
+    ]
 }

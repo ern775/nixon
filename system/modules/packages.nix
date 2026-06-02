@@ -50,6 +50,11 @@ in
       xrdb
       wget
       waypipe
+      (kodi.withPackages (
+        kodiPkgs: with kodiPkgs; [
+          pvr-iptvsimple
+        ]
+      ))
     ];
     plasma6.excludePackages = with pkgs.kdePackages; [
       khelpcenter
