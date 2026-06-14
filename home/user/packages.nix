@@ -40,6 +40,8 @@ in
     cava
     # cobang
     custom-nixpkgs.dopamine
+    ddgr
+    drawy
     # pkgsStable.jamesdsp
     jdk
     fastfetch
@@ -108,31 +110,35 @@ in
     tor-browser
     umu-launcher
     # whatsapp-electron
+    w3m
     vlc
     yt-dlp
     xsettingsd
     zapzap
-    nero-umu
     # faugus-launcher
     # hayase
     custom-nixpkgs.jdownloader2
     # custom-nixpkgs.seanime-denshi
     # iloader
     vscode-fhs
+    zotero
+    custom-nixpkgs.nero-umu
     custom-nixpkgs.seanime.denshi
     custom-nixpkgs.gecit
     # my-hp-wmi-control-panel-tui
+    (llama-cpp.override { cudaSupport = true; })
+    lmstudio
   ];
 
   nixpkgs.overlays = [
     (final: prev: {
-      nero-umu = prev.nero-umu.overrideAttrs (old: {
-        src = inputs.nero-umu;
-        patches = (old.patches or [ ]) ++ [
-          ../../pkgs/nero-umu/custom-proton.patch
-          ../../pkgs/nero-umu/main.cpp.patch
-        ];
-      });
+      # nero-umu = prev.nero-umu.overrideAttrs (old: {
+      #   src = inputs.nero-umu;
+      #   patches = (old.patches or [ ]) ++ [
+      #     ../../pkgs/nero-umu/custom-proton.patch
+      #     ../../pkgs/nero-umu/main.cpp.patch
+      #   ];
+      # });
       handbrake = prev.handbrake.overrideAttrs (previous: {
         nativeBuildInputs = (previous.nativeBuildInputs or [ ]) ++ [ pkgs.autoAddDriverRunpath ];
       });

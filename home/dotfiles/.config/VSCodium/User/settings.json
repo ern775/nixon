@@ -73,5 +73,7 @@
             "name": "Qt-6.11.0-linux-g++-x86_64_from_PATH",
             "path": "/run/current-system/sw/bin/qtpaths"
         }
-    ]
+    ],
+    "terminal.integrated.initialHint": false,
+    "continue.showInlineTip": false
 }

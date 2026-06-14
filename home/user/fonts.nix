@@ -6,6 +6,7 @@
   };
 
   home.packages = with pkgs; [
+    corefonts
     ubuntu-classic
     unifont
     font-awesome
