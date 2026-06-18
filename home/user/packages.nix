@@ -111,6 +111,7 @@ in
     umu-launcher
     # whatsapp-electron
     w3m
+    magic-wormhole-rs
     vlc
     yt-dlp
     xsettingsd

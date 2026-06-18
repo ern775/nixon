@@ -27,7 +27,7 @@
     ./sudo.nix
     ./systemd.nix
     ./users.nix
-    # ./virtualisation.nix
+    ./virtualisation.nix
     # ./webdav.nix
 
     # ./silent-boot.nix
