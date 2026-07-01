@@ -55,6 +55,7 @@ in
     # hunspellDicts.tr_TR
     intel-gpu-tools
     intel-undervolt
+    gale
     gh
     godot
     gpu-screen-recorder
@@ -93,10 +94,13 @@ in
     # prismlauncher
     protontricks
     protonup-qt
+    proton-vpn-cli
     # pkgsStable.protonvpn-gui
+    reco
     qbittorrent
     # qemu
-    # qtscrcpy
+    qtscrcpy
+    scrcpy
     sgdboop
     signal-desktop
     # steamtinkerlaunch
@@ -122,13 +126,11 @@ in
     # custom-nixpkgs.seanime-denshi
     # iloader
     vscode-fhs
-    zotero
-    custom-nixpkgs.nero-umu
+    # zotero
     custom-nixpkgs.seanime.denshi
     custom-nixpkgs.gecit
     # my-hp-wmi-control-panel-tui
     (llama-cpp.override { cudaSupport = true; })
-    lmstudio
   ];
 
   nixpkgs.overlays = [
@@ -148,6 +150,9 @@ in
         pcaudiolibSupport = false;
         sonicSupport = false;
       };
+      # vesktop = prev.vesktop.override {
+      #   pnpm_10_29_2 = final.pnpm_10;
+      # };
       # zapzap = prev.zapzap.overrideAttrs (old: {
       #   buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.qt6.qtbase ];
       # });

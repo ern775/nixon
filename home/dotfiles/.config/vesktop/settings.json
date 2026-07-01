@@ -19,5 +19,9 @@
         "ignoreInputMedia": true,
         "ignoreDevices": true,
         "deviceSelect": false
-    }
+    },
+    "spellCheckLanguages": [
+        "en-GB",
+        "en"
+    ]
 }

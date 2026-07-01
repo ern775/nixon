@@ -13,6 +13,10 @@
 
   nix = {
     settings = {
+      trusted-users = [
+        "root"
+        "eren"
+      ];
       experimental-features = [
         "nix-command"
         "flakes"

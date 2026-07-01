@@ -1,8 +1,11 @@
 [Favorites-org.kde.plasma.kickoff.favorites.instance-3-061fff6b-d515-4671-9de5-7b7b4449a77c]
 ordering=applications:systemsettings.desktop,applications:vlc.desktop,applications:protonvpn-app.desktop,applications:steam.desktop,applications:com.rtosta.zapzap.desktop,applications:com.usebottles.bottles.desktop,applications:vesktop.desktop,applications:dopamine.desktop
 
+[Favorites-org.kde.plasma.kickoff.favorites.instance-3-aa232663-7b7b-4c17-b31c-77da38f883fe]
+ordering=applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,preferred://browser,applications:xyz.TOS.Nero.desktop
+
 [Favorites-org.kde.plasma.kickoff.favorites.instance-3-global]
-ordering=applications:systemsettings.desktop,applications:vlc.desktop,applications:protonvpn-app.desktop,applications:steam.desktop,applications:com.rtosta.zapzap.desktop,applications:com.usebottles.bottles.desktop,applications:vesktop.desktop,applications:dopamine.desktop
+ordering=applications:systemsettings.desktop,applications:org.kde.dolphin.desktop,preferred://browser,applications:xyz.TOS.Nero.desktop
 
 [Favorites-org.kde.plasma.kickoff.favorites.instance-38-061fff6b-d515-4671-9de5-7b7b4449a77c]
 ordering=applications:systemsettings.desktop,applications:xyz.TOS.Nero.desktop,applications:com.rtosta.zapzap.desktop,applications:vesktop.desktop,applications:steam.desktop,applications:dopamine.desktop,applications:vlc.desktop,applications:jdownloader2.desktop

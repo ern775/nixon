@@ -6,8 +6,9 @@
   ...
 }:
 let
-  # system = "x86_64-linux";
+  system = "x86_64-linux";
   # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
+  custom-nixpkgs = inputs.custom-nixpkgs.packages.${system};
   # victus-control = pkgs.callPackage ../../pkgs/victus-control/package.nix { };
   homeConfig = inputs.self.homeConfigurations.eren.config;
 in
@@ -50,6 +51,7 @@ in
       xrdb
       wget
       waypipe
+      custom-nixpkgs.nero-umu
       (kodi.withPackages (
         kodiPkgs: with kodiPkgs; [
           pvr-iptvsimple

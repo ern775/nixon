@@ -25,19 +25,29 @@
       ];
     };
   };
-  # services.openssh = {
-  #   enable = true;
-  #   ports = [ 22 ];
-  #   openFirewall = true;
-  #   settings = {
-  #     PasswordAuthentication = true;
-  #     # AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
-  #     UseDns = true;
-  #     X11Forwarding = false;
-  #     PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-  #   };
-  # };
-  # services.fail2ban.enable = true;
+  services.openssh = {
+    enable = true;
+    ports = [ 49339 ];
+    openFirewall = true;
+    settings = {
+      PasswordAuthentication = false;
+      # AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+      UseDns = true;
+      KbdInteractiveAuthentication = false;
+      GatewayPorts = "clientspecified";
+      UsePAM = true;
+      challengeResponseAuthentication = false;
+      X11Forwarding = false;
+      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+    };
+  };
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxHGhQag3zbvIfVdr56A1RUK8jWqmlXxdtYq9rObb/u nix-on-droid"
+  ];
+  users.users.eren.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxHGhQag3zbvIfVdr56A1RUK8jWqmlXxdtYq9rObb/u nix-on-droid"
+  ];
+  services.fail2ban.enable = true;
   # systemd.services.sshd.wantedBy = lib.mkForce [ ];
   # services.zerotierone = {
   #   enable = true;

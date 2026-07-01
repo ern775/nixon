@@ -102,5 +102,6 @@
     })
     kdePackages.kirigami.unwrapped
     udiskie
+    playerctl
   ];
 }
