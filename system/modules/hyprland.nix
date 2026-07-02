@@ -63,6 +63,8 @@
     ];
   };
 
+  users.users.eren.extraGroups = [ "input" ];
+
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
   services.power-profiles-daemon.enable = true;
@@ -103,5 +105,7 @@
     kdePackages.kirigami.unwrapped
     udiskie
     playerctl
+    evtest
+    evtest-qt
   ];
 }
