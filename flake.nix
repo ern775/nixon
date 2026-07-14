@@ -29,7 +29,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     custom-nixpkgs = {
-      url = "github:ern775/custom-nixpkgs";
+      url = "path:/home/eren/Git-Projects/custom-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dw-proton = {

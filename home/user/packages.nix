@@ -86,7 +86,7 @@ in
     nvfetcher
     obsidian
     onlyoffice-desktopeditors
-    # opus-tools
+    opus-tools
     patchutils
     # parabolic
     # pavucontrol

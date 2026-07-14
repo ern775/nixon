@@ -73,7 +73,7 @@
       hyprland.hyprpaper.enable = false;
       hyprpaper.enable = false;
       hyprlock.enable = false;
-      hyprlock.useWallpaper = false;
+      hyprlock.image.enable = false;
       hyprpanel.enable = false;
       waybar.enable = false;
       kde.enable = false;

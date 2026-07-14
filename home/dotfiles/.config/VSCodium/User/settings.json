@@ -64,20 +64,11 @@
         "hl"
     ],
     "workbench.colorTheme": "Dark Modern",
+    "terminal.integrated.initialHint": false,
     "qt-core.additionalQtPaths": [
         {
-            "name": "Qt-6.11.0-linux-g++-x86_64_from_PATH",
-            "path": "/nix/store/r61cxa63wa9d9183gazkgpaj6ab7vjn2-qt6-nero-env/bin/qtpaths"
-        },
-        {
-            "name": "Qt-6.11.0-linux-g++-x86_64_from_PATH",
-            "path": "/run/current-system/sw/bin/qtpaths"
-        },
-        {
             "name": "Qt-6.11.1-linux-g++-x86_64_from_PATH",
-            "path": "/nix/store/5c7frgn449300yghy3czc1bp8dnajxim-qt6-nero-env/bin/qtpaths"
+            "path": "/run/current-system/sw/bin/qtpaths"
         }
     ],
-    "terminal.integrated.initialHint": false,
-    "continue.showInlineTip": false
 }

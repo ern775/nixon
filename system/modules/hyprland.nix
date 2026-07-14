@@ -7,16 +7,16 @@
 {
   imports = [
     # inputs.noctalia.nixosModules.default
-    inputs.hyprland.nixosModules.default
+    # inputs.hyprland.nixosModules.default
   ];
   programs = {
     hyprland = {
       enable = true;
       # set the flake package
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      # make sure to also set the portal package, so that they are in sync
-      portalPackage =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      # # make sure to also set the portal package, so that they are in sync
+      # portalPackage =
+      #   inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
     # hyprlock.enable = true;
   };
@@ -102,6 +102,7 @@
       #   ../../pkgs/noctalia-shell/brightness.patch
       # ];
     })
+    # inputs.noctalia-v5.packages.${pkgs.stdenv.hostPlatform.system}.default
     kdePackages.kirigami.unwrapped
     udiskie
     playerctl

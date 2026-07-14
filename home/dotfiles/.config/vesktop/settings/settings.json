@@ -369,7 +369,11 @@
             "enabled": false
         },
         "NoReplyMention": {
-            "enabled": true
+            "enabled": true,
+            "userList": "1234567890123445,1234567890123445",
+            "shouldPingListed": true,
+            "inverseShiftReply": false,
+            "roleList": "1234567890123445,1234567890123445"
         },
         "NoServerEmojis": {
             "enabled": false
@@ -712,7 +716,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1782278439773
+        "settingsSyncVersion": 1783220188549
     },
     "eagerPatches": false,
     "uiElements": {

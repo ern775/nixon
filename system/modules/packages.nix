@@ -19,6 +19,7 @@ in
       appimage-run
       brightnessctl
       cpufrequtils
+      devenv
       exfatprogs
       file
       jq

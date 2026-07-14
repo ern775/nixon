@@ -734,7 +734,7 @@
     "ui": {
         "boxBorderEnabled": false,
         "fontDefault": "Noto Sans",
-        "fontDefaultScale": 1,
+        "fontDefaultScale": 0.97,
         "fontFixed": "monospace",
         "fontFixedScale": 1,
         "panelBackgroundOpacity": 0.7000000000000001,
