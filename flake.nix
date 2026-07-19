@@ -62,6 +62,7 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs =

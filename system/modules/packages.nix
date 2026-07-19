@@ -18,6 +18,7 @@ in
       alejandra
       appimage-run
       brightnessctl
+      cachix
       cpufrequtils
       devenv
       exfatprogs

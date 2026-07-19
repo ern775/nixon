@@ -16,6 +16,7 @@
     ./internationalisation.nix
     # ./ios.nix
     ./journal.nix
+    ./minecraft.nix
     # ./nbfc.nix
     ./networking.nix
     ./packages.nix

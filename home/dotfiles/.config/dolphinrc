@@ -1,5 +1,8 @@
 MenuBar=Disabled
 
+[CompactMode]
+PreviewSize=80
+
 [ContentDisplay]
 DirectorySizeMode=ContentSize
 RecursiveDirectorySizeLimit=15

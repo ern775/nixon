@@ -48,7 +48,24 @@ in
     ffmpeg-full
     firefox
     fzf
-    handbrake
+    (pkgsStable.handbrake.overrideAttrs
+    {
+      nativeBuildInputs = [
+        autoconf
+        automake
+        libtool
+        m4
+        pkg-config
+        python3
+        appstream
+        desktop-file-utils
+        intltool
+        meson
+        ninja
+        wrapGAppsHook4
+        autoAddDriverRunpath
+      ];
+    })
     # haruna
     hunspell
     # hunspellDicts.en-gb-ise
@@ -91,7 +108,7 @@ in
     # parabolic
     # pavucontrol
     picard
-    # prismlauncher
+    prismlauncher
     protontricks
     protonup-qt
     proton-vpn-cli
