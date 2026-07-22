@@ -25,9 +25,6 @@ let
   # iloader = pkgs.callPackage ../../pkgs/iloader/package.nix { };
   # whatsapp-electron = pkgs.callPackage ../../pkgs/whatsapp-electron/package.nix { };
   # seanime = pkgs.callPackage ../../pkgs/seanime/package.nix { };
-  my-hp-wmi-control-panel-tui = pkgs.callPackage ../../pkgs/my-hp-wmi-control-panel-tui/package.nix {
-    inherit inputs;
-  };
 in
 {
   home.packages = with pkgs; [
@@ -39,8 +36,7 @@ in
     byedpi
     cava
     # cobang
-    custom-nixpkgs.dopamine
-    ddgr
+    # ddgr
     drawy
     # pkgsStable.jamesdsp
     jdk
@@ -48,24 +44,6 @@ in
     ffmpeg-full
     firefox
     fzf
-    (pkgsStable.handbrake.overrideAttrs
-    {
-      nativeBuildInputs = [
-        autoconf
-        automake
-        libtool
-        m4
-        pkg-config
-        python3
-        appstream
-        desktop-file-utils
-        intltool
-        meson
-        ninja
-        wrapGAppsHook4
-        autoAddDriverRunpath
-      ];
-    })
     # haruna
     hunspell
     # hunspellDicts.en-gb-ise
@@ -108,7 +86,6 @@ in
     # parabolic
     # pavucontrol
     picard
-    prismlauncher
     protontricks
     protonup-qt
     proton-vpn-cli
@@ -139,13 +116,16 @@ in
     zapzap
     # faugus-launcher
     # hayase
-    custom-nixpkgs.jdownloader2
     # custom-nixpkgs.seanime-denshi
     # iloader
     vscode-fhs
     # zotero
     custom-nixpkgs.seanime.denshi
     custom-nixpkgs.gecit
+    custom-nixpkgs.dopamine
+    custom-nixpkgs.jdownloader2
+    custom-nixpkgs.handbrake
+    custom-nixpkgs.prismlauncher
     # my-hp-wmi-control-panel-tui
     (llama-cpp.override { cudaSupport = true; })
   ];

@@ -10,11 +10,7 @@
     };
     stylix = {
       url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nero-umu = {
-      url = "github:ern775/Nero-umu";
-      flake = false;
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     # dopamine = {
     #   url = "https://github.com/digimezzo/dopamine/releases/download/v3.0.2/Dopamine-3.0.2.AppImage";
@@ -30,12 +26,12 @@
     # };
     custom-nixpkgs = {
       url = "path:/home/eren/Git-Projects/custom-nixpkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
-    dw-proton = {
-      url = "github:imaviso/dwproton-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # dw-proton = {
+    #   url = "github:imaviso/dwproton-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     # zen-browser = {
     #   url = "github:0xc000022070/zen-browser-flake";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -48,19 +44,15 @@
       url = "github:TUXOV/hp-wmi-fan-and-backlight-control";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    victus-tui = {
-      url = "path:/home/eren/Git-Projects/my-hp-wmi-control-panel-tui";
-      flake = false;
-    };
     # nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     hyprland.url = "github:hyprwm/Hyprland";
     noctalia = {
       url = "github:noctalia-dev/noctalia/legacy-v4";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia-v5 = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:noctalia-dev/noctalia/cachix";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
