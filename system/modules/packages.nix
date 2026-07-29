@@ -54,11 +54,9 @@ in
       wget
       waypipe
       custom-nixpkgs.nero-umu
-      (kodi.withPackages (
-        kodiPkgs: with kodiPkgs; [
-          pvr-iptvsimple
-        ]
-      ))
+      libcamera
+      v4l-utils
+      libcamera-qcam
     ];
     plasma6.excludePackages = with pkgs.kdePackages; [
       khelpcenter

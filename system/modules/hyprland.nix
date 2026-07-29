@@ -97,16 +97,17 @@
     hyprmon
     hyprshutdown
     quickshell
-    (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs {
-      # patches = [
-      #   ../../pkgs/noctalia-shell/brightness.patch
-      # ];
-    })
-    # inputs.noctalia-v5.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.noctalia-v5.packages.${pkgs.stdenv.hostPlatform.system}.default
     kdePackages.kirigami.unwrapped
     udiskie
     playerctl
-    evtest
-    evtest-qt
+    hicolor-icon-theme
+    kdePackages.breeze-icons
+  ];
+
+  environment.pathsToLink = [
+    "/share/icons"
+    "/share/pixmaps"
   ];
 }

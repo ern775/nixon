@@ -6,6 +6,11 @@
 }:
 {
   hardware = {
+    facter = {
+      enable = true;
+      reportPath = ./facter.json;
+      detected.camera.ipu6.enable = true;
+    };
     bluetooth = {
       enable = true;
       powerOnBoot = true;

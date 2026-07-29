@@ -38,6 +38,7 @@ in
     # cobang
     # ddgr
     drawy
+    element-desktop
     # pkgsStable.jamesdsp
     jdk
     fastfetch
@@ -108,7 +109,7 @@ in
     tor-browser
     umu-launcher
     # whatsapp-electron
-    w3m
+    # w3m
     magic-wormhole-rs
     vlc
     yt-dlp
@@ -128,6 +129,8 @@ in
     custom-nixpkgs.prismlauncher
     # my-hp-wmi-control-panel-tui
     (llama-cpp.override { cudaSupport = true; })
+    evtest
+    evtest-qt
   ];
 
   nixpkgs.overlays = [
