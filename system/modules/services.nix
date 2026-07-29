@@ -25,61 +25,67 @@
     };
     orca.enable = false;
     dbus.implementation = "broker";
-    byedpi = {
-      enable = true;
-      extraArgs = [
-        "--disorder=1"
-        "--tlsrec=1+s"
-      ];
-    };
-    # zapret = {
+    # byedpi = {
     #   enable = true;
-    #   httpSupport = false;
-    #   params = [
-    #     # eduroam - MSKU University
-    #     "--dpi-desync=fake --dpi-desync-ttl=4 --new"
-    #     # home wifi ttnet
-    #     "--hostspell=hoSt"
-    #     # "--dpi-desync=fakedsplit --dpi-desync-ttl=2 --orig-ttl=1 --orig-mod-start=s1 --orig-mod-cutoff=d1 --dpi-desync-split-pos=method+2 --dpi-desync-fakedsplit-mod=altorder=1"
-    #   ];
-    #   whitelist = [
-    #     "discord.com"
-    #     "gateway.discord.gg"
-    #     "cdn.discordapp.com"
-    #     # "discordapp.net"
-    #     # "discordapp.com"
-    #     "discord.gg"
-    #     # "media.discordapp.net"
-    #     # "images-ext-1.discordapp.net"
-    #     # "discord.app"
-    #     # "discord.media"
-    #     # "discordcdn.com"
-    #     # "discord.dev"
-    #     # "discord.new"
-    #     # "discord.gift"
-    #     # "discordstatus.com"
-    #     # "dis.gd"
-    #     # "discord.co"
-    #     # "discord-attachments-uploads-prd.storage.googleapis.com"
-    #     # "discord.design"
-    #     # "discord.gifts"
-    #     # "discord.store"
-    #     # "discord.status"
-    #     # "discord-activities.com"
-    #     # "discordactivities.com"
-    #     # "discordmerch.com"
-    #     # "discordpartygames.com"
-    #     # "discordsays.com"
-    #     # "discordsez.com"
-
-    #     "nyaa.si"
-    #     "nyaa.tracker.wf"
-    #     "exodus.desync.com"
-    #     "open.stealth.si"
-    #     "tracker.opentrackr.org"
-    #     "tracker.torrent.eu.org"
+    #   extraArgs = [
+    #     "--split=1"
+    #     "--disorder=3+s"
+    #     "--mod-http=h,d"
+    #     "--auto=torst"
+    #     "--tlsrec=1+s"
     #   ];
     # };
+    zapret = {
+      enable = true;
+      configureFirewall = true;
+      httpSupport = false;
+      udpSupport = true;
+      udpPorts = [ "50000-65535" ];
+      params = [
+        # # eduroam - MSKU University
+        # "--dpi-desync=fake --dpi-desync-ttl=4 --new"
+        # # home wifi ttnet
+        # "--hostspell=hoSt"
+        # # "--dpi-desync=fakedsplit --dpi-desync-ttl=2 --orig-ttl=1 --orig-mod-start=s1 --orig-mod-cutoff=d1 --dpi-desync-split-pos=method+2 --dpi-desync-fakedsplit-mod=altorder=1"
+      ];
+      whitelist = [
+        "discord.com"
+        "gateway.discord.gg"
+        "cdn.discordapp.com"
+        # "discordapp.net"
+        # "discordapp.com"
+        "discord.gg"
+        # "media.discordapp.net"
+        # "images-ext-1.discordapp.net"
+        # "discord.app"
+        # "discord.media"
+        # "discordcdn.com"
+        # "discord.dev"
+        # "discord.new"
+        # "discord.gift"
+        # "discordstatus.com"
+        # "dis.gd"
+        # "discord.co"
+        # "discord-attachments-uploads-prd.storage.googleapis.com"
+        # "discord.design"
+        # "discord.gifts"
+        # "discord.store"
+        # "discord.status"
+        # "discord-activities.com"
+        # "discordactivities.com"
+        # "discordmerch.com"
+        # "discordpartygames.com"
+        # "discordsays.com"
+        # "discordsez.com"
+
+        # "nyaa.si"
+        # "nyaa.tracker.wf"
+        # "exodus.desync.com"
+        # "open.stealth.si"
+        # "tracker.opentrackr.org"
+        # "tracker.torrent.eu.org"
+      ];
+    };
   };
 
   systemd.services.cloudflare-warp.serviceConfig.LogLevelMax = "notice"; # simply suppress all logs from warp
