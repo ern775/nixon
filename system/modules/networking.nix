@@ -55,19 +55,19 @@
   # };
   services.tailscale.enable = true;
 
-  services.open-webui = {
-    enable = true;
-    port = 8080;
-    host = "0.0.0.0"; # reachable from phone on same network
-    openFirewall = true; # poke the hole in the firewall automatically
+  # services.open-webui = {
+  #   enable = true;
+  #   port = 8080;
+  #   host = "0.0.0.0"; # reachable from phone on same network
+  #   openFirewall = true; # poke the hole in the firewall automatically
 
-    environment = {
-      # point at your llama-server
-      OPENAI_API_BASE_URLS = "http://127.0.0.1:6931/v1";
-      OPENAI_API_KEY = "none"; # llama-server doesn't need a real key
+  #   environment = {
+  #     # point at your llama-server
+  #     OPENAI_API_BASE_URLS = "http://127.0.0.1:6931/v1";
+  #     OPENAI_API_KEY = "none"; # llama-server doesn't need a real key
 
-      # for a home setup, disable login entirely
-      # WEBUI_AUTH = "false";
-    };
-  };
+  #     # for a home setup, disable login entirely
+  #     # WEBUI_AUTH = "false";
+  #   };
+  # };
 }
