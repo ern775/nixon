@@ -70,4 +70,38 @@
   #     # WEBUI_AUTH = "false";
   #   };
   # };
+  # services.jellyfin = {
+  #   enable = true;
+  #   openFirewall = true;
+  #   user = "eren";
+  # };
+  # services.qbittorrent = {
+  #   enable = true;
+  #   webuiPort = 40080;
+  #   user = "eren";
+  # };
+  # services.prowlarr = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
+  # services.flaresolverr = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
+  # services.radarr = {
+  #   enable = true;
+  #   openFirewall = true;
+  #   user = "eren";
+  # };
+  # systemd.services.radarr.serviceConfig.ProtectHome = lib.mkForce false;
+  # services.sonarr = {
+  #   enable = true;
+  #   openFirewall = true;
+  #   user = "eren";
+  # };
+  # systemd.services.sonarr.serviceConfig.ProtectHome = lib.mkForce false;
+  # services.seerr = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
 }

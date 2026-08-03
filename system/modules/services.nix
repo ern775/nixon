@@ -40,43 +40,39 @@
       configureFirewall = true;
       httpSupport = false;
       udpSupport = true;
-      udpPorts = [ "50000-65535" ];
+      udpPorts = [
+        "19294:19344"
+        "50000:65535"
+      ];
       params = [
         # # eduroam - MSKU University
         # "--dpi-desync=fake --dpi-desync-ttl=4 --new"
+
         # # home wifi ttnet
-        # "--hostspell=hoSt"
-        # # "--dpi-desync=fakedsplit --dpi-desync-ttl=2 --orig-ttl=1 --orig-mod-start=s1 --orig-mod-cutoff=d1 --dpi-desync-split-pos=method+2 --dpi-desync-fakedsplit-mod=altorder=1"
+        "--dpi-desync=fake"
+        "--dpi-desync-ttl=3"
+        "--dpi-desync-fooling=md5sig"
+        "--dpi-desync-any-protocol"
       ];
       whitelist = [
         "discord.com"
-        "gateway.discord.gg"
-        "cdn.discordapp.com"
-        # "discordapp.net"
-        # "discordapp.com"
+        "discordapp.com"
+        "discordapp.net"
         "discord.gg"
-        # "media.discordapp.net"
-        # "images-ext-1.discordapp.net"
-        # "discord.app"
-        # "discord.media"
-        # "discordcdn.com"
-        # "discord.dev"
-        # "discord.new"
-        # "discord.gift"
-        # "discordstatus.com"
-        # "dis.gd"
-        # "discord.co"
-        # "discord-attachments-uploads-prd.storage.googleapis.com"
-        # "discord.design"
-        # "discord.gifts"
-        # "discord.store"
-        # "discord.status"
-        # "discord-activities.com"
-        # "discordactivities.com"
-        # "discordmerch.com"
-        # "discordpartygames.com"
-        # "discordsays.com"
-        # "discordsez.com"
+        "discord.media"
+        "discord.gift"
+        "discord.gifts"
+        "discord.new"
+        "discord.store"
+        "discord.tools"
+        "discord.dev"
+        "discordstatus.com"
+        "discordactivities.com"
+        "discord-activities.com"
+        "discordsays.com"
+        "discordsez.com"
+        "discordpartygames.com"
+        "dis.gd"
 
         # "nyaa.si"
         # "nyaa.tracker.wf"

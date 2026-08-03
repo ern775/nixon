@@ -707,6 +707,12 @@
         },
         "TenorGifSearch": {
             "enabled": false
+        },
+        "ContextMenuAPI": {
+            "enabled": true
+        },
+        "NoticesAPI": {
+            "enabled": true
         }
     },
     "notifications": {
@@ -719,7 +725,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1785157991243
+        "settingsSyncVersion": 1785657209291
     },
     "eagerPatches": false,
     "uiElements": {
