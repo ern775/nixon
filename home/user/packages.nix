@@ -142,9 +142,9 @@ in
       #     ../../pkgs/nero-umu/main.cpp.patch
       #   ];
       # });
-      handbrake = prev.handbrake.overrideAttrs (previous: {
-        nativeBuildInputs = (previous.nativeBuildInputs or [ ]) ++ [ pkgs.autoAddDriverRunpath ];
-      });
+      # handbrake = prev.handbrake.overrideAttrs (previous: {
+      #   nativeBuildInputs = (previous.nativeBuildInputs or [ ]) ++ [ pkgs.autoAddDriverRunpath ];
+      # });
       espeak = prev.espeak.override {
         mbrolaSupport = false;
         pcaudiolibSupport = false;

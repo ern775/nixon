@@ -76,7 +76,6 @@
       hyprpaper.enable = false;
       hyprlock.enable = false;
       hyprlock.image.enable = false;
-      hyprpanel.enable = false;
       waybar.enable = false;
       kde.enable = false;
       mako.enable = true;

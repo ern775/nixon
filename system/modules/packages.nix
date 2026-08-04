@@ -71,14 +71,14 @@ in
     sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
-  environment.etc."current-system-packages".text =
-    let
-      systemPackages = map (p: "${p.name}") config.environment.systemPackages;
-      homePackages = map (p: "${p.name}") homeConfig.home.packages;
-      sorted = builtins.sort builtins.lessThan (systemPackages ++ homePackages);
-      formatted = pkgs.lib.strings.concatLines sorted;
-    in
-    formatted;
+  # environment.etc."current-system-packages".text =
+  #   let
+  #     systemPackages = map (p: "${p.name}") config.environment.systemPackages;
+  #     homePackages = map (p: "${p.name}") homeConfig.home.packages;
+  #     sorted = builtins.sort builtins.lessThan (systemPackages ++ homePackages);
+  #     formatted = pkgs.lib.strings.concatLines sorted;
+  #   in
+  #   formatted;
 
   nixpkgs.overlays = [
     (final: prev: {
