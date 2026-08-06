@@ -22,6 +22,7 @@
       enable = true;
       allowedTCPPorts = [
         6931
+        43211
       ];
     };
   };
@@ -58,15 +59,13 @@
   # services.open-webui = {
   #   enable = true;
   #   port = 8080;
-  #   host = "0.0.0.0"; # reachable from phone on same network
-  #   openFirewall = true; # poke the hole in the firewall automatically
+  #   host = "0.0.0.0";
+  #   openFirewall = true;
 
   #   environment = {
-  #     # point at your llama-server
   #     OPENAI_API_BASE_URLS = "http://127.0.0.1:6931/v1";
-  #     OPENAI_API_KEY = "none"; # llama-server doesn't need a real key
+  #     OPENAI_API_KEY = "none";
 
-  #     # for a home setup, disable login entirely
   #     # WEBUI_AUTH = "false";
   #   };
   # };

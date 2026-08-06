@@ -532,12 +532,13 @@
             "enabled": false
         },
         "SpotifyControls": {
-            "enabled": false
+            "enabled": true,
+            "hoverControls": false
         },
         "SpotifyCrack": {
             "enabled": true,
             "noSpotifyAutoPause": true,
-            "keepSpotifyActivityOnIdle": false
+            "keepSpotifyActivityOnIdle": true
         },
         "SpotifyShareCommands": {
             "enabled": false
@@ -725,7 +726,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1785657209291
+        "settingsSyncVersion": 1785906040259
     },
     "eagerPatches": false,
     "uiElements": {

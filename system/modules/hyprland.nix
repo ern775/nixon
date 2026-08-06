@@ -12,7 +12,7 @@
   programs = {
     hyprland = {
       enable = true;
-      # set the flake package
+      # # set the flake package
       # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       # # make sure to also set the portal package, so that they are in sync
       # portalPackage =
@@ -20,6 +20,22 @@
     };
     # hyprlock.enable = true;
   };
+
+  # systemd.user.services.xdg-desktop-portal = {
+  #   unitConfig = {
+  #     Requisite = "";
+  #   };
+  # };
+
+  systemd.user.targets.hyprland-session = {
+    unitConfig = {
+      Description = "Hyprland Session";
+      BindsTo = [ "graphical-session.target" ];
+      Wants = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+    };
+  };
+
   services.displayManager.defaultSession = "hyprland";
 
   services.udev.extraRules =
@@ -109,5 +125,23 @@
   environment.pathsToLink = [
     "/share/icons"
     "/share/pixmaps"
+  ];
+
+  nixpkgs.overlays = [
+    # REVIEW: drop once
+    # https://github.com/NixOS/nixpkgs/pull/549253
+    # lands on nixos-unstable
+    (final: prev: {
+      hyprland = prev.hyprland.overrideAttrs (oldAttrs: {
+        postPatch = ''
+          # Relax glaze dependency
+          # FIXME: this shouldn't be needed once the upstream code will adopt it
+          substituteInPlace CMakeLists.txt start/CMakeLists.txt hyprpm/CMakeLists.txt \
+            --replace-fail "glaze 7...<8" "glaze"
+
+        ''
+        + (oldAttrs.postPatch or "");
+      });
+    })
   ];
 }
