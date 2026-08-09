@@ -7,14 +7,15 @@ let
       home-manager
       nixfmt-tree
       git
-      nixos-rebuild
     ];
 
     text = ''
+      set -e
+
       pushd ~/system
 
       treefmt
-      git diff -U0 --staged
+      git diff --staged
 
       read -rp "Press Enter to continue..."
 
