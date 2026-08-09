@@ -5,5 +5,6 @@
     ./fonts.nix
     ./nix-index.nix
     ./packages.nix
+    ./rebuild.nix
   ];
 }

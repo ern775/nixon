@@ -12,6 +12,7 @@
     # VDPAU_DRIVER = "nvidia";
     # QT_QPA_PLATFORMTHEME = "qt6ct";
     DXVK_HUD = "compiler";
+    MESA_SHADER_CACHE_MAX_SIZE = "10G";
     __GL_SHADER_DISK_CACHE = "1";
     __GL_SHADER_DISK_CACHE_SIZE = "10737418240";
   };

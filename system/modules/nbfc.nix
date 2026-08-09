@@ -1,9 +1,11 @@
 {
   pkgs,
   ...
-}: let
+}:
+let
   command = "bin/nbfc_service --config-file '/home/eren/.config/nbfc.json'";
-in {
+in
+{
   environment.systemPackages = with pkgs; [
     nbfc-linux
   ];
@@ -11,9 +13,9 @@ in {
     enable = true;
     description = "NoteBook FanControl service";
     serviceConfig.Type = "simple";
-    path = [pkgs.kmod];
+    path = [ pkgs.kmod ];
     script = "${pkgs.nbfc-linux}/${command}";
-   
-    wantedBy = ["multi-user.target"];
+
+    wantedBy = [ "multi-user.target" ];
   };
 }

@@ -1,4 +1,4 @@
-  {
+{
   pkgs,
   lib,
   kernel ? pkgs.linuxPackages_latest.kernel,

@@ -36,7 +36,8 @@
           "kactivitymanagerd-statsrc".source = link "${configDir}/kactivitymanagerd-statsrc";
           "kcminputrc".source = link "${configDir}/kcminputrc";
           "touchpadxlibinputrc".source = link "${configDir}/touchpadxlibinputrc";
-          "color/icc/devices/display/Victus15.icm".source = link "${configDir}/color/icc/devices/display/Victus15.icm";
+          "color/icc/devices/display/Victus15.icm".source =
+            link "${configDir}/color/icc/devices/display/Victus15.icm";
         };
     };
 }
