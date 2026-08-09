@@ -5,6 +5,7 @@ let
 
     runtimeInputs = with pkgs; [
       git
+      home-manager
     ];
 
     text = ''
@@ -20,13 +21,18 @@ let
       grep -A 2 '^•' "$changes_file" > "$changes_file.tmp" || true
       mv "$changes_file.tmp" "$changes_file"
 
-      git add flake.lock flake.nix
+      git diff --quiet -- flake.lock flake.nix && echo "No flake changes, skipping rebuild and commit."
+      git diff --quiet -- flake.lock flake.nix || {
+        echo "Rebuilding..."
+        home-manager switch -b backup && sudo /run/current-system/sw/bin/nixos-rebuild switch
 
-      date_line="$(date '+%Y-%m-%d %H:%M:%S')"
-      commit_msg="$(printf 'flake update (%s)\n\n%s' "$date_line" "$(cat "$changes_file")")"
+        git add flake.lock flake.nix
 
-      git diff --staged --quiet && echo "No changes to commit."
-      git diff --staged --quiet || git commit -m "$commit_msg"
+        date_line="$(date '+%Y-%m-%d %H:%M:%S')"
+        commit_msg="$(printf 'flake update %s\n\n%s' "$date_line" "$(cat "$changes_file")")"
+
+        git commit -m "$commit_msg"
+      }
 
       rm -f "$changes_file"
 
