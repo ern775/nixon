@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 {
   networking = {
     hostName = "nixos";
@@ -55,6 +60,20 @@
   #   joinNetworks = [ "68BEA79ACFDBC771" ];
   # };
   services.tailscale.enable = true;
+  systemd.services.tailscaled = {
+    after =
+      # Order after NetworkManager-wait-online so an nm-online hang during a
+      # NetworkManager restart can't stall nixos-rebuild mid-activation.
+      # https://github.com/NixOS/nixpkgs/issues/180175
+      lib.optional config.networking.networkmanager.enable "NetworkManager-wait-online.service"
+      # Don't start until the network is online: otherwise tailscaled can claim
+      # MagicDNS (100.100.100.100) before it can reach the control plane and
+      # break DNS until it reconnects. Needs both `wants` and `after` — an
+      # `after` edge alone won't pull the target into the boot transaction.
+      # https://github.com/NixOS/nixpkgs/issues/527403
+      ++ [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+  };
 
   # services.open-webui = {
   #   enable = true;

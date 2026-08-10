@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 {
   services = {
     fwupd.enable = true;
@@ -82,6 +87,9 @@
         # "tracker.torrent.eu.org"
       ];
     };
+  };
+  systemd.services.zapret.serviceConfig = {
+    RuntimeMaxSec = lib.mkForce "3h";
   };
 
   systemd.services.cloudflare-warp.serviceConfig.LogLevelMax = "notice"; # simply suppress all logs from warp
