@@ -6,6 +6,7 @@
 }:
 {
   hardware = {
+    intel-gpu-tools.enable = true;
     # facter = {
     #   enable = true;
     #   reportPath = ./facter.json;
@@ -64,5 +65,12 @@
   powerManagement = {
     enable = true;
     cpufreq.min = 400000;
+  };
+
+  security.wrappers.btop = {
+    owner = "root";
+    group = "root";
+    source = "${pkgs.btop}/bin/btop";
+    capabilities = "cap_perfmon+ep";
   };
 }

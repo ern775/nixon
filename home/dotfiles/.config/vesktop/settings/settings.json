@@ -452,7 +452,8 @@
         "ReplaceGoogleSearch": {
             "enabled": true,
             "customEngineName": "DuckDuckGo",
-            "customEngineURL": "https://duckduckgo.com/?q="
+            "customEngineURL": "https://duckduckgo.com/?q=",
+            "replacementEngine": "off"
         },
         "ReplyTimestamp": {
             "enabled": false
@@ -625,7 +626,8 @@
         },
         "ViewRaw": {
             "enabled": true,
-            "clickMethod": "Left"
+            "clickMethod": "Left",
+            "messageContextMenu": false
         },
         "VoiceDownload": {
             "enabled": true
@@ -726,7 +728,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1785906040259
+        "settingsSyncVersion": 1786446995488
     },
     "eagerPatches": false,
     "uiElements": {

@@ -49,7 +49,6 @@ in
     hunspell
     # hunspellDicts.en-gb-ise
     # hunspellDicts.tr_TR
-    intel-gpu-tools
     intel-undervolt
     gale
     gh
