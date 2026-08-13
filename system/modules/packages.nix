@@ -91,6 +91,9 @@ in
         pcaudiolibSupport = false;
         sonicSupport = false;
       };
+      waypipe = prev.waypipe.override {
+        ffmpeg = prev.ffmpeg_8;
+      };
     })
   ];
 }
