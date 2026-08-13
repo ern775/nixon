@@ -18,6 +18,10 @@ in
       alejandra
       appimage-run
       brightnessctl
+      btop
+      (writeShellScriptBin "btop-cuda" ''
+        exec ${btop-cuda}/bin/btop --config ~/.config/btop/btop-cuda.conf "$@"
+      '')
       cachix
       cpufrequtils
       devenv

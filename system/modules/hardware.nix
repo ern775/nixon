@@ -67,10 +67,30 @@
     cpufreq.min = 400000;
   };
 
-  security.wrappers.btop = {
-    owner = "root";
-    group = "root";
-    source = "${pkgs.btop}/bin/btop";
-    capabilities = "cap_perfmon+ep";
+  services.udev.extraRules = ''
+    SUBSYSTEM=="powercap", ACTION=="add|change", RUN+="${pkgs.coreutils}/bin/chmod -R o+r /sys%p"
+  '';
+
+  security.wrappers = {
+    btop = {
+      owner = "root";
+      group = "root";
+      capabilities = "cap_perfmon+ep";
+      source = "${pkgs.btop}/bin/btop";
+    };
+    btop-cuda = {
+      owner = "root";
+      group = "root";
+      capabilities = "cap_perfmon+ep";
+      source = "${(pkgs.writeShellScriptBin "btop-cuda" ''
+        exec ${pkgs.btop-cuda}/bin/btop --config ~/.config/btop/btop-cuda.conf "$@"
+      '')}/bin/btop-cuda";
+    };
+    mangohud = {
+      owner = "root";
+      group = "root";
+      capabilities = "cap_perfmon+ep";
+      source = "${pkgs.mangohud}/bin/mangohud";
+    };
   };
 }
