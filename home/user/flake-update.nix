@@ -16,7 +16,7 @@ let
       changes_file=/tmp/flake-changes
 
       echo "Updating flake inputs..."
-      nix flake update 2>&1 | tee "$changes_file"
+      nix flake update 2> "$changes_file" || { cat "$changes_file"; exit 1; }
 
       grep -A 2 '^•' "$changes_file" > "$changes_file.tmp" || true
       mv "$changes_file.tmp" "$changes_file"
@@ -29,9 +29,11 @@ let
         git add flake.lock flake.nix
 
         date_line="$(date '+%Y-%m-%d %H:%M:%S')"
-        commit_msg="$(printf 'flake update %s\n\n%s' "$date_line" "$(cat "$changes_file")")"
-
-        git commit -m "$commit_msg"
+        {
+          echo "flake update $date_line"
+          echo
+          cat "$changes_file"
+        } | git commit -F -
       }
 
       rm -f "$changes_file"
