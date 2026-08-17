@@ -6,9 +6,9 @@
   hardware.graphics.extraPackages = with pkgs; [
     intel-media-driver
     # intel-vaapi-driver
-    # intel-compute-runtime
-    # vpl-gpu-rt
-    # libvdpau-va-gl
+    intel-compute-runtime
+    vpl-gpu-rt
+    intel-ocl
   ];
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";

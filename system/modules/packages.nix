@@ -38,6 +38,7 @@ in
       libarchive
       lshw
       man-pages
+      moonlight-qt
       neovim
       nixd
       nixfmt
@@ -58,9 +59,6 @@ in
       wget
       waypipe
       custom-nixpkgs.nero-umu
-      libcamera
-      v4l-utils
-      libcamera-qcam
     ];
     plasma6.excludePackages = with pkgs.kdePackages; [
       khelpcenter
@@ -92,6 +90,9 @@ in
         sonicSupport = false;
       };
       waypipe = prev.waypipe.override {
+        ffmpeg = prev.ffmpeg_8;
+      };
+      moonlight-qt = prev.moonlight-qt.override {
         ffmpeg = prev.ffmpeg_8;
       };
     })
