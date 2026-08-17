@@ -89,12 +89,12 @@ in
         pcaudiolibSupport = false;
         sonicSupport = false;
       };
-      waypipe = prev.waypipe.override {
-        ffmpeg = prev.ffmpeg_8;
-      };
-      moonlight-qt = prev.moonlight-qt.override {
-        ffmpeg = prev.ffmpeg_8;
-      };
+      # waypipe = prev.waypipe.override {
+      #   ffmpeg = prev.ffmpeg_8;
+      # };
+      # moonlight-qt = prev.moonlight-qt.override {
+      #   ffmpeg = prev.ffmpeg_8;
+      # };
     })
   ];
 }
