@@ -26,9 +26,11 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [
+        445
         6931
         43211
       ];
+      trustedInterfaces = [ "tailscale0" ];
     };
   };
   services.openssh = {

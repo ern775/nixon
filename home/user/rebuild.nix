@@ -12,6 +12,8 @@ let
     text = ''
       set -e
 
+      trap 'echo "Interrupted, aborting."; exit 1' INT
+
       pushd ~/system
 
       treefmt
