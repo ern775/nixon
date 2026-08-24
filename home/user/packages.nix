@@ -67,7 +67,7 @@ in
     wayland-utils
     # kile
     # (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
-    libreoffice-qt6-fresh
+    libreoffice-qt6
     # lutris
     mangohud
     media-downloader
@@ -148,6 +148,10 @@ in
         mbrolaSupport = false;
         pcaudiolibSupport = false;
         sonicSupport = false;
+      };
+      freerdp = prev.freerdp.override {
+        withWaylandSupport = true;
+        openh264 = null;
       };
       # vesktop = prev.vesktop.override {
       #   pnpm_10_29_2 = final.pnpm_10;

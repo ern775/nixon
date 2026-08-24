@@ -17,9 +17,8 @@ let
     gpumax = "sudo nvidia-smi -lgc 0,3360 && sudo nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=240";
     intelWatt = "sudo chmod o+r /sys/class/powercap/intel-rapl\:*/energy_uj";
     protonSymlinkUpdate = ''
-      find ~/.local/share/Steam/compatibilitytools.d -type l \( -name "GE-Proton*" -o -name "DW-Proton" \) -delete
+      find ~/.local/share/Steam/compatibilitytools.d -type l \( -name "GE-Proton" -o -name "DW-Proton" -o -name "Proton-Cachyos" \) -delete
       TOOLS_PATHS=`steam-run printenv STEAM_EXTRA_COMPAT_TOOLS_PATHS`
-      ln -sfn $TOOLS_PATHS[(ws[:])1] $HOME/.local/share/Steam/compatibilitytools.d/${pkgs.proton-ge-bin.version}
       ln -sfn $TOOLS_PATHS[(ws[:])1] $HOME/.local/share/Steam/compatibilitytools.d/GE-Proton
       ln -sfn $TOOLS_PATHS[(ws[:])2] $HOME/.local/share/Steam/compatibilitytools.d/DW-Proton
       ln -sfn $TOOLS_PATHS[(ws[:])3] $HOME/.local/share/Steam/compatibilitytools.d/Proton-Cachyos

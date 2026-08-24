@@ -21,15 +21,16 @@ VisibleRoles=Icons_text,Icons_size
 1920x1080 screen: Width=1256
 
 [General]
+FilterBar=true
 GlobalViewProps=false
 OpenExternallyCalledFolderInNewTab=true
-ShowSelectionToggle=false
 ShowStatusBar=FullWidth
 ShowZoomSlider=false
 Version=202
 ViewPropsTimestamp=2026,5,13,17,13,54.946
 
 [IconsMode]
+IconSize=80
 PreviewSize=80
 
 [InformationPanel]
