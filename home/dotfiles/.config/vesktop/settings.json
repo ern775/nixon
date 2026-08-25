@@ -23,5 +23,6 @@
     "spellCheckLanguages": [
         "en-GB",
         "en"
-    ]
+    ],
+    "webRTCIPHandlingPolicy": "default_public_and_private_interfaces"
 }
