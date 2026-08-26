@@ -6,7 +6,7 @@
     ./flake-update.nix
     ./fonts.nix
     ./nix-index.nix
-    ./packages.nix
+    # ./packages.nix
     ./rebuild.nix
   ];
 }

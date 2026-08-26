@@ -89,42 +89,42 @@
               targetDevice = "bluez_output.24_09_12_B3_35_A8.1";
             }
           );
-          "clock-rate" = {
-            "context.properties" = {
-              "default.clock.rate" = 48000;
-              "default.clock.allowed-rates" = [
-                44100
-                48000
-                88200
-                96000
-              ];
-              "default.clock.min-quantum" = 1024;
-              "default.clock.max-quantum" = 2048;
-              "default.clock.quantum" = 1024;
-              "default.clock.quantum-limit" = 4096;
-              "default.clock.quantum-floor" = 1024;
-            };
-          };
+          # "clock-rate" = {
+          #   "context.properties" = {
+          #     "default.clock.rate" = 48000;
+          #     "default.clock.allowed-rates" = [
+          #       44100
+          #       48000
+          #       88200
+          #       96000
+          #     ];
+          #     "default.clock.min-quantum" = 1024;
+          #     "default.clock.max-quantum" = 2048;
+          #     "default.clock.quantum" = 1024;
+          #     "default.clock.quantum-limit" = 4096;
+          #     "default.clock.quantum-floor" = 1024;
+          #   };
+          # };
         };
-      extraConfig.pipewire-pulse."92-low-latency" = {
-        "pulse.properties" = {
-          # "pulse.default.format" = "S16";
-          # "pulse.fix.format" = "S16LE";
-          # "pulse.fix.rate" = "48000";
-          "pulse.min.frag" = "1024/48000"; # 1.3ms
-          # "pulse.min.req" = "1024/48000"; # 1.3ms
-          # "pulse.default.frag" = "64/48000"; # 1.3ms
-          # "pulse.default.req" = "64/48000"; # 1.3ms
-          # "pulse.max.req" = "64/48000"; # 1.3ms
-          "pulse.min.quantum" = "1024/48000"; # 1.3ms
-          # "pulse.max.quantum" = "64/48000"; # 1.3ms
-        };
-        # "stream.properties" = {
-        #   "node.latency" = "1024/48000"; # 1.3ms
-        #   "resample.quality" = 4;
-        #   "resample.disable" = false;
-        # };
-      };
+      # extraConfig.pipewire-pulse."92-low-latency" = {
+      #   "pulse.properties" = {
+      #     # "pulse.default.format" = "S16";
+      #     # "pulse.fix.format" = "S16LE";
+      #     # "pulse.fix.rate" = "48000";
+      #     "pulse.min.frag" = "1024/48000"; # 1.3ms
+      #     # "pulse.min.req" = "1024/48000"; # 1.3ms
+      #     # "pulse.default.frag" = "64/48000"; # 1.3ms
+      #     # "pulse.default.req" = "64/48000"; # 1.3ms
+      #     # "pulse.max.req" = "64/48000"; # 1.3ms
+      #     "pulse.min.quantum" = "1024/48000"; # 1.3ms
+      #     # "pulse.max.quantum" = "64/48000"; # 1.3ms
+      #   };
+      #   # "stream.properties" = {
+      #   #   "node.latency" = "1024/48000"; # 1.3ms
+      #   #   "resample.quality" = 4;
+      #   #   "resample.disable" = false;
+      #   # };
+      # };
       wireplumber = {
         enable = true;
         # source: https://wiki.archlinux.org/title/PipeWire#Noticeable_audio_delay_or_audible_pop/crack_when_starting_playback

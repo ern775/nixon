@@ -20,10 +20,8 @@
       url = "github:jzbor/nix-sweep";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nix-index-database = {
-    #   url = "github:nix-community/nix-index-database";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    nix-index-database.url = "github:nix-community/nix-index-database";
+
     custom-nixpkgs = {
       url = "github:ern775/custom-nixpkgs";
       # inputs.nixpkgs.follows = "nixpkgs";
