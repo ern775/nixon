@@ -53,6 +53,10 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    mangowm = {
+      url = "github:mangowm/mango/wl-only";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
