@@ -7,6 +7,7 @@
     qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
   };
   virtualisation.spiceUSBRedirection.enable = true;
+  systemd.tmpfiles.rules = [ "L+ /var/lib/qemu/firmware - - - - ${pkgs.qemu}/share/qemu/firmware" ];
 
   # virtualisation.virtualbox.host.enable = true;
   # users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];

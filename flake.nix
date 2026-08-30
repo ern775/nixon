@@ -57,6 +57,10 @@
       url = "github:mangowm/mango/wl-only";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mangobar = {
+      url = "github:mangowm/mangobar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

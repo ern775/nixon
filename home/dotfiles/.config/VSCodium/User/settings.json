@@ -71,4 +71,5 @@
             "path": "/run/current-system/sw/bin/qtpaths"
         }
     ],
+    "qt-core.showWelcomePageOnActivation": false,
 }
