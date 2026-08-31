@@ -38,8 +38,8 @@
         name = "Noto Emoji";
       };
       monospace = {
-        name = "JetBrains Mono";
-        package = pkgs.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
       sansSerif = {
         name = "Noto Sans";
@@ -80,6 +80,37 @@
       kde.enable = false;
       mako.enable = true;
       gnome.enable = false;
+      alacritty = {
+        enable = true;
+        opacity.enable = false;
+      };
+      fuzzel.enable = true;
+    };
+  };
+
+  programs.fuzzel = {
+    enable = true;
+    settings = {
+      main = {
+        anchor = "bottom-right";
+        lines = 15;
+        # hide-prompt = true;
+        minimal-lines = true;
+      };
+      key-bindings = {cancel = "Control+q Control+c Escape";};
+    }
+    ;
+  };
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      window = {
+        padding = {
+          x = 2;
+          y = 3;
+        };
+      };
+      selection.save_to_clipboard = true;
     };
   };
 }
