@@ -137,6 +137,7 @@ in
       qtscrcpy
       rar
       reco
+      ripgrep
       scrcpy
       sgdboop
       signal-desktop
@@ -151,6 +152,7 @@ in
       thunderbird
       tor-browser
       traceroute
+      tree-sitter
       umu-launcher
       undervolt
       unzip

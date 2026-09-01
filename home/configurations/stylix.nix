@@ -97,9 +97,10 @@
         # hide-prompt = true;
         minimal-lines = true;
       };
-      key-bindings = {cancel = "Control+q Control+c Escape";};
-    }
-    ;
+      key-bindings = {
+        cancel = "Control+q Control+c Escape";
+      };
+    };
   };
   programs.alacritty = {
     enable = true;

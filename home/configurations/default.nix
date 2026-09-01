@@ -6,6 +6,7 @@
     ./gtk2.nix
     ./kitty.nix
     ./librewolf.nix
+    ./neovim.nix
     # ./qt.nix
     ./stylix.nix
     ./vesktop.nix
