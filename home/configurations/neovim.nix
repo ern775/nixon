@@ -33,6 +33,14 @@
       # bundled here. DAP debuggers (delve, debugpy, js-debug) are intentionally
       # omitted since no nvim-dap extra is imported.
       lazygit
+      bash-language-server
+      shellcheck
+      luajitPackages.lua-lsp
+      nixd # Nix LSP (eval-aware; supersedes the older nil)
+      # alejandra lives in home/shell/packages.nix under NIX TOOLS
+      gopls # Go LSP
+      typescript-language-server # JS/TS LSP
+      taplo # TOML LSP + formatter
 
       # Lua (not an extra, but fully wired)
       lua-language-server
@@ -129,16 +137,6 @@
       vim.keymap.set("x", "-", "g<C-x>", { desc = "Decrement sequence" })
     '';
 
-    "nvim/lua/plugins/colorscheme.lua".text = ''
-      return {
-        { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-        {
-          "LazyVim/LazyVim",
-          opts = { colorscheme = "catppuccin-mocha" },
-        },
-      }
-    '';
-
     # Disable Mason entirely. Mason downloads prebuilt ELF binaries that
     # need a glibc FHS layout — broken on NixOS. nvim-lspconfig keeps
     # running and picks up LSPs/formatters from system PATH (installed
@@ -173,7 +171,7 @@
           optional = true,
           opts = function(_, opts)
             opts.formatters_by_ft = opts.formatters_by_ft or {}
-            opts.formatters_by_ft.nix = { "alejandra" }
+            opts.formatters_by_ft.nix = { "nixfmt" }
           end,
         },
       }
