@@ -30,18 +30,18 @@
     };
     orca.enable = false;
     dbus.implementation = "broker";
-    # byedpi = {
-    #   enable = true;
-    #   extraArgs = [
-    #     "--split=1"
-    #     "--disorder=3+s"
-    #     "--mod-http=h,d"
-    #     "--auto=torst"
-    #     "--tlsrec=1+s"
-    #   ];
-    # };
-    zapret = {
+    byedpi = {
       enable = true;
+      extraArgs = [
+        "--split=1"
+        "--disorder=3+s"
+        "--mod-http=h,d"
+        "--auto=torst"
+        "--tlsrec=1+s"
+      ];
+    };
+    zapret = {
+      enable = false;
       configureFirewall = true;
       httpSupport = false;
       udpSupport = true;
