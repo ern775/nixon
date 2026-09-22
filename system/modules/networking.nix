@@ -29,6 +29,7 @@
         445
         6931
         43211
+        31031
       ];
       trustedInterfaces = [ "tailscale0" ];
     };
