@@ -169,6 +169,7 @@ in
       xsettingsd
       yt-dlp
       zapzap
+      zed-editor-fhs
       # zotero
     ];
     plasma6.excludePackages = with pkgs.kdePackages; [

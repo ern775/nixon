@@ -22,7 +22,7 @@ let
         echo "No flake changes, skipping rebuild and commit."
       else
         echo "Rebuilding..."
-        home-manager switch -b backup && sudo nixos-rebuild switch
+        home-manager switch -b backup && sudo nixos-rebuild boot
 
         git add flake.lock flake.nix
         git commit -m "flake update $(date '+%Y-%m-%d %H:%M:%S')"
