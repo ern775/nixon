@@ -13,6 +13,10 @@
 
   nix = {
     settings = {
+      nix-path = [
+        "nixpkgs=${inputs.nixpkgs}"
+        "custom-nixpkgs=${inputs.custom-nixpkgs}"
+      ];
       trusted-users = [
         "root"
         "eren"
@@ -43,10 +47,6 @@
       options = "--delete-older-than 7d";
     };
     optimise.automatic = true;
-    nixPath = [
-      "nixpkgs=${inputs.nixpkgs}"
-      "custom-nixpkgs=${inputs.custom-nixpkgs}"
-    ];
     extraOptions = "warn-dirty = false";
   };
 }

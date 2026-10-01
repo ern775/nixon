@@ -3,6 +3,9 @@
     "nix.enableLanguageServer": true,
     "nix.serverSettings": {
         "nixd": {
+            "nixpkgs": {
+                "expr": "imports = [((builtins.getFlake \"/home/eren/system\").inputs.nixpkgs { }) ((builtins.getFlake \"/home/eren/system\").inputs.custom-nixpkgs { })];",
+            },
             "formatting": {
                 "command": [
                     "nixfmt"

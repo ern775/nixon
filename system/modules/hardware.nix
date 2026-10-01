@@ -71,6 +71,16 @@
     SUBSYSTEM=="powercap", ACTION=="add|change", RUN+="${pkgs.coreutils}/bin/chmod -R o+r /sys%p"
   '';
 
+  systemd.services.rapl-limits = {
+    description = "Set RAPL power limits via MMIO";
+    wantedBy = [ "default.target" ];
+    serviceConfig.Type = "oneshot";
+    script = ''
+      echo 100000000 > /sys/class/powercap/intel-rapl-mmio:0/constraint_0_power_limit_uw
+      echo 100000000 > /sys/class/powercap/intel-rapl-mmio:0/constraint_1_power_limit_uw
+    '';
+  };
+
   security.wrappers = {
     btop = {
       owner = "root";

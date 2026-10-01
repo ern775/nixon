@@ -113,8 +113,10 @@
     hyprmon
     hyprshutdown
     quickshell
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.noctalia-v5.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # inputs.noctalia-v5.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # noctalia-shell
+    noctalia
     kdePackages.kirigami.unwrapped
     udiskie
     playerctl

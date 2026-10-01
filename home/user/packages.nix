@@ -128,7 +128,6 @@ in
     custom-nixpkgs.prismlauncher
     custom-nixpkgs.stoat-desktop
     # my-hp-wmi-control-panel-tui
-    (llama-cpp.override { cudaSupport = true; })
     evtest
     evtest-qt
   ];
