@@ -95,7 +95,7 @@ in
       libarchive
       libreoffice-qt6
       # (librewolf.override {nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];})
-      # (llama-cpp.override { cudaSupport = true; })
+      (llama-cpp.override { cudaSupport = true; })
       lshw
       # lutris
       magic-wormhole-rs

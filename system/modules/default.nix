@@ -20,6 +20,7 @@
     # ./minecraft.nix
     # ./nbfc.nix
     ./networking.nix
+    ./niri.nix
     ./packages.nix
     # ./plasma.nix
     ./programs.nix

@@ -30,7 +30,10 @@
         6931
         43211
         31031
+        7777
+        8888
       ];
+      allowedUDPPorts = [ 7777 ];
       trustedInterfaces = [ "tailscale0" ];
     };
   };

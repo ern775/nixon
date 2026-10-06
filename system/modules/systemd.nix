@@ -4,8 +4,8 @@
     services = {
       novideo = {
         script = ''
-          ${config.hardware.nvidia.package.bin}/bin/nvidia-smi -lgc 0,1680
-          ${config.hardware.nvidia.package.settings}/bin/nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=255
+          /run/current-system/sw/bin/nvidia-smi -lgc 0,1680
+          /run/current-system/sw/bin/nvidia-settings -c 0 -a 'GPUGraphicsClockOffsetAllPerformanceLevels'=255
         '';
         wantedBy = [ "default.target" ];
         serviceConfig = {

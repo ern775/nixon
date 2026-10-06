@@ -2,7 +2,7 @@
   home.sessionVariables = {
     BROWSER = "librewolf";
     EDITOR = "zeditor";
-    TERMINAL = "kitty";
+    TERMINAL = "alacritty";
     # NIXOS_OZONE_WL = "1";
     XCURSOR_SIZE = "20";
     QT_QPA_PLATFORM = "wayland;xcb";
