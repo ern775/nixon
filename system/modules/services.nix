@@ -24,8 +24,7 @@
     logind = {
       settings.Login = {
         HandleLidSwitch = "ignore";
-        # HandlePowerKey = "suspend";
-        KillUserProcesses = false;
+        HandlePowerKey = "ignore";
       };
     };
     orca.enable = false;

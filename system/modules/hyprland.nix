@@ -36,7 +36,7 @@
     };
   };
 
-  services.displayManager.defaultSession = "hyprland";
+  # services.displayManager.defaultSession = "hyprland";
 
   services.udev.extraRules =
     let
