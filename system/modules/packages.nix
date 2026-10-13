@@ -22,7 +22,7 @@ in
 {
   environment = {
     systemPackages = with pkgs; [
-      alejandra
+      # alejandra
       android-tools
       # anki-bin
       appimage-run
@@ -51,8 +51,8 @@ in
       devenv
       drawy
       element-desktop
-      evtest
-      evtest-qt
+      # evtest
+      # evtest-qt
       exfatprogs
       fastfetch
       # faugus-launcher
@@ -70,14 +70,14 @@ in
       # haruna
       # hayase
       home-manager
-      hunspell
+      # hunspell
       # hunspellDicts.en-gb-ise
       # hunspellDicts.tr_TR
       # iloader
       # input-remapper
       intel-undervolt
       # pkgsStable.jamesdsp
-      jdk
+      # jdk
       jq
       kdePackages.ark
       kdePackages.kate
@@ -86,7 +86,7 @@ in
       kdePackages.kde-gtk-config
       kdePackages.kimageformats
       kdePackages.kolourpaint
-      kdePackages.krdc
+      # kdePackages.krdc
       kdePackages.ksystemlog
       kdePackages.qtwayland
       kdePackages.sddm-kcm
@@ -117,7 +117,7 @@ in
       nixfmt-tree
       nixpkgs-review
       nvfetcher
-      obsidian
+      # obsidian
       onlyoffice-desktopeditors
       openssh
       opus-tools
@@ -164,8 +164,7 @@ in
       waypipe
       wget
       # whatsapp-electron
-      xrdb
-      xsettingsd
+      # xrdb
       xsettingsd
       yt-dlp
       zapzap
