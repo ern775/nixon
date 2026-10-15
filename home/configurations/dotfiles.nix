@@ -13,6 +13,7 @@
           "MangoHud".source = link "${configDir}/MangoHud";
           "ZapZap".source = link "${configDir}/ZapZap";
           "hypr".source = link "${configDir}/hypr";
+          "niri".source = link "${configDir}/niri";
           "noctalia".source = link "${configDir}/noctalia";
           "qBittorrent".source = link "${configDir}/qBittorrent";
 

@@ -88,19 +88,19 @@
       capabilities = "cap_perfmon+ep";
       source = "${pkgs.btop}/bin/btop";
     };
-    btop-cuda = {
-      owner = "root";
-      group = "root";
-      capabilities = "cap_perfmon+ep";
-      source = "${(pkgs.writeShellScriptBin "btop-cuda" ''
-        exec ${pkgs.btop-cuda}/bin/btop --config ~/.config/btop/btop-cuda.conf "$@"
-      '')}/bin/btop-cuda";
-    };
-    mangohud = {
-      owner = "root";
-      group = "root";
-      capabilities = "cap_perfmon+ep";
-      source = "${pkgs.mangohud}/bin/mangohud";
-    };
+    # btop-cuda = {
+    #   owner = "root";
+    #   group = "root";
+    #   capabilities = "cap_perfmon+ep";
+    #   source = "${(pkgs.writeShellScriptBin "btop-cuda" ''
+    #     exec ${pkgs.btop-cuda}/bin/btop --config ~/.config/btop/btop-cuda.conf "$@"
+    #   '')}/bin/btop-cuda";
+    # };
+    # mangohud = {
+    #   owner = "root";
+    #   group = "root";
+    #   capabilities = "cap_perfmon+ep";
+    #   source = "${pkgs.mangohud}/bin/mangohud";
+    # };
   };
 }

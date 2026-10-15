@@ -16,7 +16,7 @@
     ./internationalisation.nix
     # ./ios.nix
     ./journal.nix
-    ./mango.nix
+    # ./mango.nix
     # ./minecraft.nix
     # ./nbfc.nix
     ./networking.nix
