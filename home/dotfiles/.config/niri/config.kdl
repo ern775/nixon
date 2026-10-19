@@ -347,7 +347,7 @@ animations {
 
 binds {
     // Essentials
-    Mod+Ctrl+Shift+7                                                  { show-hotkey-overlay; }
+    Mod+Ctrl+Shift+7                                             { show-hotkey-overlay; }
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Space  hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
@@ -361,7 +361,7 @@ binds {
     // Window Management
     Mod+Q repeat=false       { close-window; }
     Mod+Ctrl+Q               { spawn-sh "kill -9 $(niri msg -j focused-window | jq .pid)"; }
-    Mod+W repeat=false { toggle-overview; }
+    Mod+W repeat=false       { toggle-overview; }
     Mod+M                    { toggle-window-floating; }
     Mod+Shift+M              { switch-focus-between-floating-and-tiling; }
     Mod+O                    { toggle-column-tabbed-display; }
