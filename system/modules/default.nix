@@ -9,7 +9,7 @@
     ./fonts.nix
     ./nix.nix
     ./hardware.nix
-    ./hp-fan-control.nix
+    # ./hp-fan-control.nix
     ./hp.nix
     # ./hyprland.nix
     ./intel.nix

@@ -15,7 +15,7 @@ in
   programs.niri = {
     enable = true;
     # useNautilus = true;
-    package = custom-nixpkgs.niri-icc;
+    package = custom-nixpkgs.niri-icclaude;
   };
 
   services.displayManager.defaultSession = "niri";
