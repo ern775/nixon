@@ -7,7 +7,7 @@
 }:
 let
   system = "x86_64-linux";
-  # pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
+  # pkgsStable = inputs.nixpkgs-stable.legacyPackages.${system};
   custom-nixpkgs = inputs.custom-nixpkgs.packages.${system};
   # victus-control = pkgs.callPackage ../../pkgs/victus-control/package.nix { };
   homeConfig = inputs.self.homeConfigurations.eren.config;

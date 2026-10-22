@@ -5,7 +5,7 @@
 }:
 let
   system = "x86_64-linux";
-  pkgsStable = inputs.nixpkgsStable.legacyPackages.${system};
+  pkgsStable = inputs.nixpkgs-stable.legacyPackages.${system};
   custom-nixpkgs = inputs.custom-nixpkgs.packages.${system};
   nix-sweep = inputs.nix-sweep.packages.${system}.default;
   # nero = pkgs.callPackage ../../pkgs/nero-umu/package.nix { };

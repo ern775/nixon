@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }:
 let
+  nixpkgs-stable = inputs.nixpkgs-stable.packages.${pkgs.stdenv.hostPlatform.system};
   custom-nixpkgs = inputs.custom-nixpkgs.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
