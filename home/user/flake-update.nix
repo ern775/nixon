@@ -9,26 +9,22 @@ let
     ];
 
     text = ''
-      set -e
+      cd ~/system
 
-      trap 'echo "Interrupted, aborting."; exit 1' INT
+      trap 'git checkout -- flake.lock' ERR INT TERM
 
-      pushd ~/system
-
-      echo "Updating flake inputs..."
       nix flake update
 
-      if git diff --quiet -- flake.lock flake.nix; then
-        echo "No flake changes, skipping rebuild and commit."
-      else
-        echo "Rebuilding..."
-        home-manager switch -b backup && sudo nixos-rebuild boot
-
-        git add flake.lock flake.nix
-        git commit -m "flake update $(date '+%Y-%m-%d %H:%M:%S')"
+      if git diff --quiet -- flake.lock; then
+        echo "No flake changes"
+        exit 0
       fi
 
-      popd
+      home-manager switch -b backup
+      sudo nixos-rebuild boot
+
+      git add flake.lock
+      git commit -m "flake update $(date '+%Y-%m-%d %H:%M:%S')"
     '';
   };
 in
