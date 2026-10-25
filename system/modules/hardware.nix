@@ -27,22 +27,7 @@
       open = true;
       nvidiaSettings = true;
       # package = config.boot.kernelPackages.nvidiaPackages.stable;
-      package = config.boot.kernelPackages.nvidiaPackages.stable.overrideAttrs (old: {
-        builder = pkgs.runCommand "nvidia-builder.sh" { } ''
-          substitute ${old.builder} $out --replace-fail \
-            'patchelf --interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \' \
-            '${
-              pkgs.patchelf.overrideAttrs {
-                version = "0.15.2";
-                src = pkgs.fetchurl {
-                  url = "https://github.com/NixOS/patchelf/releases/download/0.15.2/patchelf-0.15.2.tar.bz2";
-                  hash = "sha256-F3RfVkFZyOIo/EEtplogSLhGxLa0Igt3y/IkFuAvLXw=";
-                };
-                doCheck = false;
-              }
-            }/bin/patchelf --interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \'
-        '';
-      });
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
       prime = {
         offload = {
           enable = true;

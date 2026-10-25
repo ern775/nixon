@@ -17,7 +17,7 @@ in
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       extraCompatPackages = with pkgs; [
-        proton-ge-bin
+        custom-nixpkgs.ge-proton
         custom-nixpkgs.dw-proton
         custom-nixpkgs.proton-cachyos
       ];
