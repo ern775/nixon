@@ -13,7 +13,7 @@
     # };
     bluetooth = {
       enable = true;
-      # powerOnBoot = true;
+      powerOnBoot = false;
     };
     graphics = {
       enable = true;
