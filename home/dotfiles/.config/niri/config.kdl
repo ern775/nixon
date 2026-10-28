@@ -448,7 +448,7 @@ binds {
     XF86AudioMute allow-when-locked=true              { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     Ctrl+XF86AudioRaiseVolume allow-when-locked=true  { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+"; }
     Ctrl+XF86AudioLowerVolume allow-when-locked=true  { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-"; }
-    XF86AudioMicMute allow-when-locked=true           { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    Ctrl+XF86AudioMute allow-when-locked=true           { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
     // Media
     XF86AudioPlay allow-when-locked=true      { spawn-sh "noctalia msg media toggle"; }
@@ -549,6 +549,7 @@ window-rule {
 window-rule {
     match app-id=r#"^dev\.zed\.Zed$"#
     match app-id=r#"^seanime-denshi$"#
+    match app-id=r#"^vesktop"#
     open-on-workspace "Editor"
     open-focused false
     on-xdg-activate "ignore"
