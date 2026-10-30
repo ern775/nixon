@@ -141,11 +141,25 @@ switch-events {
     lid-close { spawn "noctalia" "msg" "session" "lock-and-suspend"; }
 }
 
+layer-rule {
+    match namespace="^noctalia-wallpaper"
+    place-within-backdrop true
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Layout
+
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
 layout {
     // Set gaps around windows in logical pixels.
+    background-color "transparent"
+
     gaps 3
 
     // When to center a column when changing focus, options are:
@@ -349,7 +363,7 @@ binds {
     // Essentials
     Mod+Ctrl+Shift+7                                             { show-hotkey-overlay; }
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+Space  hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+Space  hotkey-overlay-title="Run an Application: Noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
 
     // Apps
     Mod+Shift+Return { spawn "zeditor"; }
@@ -501,10 +515,13 @@ binds {
     Mod+Ctrl+Shift+U { spawn "udiskie-umount" "-ad"; }
 
     // Screenshots
-    Print       { screenshot; }
-    Mod+Shift+S { screenshot; }
-    Ctrl+Print  { screenshot-screen; }
-    Alt+Print   { screenshot-window; }
+    Print               { screenshot; }
+    Mod+Shift+S         { screenshot; }
+    Ctrl+Print          { screenshot-screen; }
+    Alt+Print           { screenshot-window; }
+    Mod+Ctrl+Shift+idotless    { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all toggle"; }
+    Mod+Ctrl+Shift+O    { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all replay-toggle"; }
+    Mod+Ctrl+Shift+P    { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all replay-save"; }
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -519,9 +536,9 @@ window-rule {
 
 window-rule {
   match app-id="dev.noctalia.Noctalia"
-  open-floating true
-  default-column-width { fixed 1080; }
-  default-window-height { fixed 920; }
+  // open-floating true
+  // default-column-width { fixed 1080; }
+  // default-window-height { fixed 920; }
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -567,6 +584,17 @@ window-rule {
     match app-id=r#"^Alacritty$"#
     match app-id=r#"^org.gnome.Nautilus$"#
     open-maximized-to-edges false
+    // on-xdg-activate "ignore"
+    // background-effect {
+    //     blur true
+    //     // xray true
+    // }
+    // opacity 0.9
+}
+
+window-rule {
+    match app-id=r#"^btop"#
+    open-maximized-to-edges true
     // on-xdg-activate "ignore"
     // background-effect {
     //     blur true

@@ -12,6 +12,11 @@ in
     hicolor-icon-theme
     kdePackages.breeze-icons
     kdePackages.kirigami.unwrapped
+    nix-search-tv
+    slurp
+    linux-wifi-hotspot
+    iw
+    pulseaudio
   ];
   programs.niri = {
     enable = true;
