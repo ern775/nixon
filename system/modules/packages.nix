@@ -154,6 +154,7 @@ in
       traceroute
       tree-sitter
       umu-launcher
+      unar
       undervolt
       unzip
       vim

@@ -39,6 +39,9 @@
           "touchpadxlibinputrc".source = link "${configDir}/touchpadxlibinputrc";
           "color/icc/devices/display/Victus15.icm".source =
             link "${configDir}/color/icc/devices/display/Victus15.icm";
+
+          "kdeglobals".source = link "${configDir}/kdeglobals";
+          "mimeapps.list".source = link "${configDir}/mimeapps.list";
         };
     };
 }
