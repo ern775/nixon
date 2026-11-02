@@ -21,7 +21,7 @@
     # ./nbfc.nix
     ./networking.nix
     ./niri.nix
-    ./nouveau.nix
+    # ./nouveau.nix
     ./packages.nix
     # ./plasma.nix
     ./programs.nix

@@ -255,4 +255,10 @@ in
       # };
     })
   ];
+
+  nixpkgs.config = {
+    problems.handlers = {
+      "gtk+".broken = "warn"; # or "ignore"
+    };
+  };
 }
