@@ -361,35 +361,39 @@ animations {
 
 binds {
     // Essentials
-    Mod+Ctrl+Shift+7                                             { show-hotkey-overlay; }
-    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+Space  hotkey-overlay-title="Run an Application: Noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+Ctrl+Shift+7                                    { show-hotkey-overlay; }
+    Mod+Return hotkey-overlay-title="alacritty"         { spawn "alacritty"; }
+    Mod+Space  hotkey-overlay-title="Noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
 
     // Apps
     Mod+Shift+Return { spawn "zeditor"; }
     Mod+E            { spawn "dolphin"; }
-    Mod+A            { spawn "librewolf"; }
+    Mod+G            { spawn "librewolf"; }
     XF86Launch2      { spawn "nero-umu"; }
     XF86Calculator   { spawn "kcalc"; }
 
     // Window Management
-    Mod+Q repeat=false       { close-window; }
-    Mod+Ctrl+Q               { spawn-sh "kill -9 $(niri msg -j focused-window | jq .pid)"; }
-    Mod+W repeat=false       { toggle-overview; }
-    Mod+M                    { toggle-window-floating; }
-    Mod+Shift+M              { switch-focus-between-floating-and-tiling; }
-    Mod+O                    { toggle-column-tabbed-display; }
+    Mod+Q repeat=false        { close-window; }
+    Mod+Ctrl+Q                { spawn-sh "kill -9 $(niri msg -j focused-window | jq .pid)"; }
+    Mod+quotedbl repeat=false { toggle-overview; }
+    Mod+M                     { toggle-window-floating; }
+    Mod+Shift+M               { switch-focus-between-floating-and-tiling; }
+    Mod+O                     { toggle-column-tabbed-display; }
 
     // Focus and Move
     Mod+Left       { focus-column-left; }
     Mod+Right      { focus-column-right; }
+    Mod+A          { focus-column-left; }
+    Mod+D          { focus-column-right; }
     // Mod+H          { focus-column-left; }
     Mod+J          { focus-window-down; }
     Mod+K          { focus-window-up; }
     // Mod+L          { focus-column-right; }
 
     Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+A     { move-column-left; }
     Mod+Shift+Right { move-column-right; }
+    Mod+Shift+D     { move-column-right; }
     Mod+Shift+H     { move-column-left; }
     Mod+Shift+J     { move-window-down; }
     Mod+Shift+K     { move-window-up; }
@@ -397,7 +401,9 @@ binds {
 
     // Workspaces
     Mod+Down          { focus-workspace-down; }
+    Mod+S             { focus-workspace-down; }
     Mod+Up            { focus-workspace-up; }
+    Mod+W             { focus-workspace-up; }
     Mod+U             { focus-workspace-down; }
     Mod+idotless      { focus-workspace-up; }
 
@@ -483,7 +489,7 @@ binds {
     Shift+XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "-n" "5%-"; }
 
     // Noctalia Panels
-    Mod+S           { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+F1          { spawn-sh "noctalia msg panel-toggle control-center"; }
     Mod+Ctrl+Comma  { spawn-sh "noctalia msg settings-toggle"; }
     Mod+V           { spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+Z           { spawn-sh "noctalia msg panel-toggle control-center notifications"; }
@@ -504,7 +510,7 @@ binds {
     Mod+Ctrl+T allow-when-locked=true { spawn-sh "noctalia msg wifi-toggle"; }
 
     // Session and Power
-    Mod+L  { spawn-sh "noctalia msg session lock && sleep 3 && niri msg action power-off-monitors"; }
+    Mod+L        { spawn-sh "noctalia msg session lock && sleep 3 && niri msg action power-off-monitors"; }
     XF86PowerOff { power-off-monitors; }
 
     // System Monitors
@@ -515,13 +521,13 @@ binds {
     Mod+Ctrl+Shift+U { spawn "udiskie-umount" "-ad"; }
 
     // Screenshots
-    Print               { screenshot; }
-    Mod+Shift+S         { screenshot; }
-    Ctrl+Print          { screenshot-screen; }
-    Alt+Print           { screenshot-window; }
-    Mod+Ctrl+Shift+idotless    { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all toggle"; }
-    Mod+Ctrl+Shift+O    { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all replay-toggle"; }
-    Mod+Ctrl+Shift+P    { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all replay-save"; }
+    Print                   { screenshot; }
+    Mod+Shift+S             { screenshot; }
+    Ctrl+Print              { screenshot-screen; }
+    Alt+Print               { screenshot-window; }
+    Mod+Ctrl+Shift+idotless { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all toggle"; }
+    Mod+Ctrl+Shift+O        { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all replay-toggle"; }
+    Mod+Ctrl+Shift+P        { spawn-sh "noctalia msg plugin noctalia/screen_recorder:service all replay-save"; }
 }
 
 // Window rules let you adjust behavior for individual windows.

@@ -4,7 +4,7 @@ let
   custom-nixpkgs = inputs.custom-nixpkgs.packages.${system};
 in
 {
-  imports = [ inputs.tuxov.nixosModules.hp-wmi-control ];
+  imports = [ inputs.custom-nixpkgs.nixosModules.hp-wmi-control ];
   hardware.hp-wmi-control = {
     enable = true;
     # victus-15-support.enable = true;
