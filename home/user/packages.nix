@@ -50,7 +50,7 @@ in
     # hunspellDicts.en-gb-ise
     # hunspellDicts.tr_TR
     intel-undervolt
-    gale
+    # gale
     gh
     godot
     gpu-screen-recorder

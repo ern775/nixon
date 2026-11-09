@@ -27,7 +27,7 @@ in
       # anki-bin
       appimage-run
       # (bottles.override { removeWarningPopup = true; })
-      brave
+      # brave
       brightnessctl
       btop
       (writeShellScriptBin "btop-cuda" ''
