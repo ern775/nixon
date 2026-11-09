@@ -58,7 +58,7 @@ in
     # input-remapper
     kdePackages.kcalc
     kdePackages.kclock
-    kdePackages.krdc
+    # kdePackages.krdc
     kdePackages.kde-gtk-config
     kdePackages.kimageformats
     kdePackages.kolourpaint

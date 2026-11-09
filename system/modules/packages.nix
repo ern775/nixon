@@ -60,7 +60,7 @@ in
       file
       firefox
       fzf
-      gale
+      # gale
       gh
       ghostscript
       git
@@ -86,7 +86,7 @@ in
       kdePackages.kde-gtk-config
       kdePackages.kimageformats
       kdePackages.kolourpaint
-      # kdePackages.krdc
+      kdePackages.krdc
       kdePackages.ksystemlog
       kdePackages.qtwayland
       kdePackages.sddm-kcm
@@ -177,6 +177,7 @@ in
       elisa
       discover
       drkonqi
+      # krdp
     ];
     pathsToLink = [
       "/share"
@@ -195,6 +196,7 @@ in
   #   formatted;
 
   nixpkgs.overlays = [
+    inputs.custom-nixpkgs.overlays.freerdp
     (final: prev: {
       # nero-umu = prev.nero-umu.overrideAttrs (old: {
       #   src = inputs.nero-umu;
@@ -211,10 +213,10 @@ in
         pcaudiolibSupport = false;
         sonicSupport = false;
       };
-      freerdp = prev.freerdp.override {
-        withWaylandSupport = true;
-        openh264 = null;
-      };
+      # freerdp = prev.freerdp.override {
+      #   withWaylandSupport = true;
+      #   openh264 = null;
+      # };
       # vesktop = prev.vesktop.override {
       #   pnpm_10_29_2 = final.pnpm_10;
       # };
