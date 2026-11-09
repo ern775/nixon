@@ -17,6 +17,7 @@ in
     linux-wifi-hotspot
     iw
     pulseaudio
+    wl-clipboard
   ];
   programs.niri = {
     enable = true;

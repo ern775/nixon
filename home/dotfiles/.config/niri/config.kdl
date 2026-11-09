@@ -614,6 +614,7 @@ window-rule {
     match title=r#"^Minecraft:"#
     match app-id=r#"^steam_app_"#
     match app-id=r#".exe$"#
+    match app-id=r#"^com.factorio.Factorio$"#
 
     geometry-corner-radius 0
     border { off; }
